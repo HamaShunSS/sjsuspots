@@ -7,7 +7,7 @@ const Contact = ({ onRouteChange }) => {
                 <p className="b f3">All For One</p>
                 <p className="f5">〜スポット〜</p>
                 <p className="f5">サンノゼのオススメのスポットを紹介</p>
-                <p className="f6">Made by サンノゼの先輩方</p>
+                <p className="f6">Made by Shunsuke Hama</p>
             </div>
             <div className="ph4">
                 <p className="b f3">質問・連絡先</p>
