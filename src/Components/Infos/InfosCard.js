@@ -9,8 +9,10 @@ const Card = ({ info } ) => {
         <div className='tc bg-light-green dib br3 pa4 ma3 grow bw2 shadow-5 w5-ns'>
             <div className="black">
                 <h2>{info.name}</h2>
-
+                <p></p>
+                <div>
                 <img id='inputimage' alt='画像' src={info.url} className="pv3 fl w5 h4 h4-ns w5-ns tc" />
+                </div>
                 <p></p>
                 <div>
                 <p className="">住所：{info.location}</p>
