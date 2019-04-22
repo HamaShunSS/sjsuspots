@@ -6,7 +6,7 @@ import React from 'react';
 const Card = ({ info } ) => {
     console.log('url is ', info.url );
     return(
-        <div className='tc bg-light-green dib br3 pa4 ma3 grow bw2 shadow-5'>
+        <div className='tc bg-light-green dib br3 pa4 ma3 grow bw2 shadow-5 w5-ns'>
             <div className="black">
                 <h2>{info.name}</h2>
                 <img id='inputimage' alt='画像' src={info.url} className="pv3 fl w-100 w-100-ns tc" />
