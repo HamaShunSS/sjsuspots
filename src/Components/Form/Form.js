@@ -63,39 +63,44 @@ class Form extends Component {
 
 
     onSubmitForm =() => {
-        if (this.props.route === 'form') {
-            this.props.onRouteChange('loading');
+        if (this.state.url.includes('jpg') || this.state.url.includes('jpeg')){
+            if (this.props.route === 'form') {
+                this.props.onRouteChange('loading');
+            }
+            fetch('https://spots-for-sjsu-students.herokuapp.com/register', {
+                method: 'post',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                    name: this.state.name,
+                    ramen: this.state.checkboxes.ラーメン,
+                    food: this.state.checkboxes.食事処,
+                    view: this.state.checkboxes.景色,
+                    cafe: this.state.checkboxes.カフェ,
+                    park: this.state.checkboxes.公園,
+                    club: this.state.checkboxes.クラブ,
+                    bar: this.state.checkboxes.バー,
+                    study: this.state.checkboxes.勉強する場所,
+                    hiking: this.state.checkboxes.ハイキング,
+                    shopping: this.state.checkboxes.買い物,
+                    beauty: this.state.checkboxes.美容系,
+                    location: this.state.location,
+                    url: this.state.url,
+                    price: this.state.price,
+                    comments: this.state.comments
+                })
+            })
+                .then(response => response.json()) // Get response through json, and get data by ".then"
+                .then(response => {
+                    console.log('what is ', response)
+                    if (response === 'success') {
+                        this.props.onRouteChange('thankyou');
+                    } else if (response === 'incorrect form submission') {
+                        this.props.onRouteChange('sorry');
+                    }
+                })
+        } else {
+            alert("画像のURLはjpgを含むものでお願いします")
         }
-        fetch('https://spots-for-sjsu-students.herokuapp.com/register', {
-            method: 'post',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
-                name: this.state.name,
-                ramen: this.state.checkboxes.ラーメン,
-                food: this.state.checkboxes.食事処,
-                view: this.state.checkboxes.景色,
-                cafe: this.state.checkboxes.カフェ,
-                park: this.state.checkboxes.公園,
-                club: this.state.checkboxes.クラブ,
-                bar: this.state.checkboxes.バー,
-                study: this.state.checkboxes.勉強する場所,
-                hiking: this.state.checkboxes.ハイキング,
-                shopping: this.state.checkboxes.買い物,
-                beauty: this.state.checkboxes.美容系,
-                location: this.state.location,
-                url: this.state.url,
-                price: this.state.price,
-                comments: this.state.comments
-            })
-        })
-            .then(response => response.json()) // Get response through json, and get data by ".then"
-            .then(response => {console.log('what is ', response)
-                if (response === 'success') {
-                    this.props.onRouteChange('thankyou');
-                }　else if (response === 'incorrect form submission') {
-                    this.props.onRouteChange('sorry');
-                }
-            })
     }
 
 
@@ -162,7 +167,7 @@ class Form extends Component {
                         <div className="pt5">
                             <label className="db fw6 lh-copy f6" htmlFor="name">場所の名前は？</label>
                             <input
-                                className="pa2 input-reset ba bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="name"
                                 id="name"
@@ -180,17 +185,17 @@ class Form extends Component {
                                             <div className="form-group pv2">
                                                 <button
                                                     type="button"
-                                                    className="btn btn-outline-primary ph2 pv2 bg-light-green grow pointer br-pill mr-2"
+                                                    className="btn btn-outline-primary ph2 pv2 bg-light-green grow pointer br-pill mr-2 f6 white"
                                                     onClick={this.selectAll}
                                                 >
-                                                    全部選択
+                                                    全選択
                                                 </button> <label> </label>
                                                 <button
                                                     type="button"
-                                                    className="btn btn-outline-primary ph2 pv2  bg-light-green grow pointer br-pill mr-2"
+                                                    className="btn btn-outline-primary ph2 pv2 bg-light-green grow pointer br-pill mr-2 f6 white"
                                                     onClick={this.deselectAll}
                                                 >
-                                                    全部消す
+                                                    全消し
                                                 </button>
                                                 {/*<button type="submit" className="btn btn-primary">*/}
                                                 {/*Save*/}
@@ -204,7 +209,7 @@ class Form extends Component {
                         <div className="pt5">
                             <label className="db fw6 lh-copy f6 pt4" htmlFor="name">写真のURLを貼って下さい</label>
                             <input
-                                className="pa2 input-reset ba bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="url"
                                 id="url"
@@ -237,7 +242,7 @@ class Form extends Component {
                                         className="form-check-input"
                                     />
                                     <label> </label>
-                                    $
+                                    $ (~$10)
                                 </label>
                                 <label className="f4 ph2">
                                     <input
@@ -249,7 +254,7 @@ class Form extends Component {
                                         className="form-check-input"
                                     />
                                     <label> </label>
-                                    $$
+                                    $$ (~$15)
                                 </label >
                                 <label className="f4 ph2">
                                     <input
@@ -261,7 +266,7 @@ class Form extends Component {
                                         className="form-check-input"
                                     />
                                     <label> </label>
-                                    $$$
+                                    $$$ (~$30)
                                 </label>
                                 <label className="f4 ph2">
                                     <input
@@ -273,14 +278,14 @@ class Form extends Component {
                                         className="form-check-input"
                                     />
                                     <label> </label>
-                                    $$$$
+                                    $$$$ ($30~)
                                 </label>
                             </div>
                         </form>
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6" htmlFor="name">住所</label>
                             <input
-                                className="pa2 input-reset ba bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="location"
                                 id="location"
@@ -290,7 +295,7 @@ class Form extends Component {
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6" htmlFor="name">コメント</label>
                             <input
-                                className="pa2 input-reset ba bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="comments"
                                 id="comments"
