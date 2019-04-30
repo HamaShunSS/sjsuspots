@@ -15,10 +15,13 @@ const Card = ({ info } ) => {
                 </div>
                 <p></p>
                 <div>
-                <p className="">住所：{info.location}</p>
+                <p className="">住所：
+                    <label className=""> {info.location}</label></p>
                 </div>
-                <p>星：{info.rate}</p>
-                <p>コメント：{info.comments}</p>
+                <p className=" ">値段：
+                    <label> {info.price}</label></p>
+                <p className=" ">
+                    <label> {info.comments}</label></p>
             </div>
         </div>
     );

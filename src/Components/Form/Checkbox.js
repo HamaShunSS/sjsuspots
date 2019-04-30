@@ -9,6 +9,7 @@ const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
             onChange={onCheckboxChange}
             className="form-check-input"
         />
+        <label> </label>
         {label}
     </label>
 );

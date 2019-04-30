@@ -29,7 +29,7 @@ class Form extends Component {
             beauty:'',
             location: '',
             url:'',
-            rate:'',
+            price:'',
             comments: ''
         };
         // console.log(this.state.checkboxes)
@@ -55,14 +55,17 @@ class Form extends Component {
 
 
 
-    handleRateChange = changeEvent => {
+    handlePriceChange = changeEvent => {
         this.setState({
-            rate: changeEvent.target.value
+            price: changeEvent.target.value
         });
     };
 
 
     onSubmitForm =() => {
+        if (this.props.route === 'form') {
+            this.props.onRouteChange('loading');
+        }
         fetch('https://spots-for-sjsu-students.herokuapp.com/register', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
@@ -81,7 +84,7 @@ class Form extends Component {
                 beauty: this.state.checkboxes.美容系,
                 location: this.state.location,
                 url: this.state.url,
-                rate: this.state.rate,
+                price: this.state.price,
                 comments: this.state.comments
             })
         })
@@ -89,6 +92,8 @@ class Form extends Component {
             .then(response => {console.log('what is ', response)
                 if (response === 'success') {
                     this.props.onRouteChange('thankyou');
+                }　else if (response === 'incorrect form submission') {
+                    this.props.onRouteChange('sorry');
                 }
             })
     }
@@ -154,10 +159,10 @@ class Form extends Component {
                 <div className="tc fl w-100 w-100-ns tc">
                     <fieldset id="sign_up" className="ba b--transparent ph0 mh0 mt4-ns ">
                         <div className="f2 pv5 fl w-100 w-100-ns tc fw6 ph0 mh0">オススメの場所をシェアハピして下さい！！</div>
-                        <div className="">
+                        <div className="pt5">
                             <label className="db fw6 lh-copy f6" htmlFor="name">場所の名前は？</label>
                             <input
-                                className="pa2 input-reset ba bg-white hover-bg-black hover-white w-100"
+                                className="pa2 input-reset ba bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="name"
                                 id="name"
@@ -165,27 +170,27 @@ class Form extends Component {
                             />
                         </div>
 
-                        <div className="container">
-                            <div className="row mt-5">
-                                <div className="col-sm-12">
-                                    <label className="db fw6 lh-copy f6 pt5" htmlFor="name">ジャンルは？　（複数選択可能）</label>
-                                    <div className="left">
+                        <div className="container tc pt4">
+                            <div className="">
+                                <div className="col-sm-12 pb4">
+                                    <label className="db fw6 lh-copy f6" htmlFor="name">ジャンルは？　（複数選択可能）</label>
+                                    <div className="tc fl w-100 w-100-ns tc w-50-ns">
                                         <form onSubmit={this.handleFormSubmit}>
                                             {this.createCheckboxes()}
-                                            <div className="form-group mt-2">
+                                            <div className="form-group pv2">
                                                 <button
                                                     type="button"
-                                                    className="btn btn-outline-primary mr-2"
+                                                    className="btn btn-outline-primary ph2 pv2 bg-light-green grow pointer br-pill mr-2"
                                                     onClick={this.selectAll}
                                                 >
-                                                    Select All
-                                                </button>
+                                                    全部選択
+                                                </button> <label> </label>
                                                 <button
                                                     type="button"
-                                                    className="btn btn-outline-primary mr-2"
+                                                    className="btn btn-outline-primary ph2 pv2  bg-light-green grow pointer br-pill mr-2"
                                                     onClick={this.deselectAll}
                                                 >
-                                                    Deselect All
+                                                    全部消す
                                                 </button>
                                                 {/*<button type="submit" className="btn btn-primary">*/}
                                                 {/*Save*/}
@@ -196,10 +201,10 @@ class Form extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="pv3">
-                            <label className="db fw6 lh-copy f6" htmlFor="name">写真のURLを貼って下さい</label>
+                        <div className="pt5">
+                            <label className="db fw6 lh-copy f6 pt4" htmlFor="name">写真のURLを貼って下さい</label>
                             <input
-                                className="pa2 input-reset ba bg-white hover-bg-black hover-white w-100"
+                                className="pa2 input-reset ba bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="url"
                                 id="url"
@@ -207,80 +212,85 @@ class Form extends Component {
                             />
                         </div>
 
-                        <form className="pv3">
-                            <label className="db fw6 lh-copy f6" htmlFor="name">星</label>
+                        <form className="pt4">
+                            <label className="db fw6 lh-copy f6" htmlFor="name">値段</label>
                             <div className=''>
                                 <label className="f4 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
-                                        value="5"
-                                        checked={this.state.rate === "5"}
-                                        onChange={this.handleRateChange}
+                                        value="無料"
+                                        checked={this.state.price === "無料"}
+                                        onChange={this.handlePriceChange}
                                         className="form-check-input"
                                     />
-                                    5
+                                    <label> </label>
+                                    無料
                                 </label>
                                 <label className="f4 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
-                                        value="4"
-                                        checked={this.state.rate === "4"}
-                                        onChange={this.handleRateChange}
+                                        value="$"
+                                        checked={this.state.price === "$"}
+                                        onChange={this.handlePriceChange}
                                         className="form-check-input"
                                     />
-                                    4
+                                    <label> </label>
+                                    $
                                 </label>
                                 <label className="f4 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
-                                        value="3"
-                                        checked={this.state.rate === "3"}
-                                        onChange={this.handleRateChange}
+                                        value="$$"
+                                        checked={this.state.price === "$$"}
+                                        onChange={this.handlePriceChange}
                                         className="form-check-input"
                                     />
-                                    3
+                                    <label> </label>
+                                    $$
                                 </label >
                                 <label className="f4 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
-                                        value="2"
-                                        checked={this.state.rate === "2"}
-                                        onChange={this.handleRateChange}
+                                        value="$$$"
+                                        checked={this.state.price === "$$$"}
+                                        onChange={this.handlePriceChange}
                                         className="form-check-input"
                                     />
-                                    2
+                                    <label> </label>
+                                    $$$
                                 </label>
                                 <label className="f4 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
-                                        value="1"
-                                        checked={this.state.rate === "1"}
-                                        onChange={this.handleRateChange}
+                                        value="$$$$"
+                                        checked={this.state.price === "$$$$"}
+                                        onChange={this.handlePriceChange}
                                         className="form-check-input"
                                     />
-                                    1
+                                    <label> </label>
+                                    $$$$
                                 </label>
                             </div>
                         </form>
-                        <div className="pv3">
+                        <div className="pt4">
                             <label className="db fw6 lh-copy f6" htmlFor="name">住所</label>
                             <input
-                                className="pa2 input-reset ba bg-white hover-bg-black hover-white w-100"
+                                className="pa2 input-reset ba bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="location"
                                 id="location"
                                 onChange={this.onLocationChange}
                             />
                         </div>
-                        <div className="pv3">
+                        <div className="pt4">
                             <label className="db fw6 lh-copy f6" htmlFor="name">コメント</label>
                             <input
-                                className="pa2 input-reset ba bg-white hover-bg-black hover-white w-100"
+                                className="pa2 input-reset ba bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="comments"
                                 id="comments"
@@ -290,10 +300,10 @@ class Form extends Component {
                     </fieldset>
 
 
-                    <div className="pv3">
+                    <div className="pv5">
                         <input
                             onClick={this.onSubmitForm}
-                            className="b ph3 pv3 input-reset ba b--black bg-white grow pointer f6 dib"
+                            className="b ph3 pv3 input-reset ba bg-light-green white br-pill grow pointer f6 dib"
                             type="submit"
                             value="シェアハピ"
                         />

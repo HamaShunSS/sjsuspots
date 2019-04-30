@@ -5,6 +5,8 @@ import Category from './Components/Search/Category';
 import Infos from './Components/Infos/Infos';
 import Form from './Components/Form/Form';
 import Thankyou from "./Components/Form/Thankyou";
+import Sorry from "./Components/Form/Sorry";
+import Loading from "./Components/Form/Loading";
 import Contact from "./Components/Contact/Contact";
 
 
@@ -68,7 +70,15 @@ class App extends Component {
                                     route === 'thankyou'
                                         ?< Thankyou onRouteChange={this.onRouteChange} />
                                         :(
-                                            < Form loadUser={this.loadUser}  onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                            route === 'loading'
+                                                ?< Loading onRouteChange={this.onRouteChange} />
+                                                :(
+                                                    route === 'sorry'
+                                                        ?< Sorry onRouteChange={this.onRouteChange} />
+                                                            :(
+                                                                < Form route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                                                )
+                                                )
                                         )
                                 )
                         )
