@@ -65,6 +65,9 @@ class Form extends Component {
 
 
     onSubmitForm =() => {
+        if (this.state.name === '' || this.state.location === '' || this.state.comments === '' ) {
+            alert("場所の名前か住所、コメントのどれかに記入漏れがあるようです...");
+        }
         if (this.state.url.includes('jpg') || this.state.url.includes('jpeg')){
             if (this.props.route === 'form') {
                 this.props.onRouteChange('loading');
@@ -103,7 +106,7 @@ class Form extends Component {
                     }
                 })
         } else {
-            alert("画像のURLは jpg 又は jpeg を含むものでお願いします")
+            alert("画像のURLは jpg 又は jpeg を含むものでお願いします");
         }
     }
 
@@ -246,7 +249,7 @@ class Form extends Component {
                                         className="form-check-input"
                                     />
                                     <label> </label>
-                                    $ (~$10)
+                                    $ (~10)
                                 </label>
                                 <label className="f4 ph2">
                                     <input
@@ -258,7 +261,7 @@ class Form extends Component {
                                         className="form-check-input"
                                     />
                                     <label> </label>
-                                    $$ (~$15)
+                                    $$ (~$18)
                                 </label >
                                 <label className="f4 ph2">
                                     <input
