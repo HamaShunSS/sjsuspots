@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
 
-const category = ["ラーメン", "食事処", "景色","カフェ","公園", "クラブ", "バー", "勉強する場所", "ハイキング","買い物", "美容系"];
+const category = ["ラーメン", "食事処", "景色","カフェ","娯楽", "クラブ", "バー", "勉強する場所", "自然","買い物", "美容系","デリ","その他"];
 
 class Form extends Component {
     constructor(props){
@@ -20,13 +20,15 @@ class Form extends Component {
             food: '',
             view: '',
             cafe: '',
-            park:'',
+            hobby:'',
             club: '',
             bar: '',
             study: '',
-            hiking: '',
+            nature: '',
             shopping: '',
             beauty:'',
+            deli: '',
+            others:'',
             location: '',
             url:'',
             price:'',
@@ -76,13 +78,15 @@ class Form extends Component {
                     food: this.state.checkboxes.食事処,
                     view: this.state.checkboxes.景色,
                     cafe: this.state.checkboxes.カフェ,
-                    park: this.state.checkboxes.公園,
+                    hobby: this.state.checkboxes.娯楽,
                     club: this.state.checkboxes.クラブ,
                     bar: this.state.checkboxes.バー,
                     study: this.state.checkboxes.勉強する場所,
-                    hiking: this.state.checkboxes.ハイキング,
+                    nature: this.state.checkboxes.自然,
                     shopping: this.state.checkboxes.買い物,
                     beauty: this.state.checkboxes.美容系,
+                    deli: this.state.checkboxes.デリ,
+                    others: this.state.checkboxes.その他,
                     location: this.state.location,
                     url: this.state.url,
                     price: this.state.price,
@@ -99,7 +103,7 @@ class Form extends Component {
                     }
                 })
         } else {
-            alert("画像のURLはjpgを含むものでお願いします")
+            alert("画像のURLは jpg 又は jpeg を含むものでお願いします")
         }
     }
 
@@ -207,13 +211,13 @@ class Form extends Component {
                             </div>
                         </div>
                         <div className="pt5">
-                            <label className="db fw6 lh-copy f6 pt4" htmlFor="name">写真のURLを貼って下さい</label>
+                            <label className="db fw6 lh-copy f6" htmlFor="name">住所</label>
                             <input
                                 className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
-                                name="url"
-                                id="url"
-                                onChange={this.onURLChange}
+                                name="location"
+                                id="location"
+                                onChange={this.onLocationChange}
                             />
                         </div>
 
@@ -283,13 +287,13 @@ class Form extends Component {
                             </div>
                         </form>
                         <div className="pt4">
-                            <label className="db fw6 lh-copy f6" htmlFor="name">住所</label>
+                            <label className="db fw6 lh-copy f6 pt2" htmlFor="name">写真のURLを貼って下さい</label>
                             <input
                                 className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
-                                name="location"
-                                id="location"
-                                onChange={this.onLocationChange}
+                                name="url"
+                                id="url"
+                                onChange={this.onURLChange}
                             />
                         </div>
                         <div className="pt4">

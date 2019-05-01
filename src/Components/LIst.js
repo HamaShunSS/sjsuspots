@@ -23,8 +23,8 @@ const List = ({ onRouteChange, loadCategory }) => {
                             className='f3 link pa3 dim pointer'>カフェ</h2>
                     </div>
                     <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 w5 w5-ns'>
-                        <h2 onClick={() => {onRouteChange('infos'); loadCategory('park');}}
-                            className='f3 link pa3 dim pointer'>公園</h2>
+                        <h2 onClick={() => {onRouteChange('infos'); loadCategory('hobby');}}
+                            className='f3 link pa3 dim pointer'>娯楽</h2>
                     </div>
                     <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 w5 w5-ns'>
                         <h2 onClick={() => {onRouteChange('infos'); loadCategory('club');}}
@@ -39,8 +39,8 @@ const List = ({ onRouteChange, loadCategory }) => {
                             className='f3 link dim pa3 pointer'>勉強する場所</h2>
                     </div>
                     <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 w5 w5-ns'>
-                        <h2 onClick={() => {onRouteChange('infos'); loadCategory('hiking');}}
-                            className='f3 link dim pa3 pointer'>ハイキング</h2>
+                        <h2 onClick={() => {onRouteChange('infos'); loadCategory('nature');}}
+                            className='f3 link dim pa3 pointer'>自然</h2>
                     </div>
                     <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 w5 w5-ns'>
                         <h2 onClick={() => {onRouteChange('infos'); loadCategory('shopping');}}
@@ -49,6 +49,14 @@ const List = ({ onRouteChange, loadCategory }) => {
                     <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 w5 w5-ns'>
                         <h2 onClick={() => {onRouteChange('infos'); loadCategory('beauty');}}
                             className='f3 link dim pa3 pointer'>美容系</h2>
+                    </div>
+                    <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 w5 w5-ns'>
+                        <h2 onClick={() => {onRouteChange('infos'); loadCategory('deli');}}
+                            className='f3 link dim pa3 pointer'>デリ</h2>
+                    </div>
+                    <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 w5 w5-ns'>
+                        <h2 onClick={() => {onRouteChange('infos'); loadCategory('others');}}
+                            className='f3 link dim pa3 pointer'>その他</h2>
                     </div>
                 </div>
             </div>
