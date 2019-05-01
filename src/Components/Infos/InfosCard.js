@@ -6,7 +6,7 @@ import React from 'react';
 const Card = ({ info } ) => {
     console.log('url is ', info.url );
     return(
-        <div className='tc bg-light-green dib br3 pa3 ma3 grow bw2 shadow-5 w5-ns'>
+        <div className='tc bg-light-green dib br3 pa3 ma3 bw2 grow shadow-5 w5-ns'>
             <div className="black tc">
                 <h2>{info.name}</h2>
                 <div className="ph2 tc">

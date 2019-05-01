@@ -67,46 +67,47 @@ class Form extends Component {
     onSubmitForm =() => {
         if (this.state.name === '' || this.state.location === '' || this.state.comments === '' ) {
             alert("場所の名前か住所、コメントのどれかに記入漏れがあるようです...");
-        }
-        if (this.state.url.includes('jpg') || this.state.url.includes('jpeg')){
-            if (this.props.route === 'form') {
-                this.props.onRouteChange('loading');
-            }
-            fetch('https://spots-for-sjsu-students.herokuapp.com/register', {
-                method: 'post',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
-                    name: this.state.name,
-                    ramen: this.state.checkboxes.ラーメン,
-                    food: this.state.checkboxes.食事処,
-                    view: this.state.checkboxes.景色,
-                    cafe: this.state.checkboxes.カフェ,
-                    hobby: this.state.checkboxes.娯楽,
-                    club: this.state.checkboxes.クラブ,
-                    bar: this.state.checkboxes.バー,
-                    study: this.state.checkboxes.勉強する場所,
-                    nature: this.state.checkboxes.自然,
-                    shopping: this.state.checkboxes.買い物,
-                    beauty: this.state.checkboxes.美容系,
-                    deli: this.state.checkboxes.デリ,
-                    others: this.state.checkboxes.その他,
-                    location: this.state.location,
-                    url: this.state.url,
-                    price: this.state.price,
-                    comments: this.state.comments
-                })
-            })
-                .then(response => response.json()) // Get response through json, and get data by ".then"
-                .then(response => {
-                    console.log('what is ', response)
-                    if (response === 'success') {
-                        this.props.onRouteChange('thankyou');
-                    } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
-                    }
-                })
         } else {
-            alert("画像のURLは jpg 又は jpeg を含むものでお願いします");
+            if (this.state.url.includes('jpg') || this.state.url.includes('jpeg')) {
+                if (this.props.route === 'form') {
+                    this.props.onRouteChange('loading');
+                }
+                fetch('https://spots-for-sjsu-students.herokuapp.com/register', {
+                    method: 'post',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                        name: this.state.name,
+                        ramen: this.state.checkboxes.ラーメン,
+                        food: this.state.checkboxes.食事処,
+                        view: this.state.checkboxes.景色,
+                        cafe: this.state.checkboxes.カフェ,
+                        hobby: this.state.checkboxes.娯楽,
+                        club: this.state.checkboxes.クラブ,
+                        bar: this.state.checkboxes.バー,
+                        study: this.state.checkboxes.勉強する場所,
+                        nature: this.state.checkboxes.自然,
+                        shopping: this.state.checkboxes.買い物,
+                        beauty: this.state.checkboxes.美容系,
+                        deli: this.state.checkboxes.デリ,
+                        others: this.state.checkboxes.その他,
+                        location: this.state.location,
+                        url: this.state.url,
+                        price: this.state.price,
+                        comments: this.state.comments
+                    })
+                })
+                    .then(response => response.json()) // Get response through json, and get data by ".then"
+                    .then(response => {
+                        console.log('what is ', response)
+                        if (response === 'success') {
+                            this.props.onRouteChange('thankyou');
+                        } else if (response === 'incorrect form submission') {
+                            this.props.onRouteChange('sorry');
+                        }
+                    })
+            } else {
+                alert("画像のURLは jpg 又は jpeg を含むものでお願いします");
+            }
         }
     }
 
