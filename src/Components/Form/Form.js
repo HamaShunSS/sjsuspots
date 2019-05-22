@@ -32,6 +32,7 @@ class Form extends Component {
             location: '',
             url:'',
             price:'',
+            region:'',
             comments: ''
         };
         // console.log(this.state.checkboxes)
@@ -55,7 +56,11 @@ class Form extends Component {
         this.setState({comments: event.target.value}) // updated signInEmail from <input />
     }
 
-
+    handleRegionChange = changeEvent => {
+        this.setState({
+            region: changeEvent.target.value
+        });
+    };
 
     handlePriceChange = changeEvent => {
         this.setState({
@@ -72,6 +77,7 @@ class Form extends Component {
                 if (this.props.route === 'form') {
                     this.props.onRouteChange('loading');
                 }
+                console.log('region は　', this.state.region)
                 fetch('https://spots-for-sjsu-students.herokuapp.com/register', {
                     method: 'post',
                     headers: {'Content-Type': 'application/json'},
@@ -93,6 +99,7 @@ class Form extends Component {
                         location: this.state.location,
                         url: this.state.url,
                         price: this.state.price,
+                        region: this.state.region,
                         comments: this.state.comments
                     })
                 })
@@ -172,6 +179,73 @@ class Form extends Component {
                 <div className="tc fl w-100 w-100-ns tc">
                     <fieldset id="sign_up" className="ba b--transparent ph0 mh0 mt4-ns ">
                         <div className="f2 pv5 fl w-100 w-100-ns tc fw6 ph0 mh0">オススメの場所をシェアハピして下さい！！</div>
+
+                        <form className="pt4">
+                            <label className="db fw6 lh-copy f6" htmlFor="name">地域は？</label>
+                            <div className=''>
+                                <label className="f4 ph2">
+                                    <input
+                                        type="radio"
+                                        name="react-tips"
+                                        value="San Jose"
+                                        checked={this.state.region === "San Jose"}
+                                        onChange={this.handleRegionChange}
+                                        className="form-check-input"
+                                    />
+                                    <label> </label>
+                                    San Jose
+                                </label>
+                                <label className="f4 ph2">
+                                    <input
+                                        type="radio"
+                                        name="react-tips"
+                                        value="San Francisco"
+                                        checked={this.state.region === "San Francisco"}
+                                        onChange={this.handleRegionChange}
+                                        className="form-check-input"
+                                    />
+                                    <label> </label>
+                                    San Francisco
+                                </label>
+                                <label className="f4 ph2">
+                                    <input
+                                        type="radio"
+                                        name="react-tips"
+                                        value="Monterey"
+                                        checked={this.state.region === "Monterey"}
+                                        onChange={this.handleRegionChange}
+                                        className="form-check-input"
+                                    />
+                                    <label> </label>
+                                    Monterey
+                                </label >
+                                <label className="f4 ph2">
+                                    <input
+                                        type="radio"
+                                        name="react-tips"
+                                        value="Santa Cruz"
+                                        checked={this.state.region === "Santa Cruz"}
+                                        onChange={this.handleRegionChange}
+                                        className="form-check-input"
+                                    />
+                                    <label> </label>
+                                    Santa Cruz
+                                </label>
+                                <label className="f4 ph2">
+                                    <input
+                                        type="radio"
+                                        name="react-tips"
+                                        value="Berkeley"
+                                        checked={this.state.region === "Berkeley"}
+                                        onChange={this.handleRegionChange}
+                                        className="form-check-input"
+                                    />
+                                    <label> </label>
+                                    Berkeley
+                                </label>
+                            </div>
+                        </form>
+
                         <div className="pt5">
                             <label className="db fw6 lh-copy f6" htmlFor="name">場所の名前は？</label>
                             <input
@@ -305,8 +379,8 @@ class Form extends Component {
                             <input
                                 className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="file"
-                                name="url"
-                                id="url"
+                                name="file"
+                                id="file"
                                 onChange={this.onURLChange}
                             />
                         </div>

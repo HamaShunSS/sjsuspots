@@ -8,11 +8,13 @@ import Thankyou from "./Components/Form/Thankyou";
 import Sorry from "./Components/Form/Sorry";
 import Loading from "./Components/Form/Loading";
 import Contact from "./Components/Contact/Contact";
+import FirstPage from "./FirstPage";
 
 
 
 const initialState = {
     category: '',
+    region: '',
     route: 'home',
     isSignedIn: true,
     user: {
@@ -46,6 +48,13 @@ class App extends Component {
         console.log(cat)
     }
 
+    loadRegion = (region ) => {
+        this.setState({
+            region: region
+        })
+        console.log(region)
+    }
+
     onRouteChange = (route) => {
         this.setState({route: route});
     }
@@ -55,17 +64,16 @@ class App extends Component {
     return (
         <div className="App">
             <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
-            { route === 'home' || route === 'category'
+            { route === 'home' || route === 'firstpage'
                 ? <div>
-                    < Category loadUser={this.loadUser} onRouteChange={this.onRouteChange} loadCategory={this.loadCategory}/>
-
+                    < FirstPage loadUser={this.loadUser} onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion}/>
                 </div>
                 :(
                     route === 'category'
-                        ?< Category loadUser={this.loadUser} onRouteChange={this.onRouteChange} loadCategory={this.loadCategory}/>
+                        ?< Category loadUser={this.loadUser} onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} region={this.state.region}/>
                         :(
                             route === 'infos'
-                                ?< Infos loadUser={this.loadUser}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} category={this.state.category} />
+                                ?< Infos loadUser={this.loadUser}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} category={this.state.category} region={this.state.region}/>
                                 :(
                                     route === 'thankyou'
                                         ?< Thankyou onRouteChange={this.onRouteChange} />
