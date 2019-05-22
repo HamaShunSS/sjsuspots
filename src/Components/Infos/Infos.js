@@ -133,9 +133,9 @@ class Infos extends React.Component {
                     <Scroll>
                         <CardList infos={filterdInfos}　onButtonSubmit={this.onButtonSubmit} onButtonSubmitW={this.onButtonSubmitW} onSubmitForm={this.onSubmitForm} onCommentsChange={this.onCommentsChange}/>
                     </Scroll>
-                    <div className="center">
-                        <div onClick={() => this.props.onRouteChange('category')} className="fl b tc center ph1 pv3 ma2 grow pointer f4 f4-ns dib"><p className="ph3 pv3 bg-light-green white br-pill grow">カテゴリーに戻る</p></div>
-                        <div onClick={() => this.props.onRouteChange('home')} className="fl b tc center ph1 pv3 ma2 grow pointer f4 f4-ns dib"><p className="ph3 pv3 bg-light-green white br-pill grow">ホームに戻る</p></div>
+                    <div className="tc">
+                        <button onClick={() => this.props.onRouteChange('category')} className="tc b ph3 pv3 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">カテゴリーに戻る</button>
+                        <button onClick={() => this.props.onRouteChange('home')} className="tc b ph3 pv3 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">ホームに戻る</button>
                     </div>
                 </div>
             );
