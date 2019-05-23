@@ -9,6 +9,8 @@ import Sorry from "./Components/Form/Sorry";
 import Loading from "./Components/Form/Loading";
 import Contact from "./Components/Contact/Contact";
 import FirstPage from "./FirstPage";
+import Iine from "./Components/Infos/Iine";
+import Waruiine from "./Components/Infos/Waruiine";
 
 
 
@@ -73,20 +75,28 @@ class App extends Component {
                         ?< Category loadUser={this.loadUser} onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} region={this.state.region}/>
                         :(
                             route === 'infos'
-                                ?< Infos loadUser={this.loadUser}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} category={this.state.category} region={this.state.region}/>
+                                ?< Infos route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} category={this.state.category} region={this.state.region}/>
                                 :(
                                     route === 'thankyou'
                                         ?< Thankyou onRouteChange={this.onRouteChange} />
                                         :(
-                                            route === 'loading'
-                                                ?< Loading onRouteChange={this.onRouteChange} />
+                                            route === 'iine'
+                                                ?< Iine onRouteChange={this.onRouteChange} />
                                                 :(
-                                                    route === 'sorry'
-                                                        ?< Sorry onRouteChange={this.onRouteChange} />
-                                                            :(
-                                                                < Form route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
-                                                                )
-                                                )
+                                                    route === 'waruiine'
+                                                        ?< Waruiine onRouteChange={this.onRouteChange} />
+                                                        :(
+                                                            route === 'loading'
+                                                                ?< Loading onRouteChange={this.onRouteChange} />
+                                                                    :(
+                                                                        route === 'sorry'
+                                                                            ?< Sorry onRouteChange={this.onRouteChange} />
+                                                                                :(
+                                                                                    < Form route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                                                                  )
+                                                                      )
+                                                          )
+                                                    )
                                         )
                                 )
                         )

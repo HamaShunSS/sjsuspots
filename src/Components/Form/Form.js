@@ -365,7 +365,7 @@ class Form extends Component {
                             </div>
                         </form>
                         <div className="pt4">
-                            <label className="db fw6 lh-copy f6 pt2" htmlFor="name">写真のURLを貼って下さい</label>
+                            <label className="db fw6 lh-copy f6 pt2" htmlFor="name">ネットのImage(写真)からの一番いい写真のURLを貼って下さい</label>
                             <input
                                 className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
@@ -374,16 +374,16 @@ class Form extends Component {
                                 onChange={this.onURLChange}
                             />
                         </div>
-                        <div className="pt4">
-                            <label className="db fw6 lh-copy f6 pt2" htmlFor="name">写真のURLを貼って下さい (アップロード)</label>
-                            <input
-                                className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
-                                type="file"
-                                name="file"
-                                id="file"
-                                onChange={this.onURLChange}
-                            />
-                        </div>
+                        {/*<div className="pt4">*/}
+                            {/*<label className="db fw6 lh-copy f6 pt2" htmlFor="name">写真のURLを貼って下さい (アップロード)</label>*/}
+                            {/*<input*/}
+                                {/*className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"*/}
+                                {/*type="file"*/}
+                                {/*name="file"*/}
+                                {/*id="file"*/}
+                                {/*onChange={this.onURLChange}*/}
+                            {/*/>*/}
+                        {/*</div>*/}
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6" htmlFor="name">コメント</label>
                             <input

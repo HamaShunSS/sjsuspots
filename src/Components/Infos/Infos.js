@@ -2,6 +2,7 @@ import React from 'react';
 import CardList from './InfosCardList'; //child
 import Scroll from '../Scroll';
 import Spinner from 'react-spinner-material';
+import SearchBox from "../SearchBox/SearchBox";
 
 
 class Infos extends React.Component {
@@ -13,6 +14,7 @@ class Infos extends React.Component {
             iine:'',
             waruiine:'',
             comments:'',
+            searchfield:''
         };
 
     }
@@ -41,6 +43,9 @@ class Infos extends React.Component {
     // iine
     onButtonSubmit = (id) => {
         console.log('アイディー', id)
+        if (this.props.route === 'infos') {
+            this.props.onRouteChange('iine');
+        }
         fetch('https://spots-for-sjsu-students.herokuapp.com/button',
             { //fetch connects frontend with the server
             method: 'put',
@@ -51,8 +56,8 @@ class Infos extends React.Component {
         })
             .then(response => response.json()) // Get response through json, and get data by ".then"
             .then(count => {
-                this.setState({iine: count})
-                console.log('iine のなかは',count)
+                    this.setState({iine: count})
+                    console.log('iine のなかは',count)
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
     }
@@ -60,7 +65,9 @@ class Infos extends React.Component {
     //waruiine
 
     onButtonSubmitW = (id) => {
-        console.log('アイディー', id)
+        if (this.props.route === 'infos') {
+            this.props.onRouteChange('waruiine');
+        }
         fetch('https://spots-for-sjsu-students.herokuapp.com/buttonW',
             { //fetch connects frontend with the server
                 method: 'put',
@@ -106,11 +113,16 @@ class Infos extends React.Component {
             }
     }
 
+    // Search box
+    onSearchChange = (event) => { //whenever it gets changed
+        this.setState({searchfield: event.target.value}) //update "serachfiled is event.target.value"
+    }
+
 
     render() {
         const filterdInfos = this.state.results.filter(infos => {
             //"filter" is a function to go thorough array in "robots from State", having a parameter "robot"
-            return infos
+            return infos.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
         })
         if (this.state.results.length === 0) {
             return <div className="pt6 pt6-ns">
@@ -130,6 +142,7 @@ class Infos extends React.Component {
                     <div className="pv4 pb4-ns">
                         <label className="fl pv4 w-100 w-100-ns tc db fw6 lh-copy f2">オススメの場所です</label>
                     </div>
+                    <SearchBox onSearchChange={this.onSearchChange}/>
                     <Scroll>
                         <CardList infos={filterdInfos}　onButtonSubmit={this.onButtonSubmit} onButtonSubmitW={this.onButtonSubmitW} onSubmitForm={this.onSubmitForm} onCommentsChange={this.onCommentsChange}/>
                     </Scroll>

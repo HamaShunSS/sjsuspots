@@ -19,9 +19,9 @@ const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsC
                         <h4> {info.comments}</h4></p>
                     <p className="">
                         <button className="b ph2 pv2 input-reset ba bg-green white br-pill grow pointer f6 dib"
-                        onClick={() => {onButtonSubmit(info.id);}} >いいね {info.iine}</button>
+                        onClick={() => {onButtonSubmit(info.id);}} >良かった！ {info.iine}</button>
                         <button className="b ph2 pv2 input-reset ba bg-green white br-pill grow pointer f6 dib"
-                                onClick={() => {onButtonSubmitW(info.id);}} >わるいいね {info.waruiine}</button></p>
+                                onClick={() => {onButtonSubmitW(info.id);}} >ビミョー {info.waruiine}</button></p>
                 {/*<div className="pv4">*/}
                     {/*<label className="db fw6 lh-copy f6" htmlFor="name">コメント</label>*/}
                     {/*<input*/}
