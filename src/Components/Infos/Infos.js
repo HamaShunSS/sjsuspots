@@ -23,6 +23,7 @@ class Infos extends React.Component {
         this.setState({comments: event.target.value}) // updated signInEmail from <input />
     }
 
+
     componentDidMount() {
         fetch('https://spots-for-sjsu-students.herokuapp.com/places',
             {
@@ -36,8 +37,6 @@ class Infos extends React.Component {
             .then(response => response.json())
             .then(informations => this.setState({results: informations})
             );
-        console.log('results is ',this.state.results);
-        console.log('props is ',this.props);
     }
 
     // iine
@@ -118,7 +117,6 @@ class Infos extends React.Component {
         this.setState({searchfield: event.target.value}) //update "serachfiled is event.target.value"
     }
 
-
     render() {
         const filterdInfos = this.state.results.filter(infos => {
             //"filter" is a function to go thorough array in "robots from State", having a parameter "robot"
@@ -126,6 +124,7 @@ class Infos extends React.Component {
         })
         if (this.state.results.length === 0) {
             return <div className="pt6 pt6-ns">
+                <button onClick={() => this.props.onRouteChange('category')} className="tc b ph3 pv3 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">カテゴリーに戻る</button>
                 <div className="pv4-ns"><h1 className='pv4 pv4-ns'>Loading...</h1></div>
                 <div className="ph6-ns tc center pb5-ns">
                     <div className="ph6 ph7-ns tc center pb6">
@@ -134,9 +133,13 @@ class Infos extends React.Component {
                     <p className="pv7 pv7-ns"> </p>
                     <p className="pv7-ns"> </p>
                 </div>
-
             </div>
-        } else {
+
+        }
+        if (this.state.results.length === 0){
+
+        }
+        else {
             return (
                 <div className="tc">
                     <div className="pv4 pb4-ns">

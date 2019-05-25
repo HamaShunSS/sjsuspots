@@ -51,8 +51,8 @@ const List = ({ onRouteChange, loadCategory }) => {
                             className='f3 link dim pa3 pointer'>美容系</h2>
                     </div>
                     <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 w5 w5-ns'>
-                        <h2 onClick={() => {onRouteChange('infos'); loadCategory('deli');}}
-                            className='f3 link dim pa3 pointer'>デリ</h2>
+                        <h2 onClick={() => {onRouteChange('infos'); loadCategory('kankou');}}
+                            className='f3 link dim pa3 pointer'>観光</h2>
                     </div>
                     <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 w5 w5-ns'>
                         <h2 onClick={() => {onRouteChange('infos'); loadCategory('others');}}

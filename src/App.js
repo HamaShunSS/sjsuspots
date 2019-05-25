@@ -11,6 +11,7 @@ import Contact from "./Components/Contact/Contact";
 import FirstPage from "./FirstPage";
 import Iine from "./Components/Infos/Iine";
 import Waruiine from "./Components/Infos/Waruiine";
+import NoData from "./Components/Infos/Nodata";
 
 
 
@@ -92,8 +93,12 @@ class App extends Component {
                                                                         route === 'sorry'
                                                                             ?< Sorry onRouteChange={this.onRouteChange} />
                                                                                 :(
-                                                                                    < Form route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
-                                                                                  )
+                                                                                    route === 'nodata'
+                                                                                    ?< NoData onRouteChange={this.onRouteChange} />
+                                                                                    :(
+                                                                                        < Form route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                                                                    )
+                                                                                 )
                                                                       )
                                                           )
                                                     )

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
 
-const category = ["ラーメン", "食事処", "景色","カフェ","娯楽", "クラブ", "バー", "勉強する場所", "自然","買い物", "美容系","デリ","その他"];
+const category = ["ラーメン", "食事処", "景色","カフェ","娯楽", "クラブ", "バー", "勉強する場所", "自然","買い物", "美容系","観光","その他"];
 
 class Form extends Component {
     constructor(props){
@@ -27,7 +27,7 @@ class Form extends Component {
             nature: '',
             shopping: '',
             beauty:'',
-            deli: '',
+            kankou: '',
             others:'',
             location: '',
             url:'',
@@ -70,8 +70,8 @@ class Form extends Component {
 
 
     onSubmitForm =() => {
-        if (this.state.name === '' || this.state.location === '' || this.state.comments === '' ) {
-            alert("場所の名前か住所、コメントのどれかに記入漏れがあるようです...");
+        if (this.state.name === '' || this.state.location === '' || this.state.region === '' || this.state.comments === '' ) {
+            alert("場所の名前か地域、住所、コメントのどれかに記入漏れがあるようです...");
         } else {
             if (this.state.url.includes('jpg') || this.state.url.includes('jpeg')) {
                 if (this.props.route === 'form') {
@@ -94,7 +94,7 @@ class Form extends Component {
                         nature: this.state.checkboxes.自然,
                         shopping: this.state.checkboxes.買い物,
                         beauty: this.state.checkboxes.美容系,
-                        deli: this.state.checkboxes.デリ,
+                        kankou: this.state.checkboxes.観光,
                         others: this.state.checkboxes.その他,
                         location: this.state.location,
                         url: this.state.url,
@@ -265,13 +265,13 @@ class Form extends Component {
                                         <form onSubmit={this.handleFormSubmit}>
                                             {this.createCheckboxes()}
                                             <div className="form-group pv2">
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-outline-primary ph2 pv2 bg-light-green grow pointer br-pill mr-2 f6 white"
-                                                    onClick={this.selectAll}
-                                                >
-                                                    全選択
-                                                </button> <label> </label>
+                                                {/*<button*/}
+                                                    {/*type="button"*/}
+                                                    {/*className="btn btn-outline-primary ph2 pv2 bg-light-green grow pointer br-pill mr-2 f6 white"*/}
+                                                    {/*onClick={this.selectAll}*/}
+                                                {/*>*/}
+                                                    {/*全選択*/}
+                                                {/*</button> <label> </label>*/}
                                                 <button
                                                     type="button"
                                                     className="btn btn-outline-primary ph2 pv2 bg-light-green grow pointer br-pill mr-2 f6 white"
