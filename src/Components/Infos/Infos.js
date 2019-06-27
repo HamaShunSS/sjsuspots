@@ -143,7 +143,7 @@ class Infos extends React.Component {
             return (
                 <div className="tc">
                     <div className="pv4 pb4-ns">
-                        <label className="fl pv4 w-100 w-100-ns tc db fw6 lh-copy f2">オススメの場所です</label>
+                        <label className="fl pv4 w-100 w-100-ns tc db fw6 lh-copy f2"><i className="fas fa-thumbs-down"></i>{' '}オススメの場所です</label>
                     </div>
                     <SearchBox onSearchChange={this.onSearchChange}/>
                     <Scroll>
