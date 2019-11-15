@@ -1,41 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bf2abe4-f485-47ab-9476-a0a149cf7d2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Buttons/Buttons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Dropdown/Dropdown.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/FUI/FUI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/FUI/InfosCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/FUI/InfosCardList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/FUI/InfosCardListR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/FUI/InfosCardR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/FUI/Nodata.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/GUIforBack/CardForB.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/GUIforBack/CardLIstForB.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/GUIforBack/GUIforBack.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/GUIforBack/Mistake.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/GUIforBack/SignIn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouB.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/GUIforBack/Touroku.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ScrollMini.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/SearchBox/SearchBoxRegion.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Contact/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Contact/Contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Form/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Form/Sorry.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/Sorry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Form/Thankyou.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/Thankyou.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Infos/Iine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Infos/Iine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Infos/Infos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Infos/Infos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Infos/Waruiine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Infos/Waruiine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navigation/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchBox/SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchBox/SearchBox.js" afterDir="false" />
-    </list>
+    <list default="true" id="8bf2abe4-f485-47ab-9476-a0a149cf7d2c" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -318,18 +284,17 @@
       <workItem from="1573710567178" duration="2283000" />
       <workItem from="1573713356321" duration="1252000" />
       <workItem from="1573715756763" duration="1742000" />
-      <workItem from="1573769409109" duration="27012000" />
+      <workItem from="1573769409109" duration="27308000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100956000" />
+    <option name="totallyTimeSpent" value="101252000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.07892882" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07892882" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -343,7 +308,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24570024" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24570024" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
