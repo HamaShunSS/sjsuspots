@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Component }  from 'react';
 import CardList from './InfosCardList'; //child
+import CardListR from './InfosCardListR'; //child
 import Scroll from '../Scroll';
+import ScrollMini from '../ScrollMini';
 import Spinner from 'react-spinner-material';
 import SearchBox from "../SearchBox/SearchBox";
+import SearchBoxRegion from "../SearchBox/SearchBoxRegion";
 
 
-class Infos extends React.Component {
+
+
+class FUI extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,27 +18,21 @@ class Infos extends React.Component {
             item:'',
             iine:'',
             waruiine:'',
-            comments:'',
-            searchfield:''
+            com:'',
+            searchfield:'',
+            searchfieldRegion:'',
+            region:''
         };
 
     }
 
     onCommentsChange = (event) => {
-        this.setState({comments: event.target.value}) // updated signInEmail from <input />
+        this.setState({com: event.target.value}) // updated signInEmail from <input />
     }
 
 
     componentDidMount() {
-        fetch('https://spots-for-sjsu-students.herokuapp.com/places',
-            {
-                method: 'post',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({
-                    category: this.props.category, // カテゴリーは List => App => FUI で来ている
-                    reg: this.props.region
-                })
-            })
+        fetch('https://spots-for-sjsu-students.herokuapp.com/allData')
             .then(response => response.json())
             .then(informations => this.setState({results: informations})
             );
@@ -42,9 +41,6 @@ class Infos extends React.Component {
     // iine
     onButtonSubmit = (id) => {
         console.log('アイディー', id)
-        if (this.props.route === 'infos') {
-            this.props.onRouteChange('iine');
-        }
         fetch('https://spots-for-sjsu-students.herokuapp.com/button',
             { //fetch connects frontend with the server
             method: 'put',
@@ -59,14 +55,14 @@ class Infos extends React.Component {
                     console.log('iine のなかは',count)
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
+        if (this.props.route === '/') {
+            this.props.onRouteChange('iine');
+        }
     }
 
     //waruiine
 
     onButtonSubmitW = (id) => {
-        if (this.props.route === 'infos') {
-            this.props.onRouteChange('waruiine');
-        }
         fetch('https://spots-for-sjsu-students.herokuapp.com/buttonW',
             { //fetch connects frontend with the server
                 method: 'put',
@@ -80,24 +76,28 @@ class Infos extends React.Component {
                 this.setState({waruiine: count})
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
+        if (this.props.route === '/') {
+            this.props.onRouteChange('waruiine');
+        }
     }
 
     //comments
 
-    onSubmitForm =(id) => {
-        if (this.state.comments === '' ) {
+    onSubmitForm =(id, com) => {
+        if (this.state.com === '' ) {
             alert("コメントを記入してください...");
         } else {
                 if (this.props.route === 'infos') {
                     this.props.onRouteChange('loading');
                 }
-                console.log('com no naka ha ',this.state.comments)
+                console.log('com のナカは ', this.state.com)
                 fetch('https://spots-for-sjsu-students.herokuapp.com/addcomments', {
                     method: 'put',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
                         id: id,
-                        com: this.state.comments
+                        com: this.state.com,
+                        originalComments: com
                     })
                 })
                     .then(response => response.json()) // Get response through json, and get data by ".then"
@@ -116,15 +116,41 @@ class Infos extends React.Component {
     onSearchChange = (event) => { //whenever it gets changed
         this.setState({searchfield: event.target.value}) //update "serachfiled is event.target.value"
     }
+    // Search box for region
+    onSearchChangeRegion = (reg) => { //whenever it gets changed
+        this.setState({searchfieldRegion: reg.target.value}) //update "serachfiledRegion is event.target.value"
+        console.log('searchfieldRegion は', this.state.searchfieldRegion)
+    }
+
+    bashoDisplay = () => {
+        if (this.state.searchfield === '') {
+            return 'All Regions'
+        }　else
+            return this.state.searchfield
+    }
+
 
     render() {
         const filterdInfos = this.state.results.filter(infos => {
             //"filter" is a function to go thorough array in "robots from State", having a parameter "robot"
-            return infos.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+            return (
+                infos.name.toLowerCase().includes(this.state.searchfield.toLowerCase()) ||
+                infos.region.toLowerCase().includes(this.state.searchfield.toLowerCase()) ||
+                infos.location.toLowerCase().includes(this.state.searchfield.toLowerCase())
+            )
         })
+        // const child = { width: `30em`, height: `100%`}
+        // const parent = { width: `60em`, height: `100%`}
+
+        const filterdRegions = this.state.results.filter(infos => {
+            //"filter" is a function to go thorough array in "robots from State", having a parameter "robot"
+            return infos.region.toLowerCase().includes(this.state.searchfieldRegion.toLowerCase())
+        })
+
+
+
         if (this.state.results.length === 0) {
             return <div className="pt6 pt6-ns">
-                <button onClick={() => this.props.onRouteChange('category')} className="tc b ph3 pv3 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">カテゴリーに戻る</button>
                 <div className="pv4-ns"><h1 className='pv4 pv4-ns'>Loading...</h1></div>
                 <div className="ph6-ns tc center pb5-ns">
                     <div className="ph6 ph7-ns tc center pb6">
@@ -142,16 +168,50 @@ class Infos extends React.Component {
         else {
             return (
                 <div className="tc">
-                    <div className="pv4 pb4-ns">
-                        <label className="fl pv4 w-100 w-100-ns tc db fw6 lh-copy f2"><i className="fas fa-thumbs-down"></i>{' '}オススメの場所です</label>
+                    <div className=" ">
+                        <label className="fl pv4-ns f3 pv3 w-100 w-100-ns tc db fw6 lh-copy f2-ns"><i className="fas fa-thumbs-down"></i>{' '}リコット</label>
                     </div>
+                    {/*<div class="fl w-100 w50-ns bg-dark">*/}
+                        {/*<div class="fl w-50 w-35-ns" >*/}
+                            {/*<SearchBoxRegion onSearchChangeRegion={this.onSearchChangeRegion}/>*/}
+                        {/*</div>*/}
+                        {/*<div>*/}
+                            {/*<ScrollMini class="fl w-50 w-15-ns">*/}
+                                {/*<CardListR infos={filterdRegions}/>*/}
+                            {/*</ScrollMini>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
+                    <div className='ma0 tl fl w-100 w50-ns pb3'>
+                        <ul className="ddmenu">
+                            <li className='ttll fl w-50'><a href="#">場所：　{this.bashoDisplay()}</a>
+                                <ul className='ttll'>
+                                    <li className='' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
+                                    <li><p onClick={() => this.setState({searchfield: 'San Jose'})}>San Jose</p></li>
+                                    <li onClick={() => this.setState({searchfield: 'San Francisco'})}>San Francisco</li>
+                                    <li onClick={() => this.setState({searchfield: 'Santa Cruz'})}>Santa Cruz</li>
+                                    <li onClick={() => this.setState({searchfield: 'Berkeley'})}>Berkeley</li>
+                                    <li onClick={() => this.setState({searchfield: 'Monterey'})}>Monterey</li>
+                                </ul>
+                            </li>
+                            {/*<li className='fl w-50 w25-ns' ><a href="#">製品・技術</a>*/}
+                                {/*<ul>*/}
+                                    {/*<li><a href="#">ハードウェア</a></li>*/}
+                                    {/*<li><a href="#">ソフトウェア</a></li>*/}
+                                    {/*<li><a href="#">ウェブサービス</a></li>*/}
+                                {/*</ul>*/}
+                            {/*</li>*/}
+                        </ul>
+                    </div>
+
                     <SearchBox onSearchChange={this.onSearchChange}/>
                     <Scroll>
                         <CardList infos={filterdInfos}　onButtonSubmit={this.onButtonSubmit} onButtonSubmitW={this.onButtonSubmitW} onSubmitForm={this.onSubmitForm} onCommentsChange={this.onCommentsChange}/>
                     </Scroll>
                     <div className="tc">
-                        <button onClick={() => this.props.onRouteChange('category')} className="tc b ph3 pv3 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">カテゴリーに戻る</button>
-                        <button onClick={() => this.props.onRouteChange('home')} className="tc b ph3 pv3 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">ホームに戻る</button>
+                        <button onClick={() => this.props.onRouteChange('form')} className="tc b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">シェアしてみる</button>
+                    </div>
+                    <div className='pv6-ns'>
+
                     </div>
                 </div>
             );
@@ -160,4 +220,4 @@ class Infos extends React.Component {
 }
 
 
-export default Infos;
+export default FUI;

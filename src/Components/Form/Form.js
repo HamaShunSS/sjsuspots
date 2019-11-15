@@ -78,6 +78,7 @@ class Form extends Component {
                     this.props.onRouteChange('loading');
                 }
                 console.log('region は　', this.state.region)
+                console.log('comments は　', this.state.comments)
                 fetch('https://spots-for-sjsu-students.herokuapp.com/register', {
                     method: 'post',
                     headers: {'Content-Type': 'application/json'},
@@ -133,7 +134,7 @@ class Form extends Component {
         });
     };
 
-    selectAll = () => this.selectAllCheckboxes(true);
+    selectAll = () => this.selectAllCheckboxes(true); //使わない
 
     deselectAll = () => this.selectAllCheckboxes(false);
 
@@ -178,12 +179,10 @@ class Form extends Component {
             <main className="pa4">
                 <div className="tc fl w-100 w-100-ns tc">
                     <fieldset id="sign_up" className="ba b--transparent ph0 mh0 mt4-ns ">
-                        <div className="f2 pv5 fl w-100 w-100-ns tc fw6 ph0 mh0">オススメの場所をシェアハピして下さい！！</div>
-
-                        <form className="pt4">
+                        <div className="db f2-ns f5 pv5-ns pv3 fl w-100 w-100-ns tc fw6 ph0 mh0">オススメの場所をシェアして下さい！！</div>
                             <label className="db fw6 lh-copy f6" htmlFor="name">地域は？</label>
                             <div className=''>
-                                <label className="f4 ph2">
+                                <label className="f7 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
@@ -195,7 +194,7 @@ class Form extends Component {
                                     <label> </label>
                                     San Jose
                                 </label>
-                                <label className="f4 ph2">
+                                <label className="f7 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
@@ -207,7 +206,7 @@ class Form extends Component {
                                     <label> </label>
                                     San Francisco
                                 </label>
-                                <label className="f4 ph2">
+                                <label className="f7 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
@@ -219,7 +218,7 @@ class Form extends Component {
                                     <label> </label>
                                     Monterey
                                 </label >
-                                <label className="f4 ph2">
+                                <label className="f7 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
@@ -231,7 +230,7 @@ class Form extends Component {
                                     <label> </label>
                                     Santa Cruz
                                 </label>
-                                <label className="f4 ph2">
+                                <label className="f7 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
@@ -244,12 +243,10 @@ class Form extends Component {
                                     Berkeley
                                 </label>
                             </div>
-                        </form>
-
-                        <div className="pt5">
+                        <div className="pt5-ns pt2">
                             <label className="db fw6 lh-copy f6" htmlFor="name">場所の名前は？</label>
                             <input
-                                className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="name"
                                 id="name"
@@ -257,7 +254,7 @@ class Form extends Component {
                             />
                         </div>
 
-                        <div className="container tc pt4">
+                        <div className="tc pt4-ns pt2">
                             <div className="">
                                 <div className="col-sm-12 pb4">
                                     <label className="db fw6 lh-copy f6" htmlFor="name">ジャンルは？　（複数選択可能）</label>
@@ -288,10 +285,10 @@ class Form extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="pt5">
+                        <div className="pt5-ns pt2">
                             <label className="db fw6 lh-copy f6" htmlFor="name">住所</label>
                             <input
-                                className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="location"
                                 id="location"
@@ -302,7 +299,7 @@ class Form extends Component {
                         <form className="pt4">
                             <label className="db fw6 lh-copy f6" htmlFor="name">値段</label>
                             <div className=''>
-                                <label className="f4 ph2">
+                                <label className="f7 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
@@ -314,7 +311,7 @@ class Form extends Component {
                                     <label> </label>
                                     無料
                                 </label>
-                                <label className="f4 ph2">
+                                <label className="f7 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
@@ -326,7 +323,7 @@ class Form extends Component {
                                     <label> </label>
                                     $ (~10)
                                 </label>
-                                <label className="f4 ph2">
+                                <label className="f7 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
@@ -338,7 +335,7 @@ class Form extends Component {
                                     <label> </label>
                                     $$ (~$18)
                                 </label >
-                                <label className="f4 ph2">
+                                <label className="f7 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
@@ -350,7 +347,7 @@ class Form extends Component {
                                     <label> </label>
                                     $$$ (~$30)
                                 </label>
-                                <label className="f4 ph2">
+                                <label className="f7 ph2">
                                     <input
                                         type="radio"
                                         name="react-tips"
@@ -364,10 +361,10 @@ class Form extends Component {
                                 </label>
                             </div>
                         </form>
-                        <div className="pt4">
+                        <div className="pt3">
                             <label className="db fw6 lh-copy f6 pt2" htmlFor="name">ネットのImage(写真)からの一番いい写真のURLを貼って下さい</label>
                             <input
-                                className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="url"
                                 id="url"
@@ -387,7 +384,7 @@ class Form extends Component {
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6" htmlFor="name">コメント</label>
                             <input
-                                className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="comments"
                                 id="comments"
@@ -397,10 +394,10 @@ class Form extends Component {
                     </fieldset>
 
 
-                    <div className="pv5">
+                    <div className="pv5-ns pv3">
                         <input
                             onClick={this.onSubmitForm}
-                            className="b ph3 pv3 input-reset ba bg-light-green white br-pill grow pointer f6 dib"
+                            className="b ph3-ns pv2-ns pa2 input-reset ba bg-light-green white br-pill grow pointer f6 dib"
                             type="submit"
                             value="シェアハピ"
                         />

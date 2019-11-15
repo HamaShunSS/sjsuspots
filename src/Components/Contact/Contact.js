@@ -13,6 +13,7 @@ const Contact = ({ onRouteChange }) => {
                 <p className="b f3-ns f4">質問・連絡先</p>
                 <p className="f5-ns f6">Location: 1 Washington Sq, San Jose, CA 95192</p>
                 <p className="f5-ns f6">Email: shunsuke.hama@sjsu.edu</p>
+                <p onClick={() => onRouteChange('signin')} className="f5-ns f6">officers page</p>
             </div>
         </nav>
     );
