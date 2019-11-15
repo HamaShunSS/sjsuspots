@@ -271,7 +271,7 @@ class Form extends Component {
                                                 {/*</button> <label> </label>*/}
                                                 <button
                                                     type="button"
-                                                    className="btn btn-outline-primary ph2 pv2 bg-light-green grow pointer br-pill mr-2 f6 white"
+                                                    className="btn btn-outline-light-green ph3-ns pv2-ns pa2 bg-light-green grow pointer br-pill mr-2 f6 white"
                                                     onClick={this.deselectAll}
                                                 >
                                                     全消し
@@ -397,7 +397,7 @@ class Form extends Component {
                     <div className="pv5-ns pv3">
                         <input
                             onClick={this.onSubmitForm}
-                            className="b ph3-ns pv2-ns pa2 input-reset ba bg-light-green white br-pill grow pointer f6 dib"
+                            className="b ph3-ns pv2-ns pa2 input-reset bg-light-green btn-outline-light-green white br-pill grow pointer f6"
                             type="submit"
                             value="シェアハピ"
                         />

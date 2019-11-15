@@ -278,12 +278,6 @@ class GUIforBack extends React.Component {
 
     //changePrice
     onSubmitFormBackPrice =(id) => {
-        if (this.state.textB === '' ) {
-            alert("コメントを記入してください...");
-        } else {
-            if (this.props.route === 'infos') {
-                this.props.onRouteChange('loading');
-            }
             console.log('textB のナカは ', this.state.textB)
             fetch('https://spots-for-sjsu-students.herokuapp.com/changePrice', {
                 method: 'put',
@@ -302,7 +296,7 @@ class GUIforBack extends React.Component {
                         this.props.onRouteChange('sorry');
                     }
                 })
-        }
+
     }
 
 

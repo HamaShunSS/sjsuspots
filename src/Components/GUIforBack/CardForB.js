@@ -34,7 +34,7 @@ const CardForB = ({ info,
                         id="comments"
                         onChange={onCommentsChangeB}
                     />
-                    <button className="b pa1 input-reset bg-green white br2 grow pointer f7 dib"
+                    <button className="b pa1 input-reset bg-green btn-outline-green white br2 grow pointer f7 dib"
                             onClick={() => {onSubmitFormBackURL(info.id);}} > 画像のURL変更</button>
                 </div>
                 <div className="pa3 tl">
@@ -48,7 +48,7 @@ const CardForB = ({ info,
                         placeholder= '場所の名前'
                         onChange={onCommentsChangeB}
                     />
-                    <button className="b pa1 input-reset bg-green white br2 grow pointer f7 dib"
+                    <button className="b pa1 input-reset bg-green btn-outline-green white br2 grow pointer f7"
                             onClick={() => {onSubmitFormBackName(info.id);}} > 名前変更</button>
                     <label className="db fw6 lh-copy f7" htmlFor="name">アドレス</label>
                     <p className="f7">{info.location}</p>
@@ -60,7 +60,7 @@ const CardForB = ({ info,
                         placeholder= 'アドレス（住所）'
                         onChange={onCommentsChangeB}
                     />
-                    <button className="b pa1 input-reset ba bg-green white br2 grow pointer f7 dib"
+                    <button className="b pa1 input-reset btn-outline-green bg-green white br2 grow pointer f7"
                             onClick={() => {onSubmitFormBackLocation(info.id);}} > アドレス変更</button>
                     <p className="">
                         <label className="db fw6 lh-copy f7" htmlFor="name">値段</label>
@@ -73,7 +73,7 @@ const CardForB = ({ info,
                         placeholder= '何もかかない（無料の場合）〜$$$$$'
                         onChange={onCommentsChangeB}
                     />
-                    <button className="b pa1 input-reset ba bg-green white br2 grow pointer f7 dib"
+                    <button className="b pa1 input-reset bg-green btn-outline-green white br2 grow pointer f7"
                             onClick={() => {onSubmitFormBackPrice(info.id);}} > 値段変更</button>
                     <p className="">
                         <label className="db fw6 lh-copy f7" htmlFor="name">コメント</label>
@@ -86,20 +86,20 @@ const CardForB = ({ info,
                         placeholder= 'コメント変更'
                         onChange={onCommentsChangeB}
                     />
-                    <button className="b pa1 input-reset bg-green white br2 grow pointer f7 dib"
+                    <button className="b pa1 input-reset bg-green btn-outline-green white br2 grow pointer f7"
                             onClick={() => {onSubmitFormBackComments(info.id);}} > コメント変更</button>
                     <div className="pv2">
                         <p className="">
-                            <button className="b pa1 input-reset bg-green white br2 grow pointer f7 dib"
+                            <button className="b pa1 input-reset bg-green btn-outline-green white br2 grow pointer f7"
                                     onClick={() => {onButtonSubmit(info.id);}} >良かった {info.iine}</button>
                             {' '}
-                            <button className="b pa1 input-reset bg-green white br2 grow pointer f7 dib"
+                            <button className="b pa1 input-reset bg-green btn-outline-green white br2 grow pointer f7"
                                     onClick={() => {onButtonSubmitW(info.id);}} >ビミョー {info.waruiine}</button></p>
                         <p className="">
-                            <button className="b pa1 input-reset bg-green white br2 grow pointer f7 dib"
+                            <button className="b pa1 input-reset bg-green btn-outline-green white br2 grow pointer f7"
                                     onClick={() => {onButtonSubmitD(info.id);}} >良かった！減らす {info.iine}</button>
                             {' '}
-                            <button className="b pa1 input-reset bg-green white br2 grow pointer f7 dib"
+                            <button className="b pa1 input-reset bg-green btn-outline-green white br2 grow pointer f7"
                                     onClick={() => {onButtonSubmitWD(info.id);}} >ビミョー減らす {info.waruiine}</button></p>
                     </div>
                 </div>

@@ -183,7 +183,7 @@ class FUI extends React.Component {
                     {/*</div>*/}
                     <div className='ma0 tl fl w-100 w50-ns pb3'>
                         <ul className="ddmenu">
-                            <li className='ttll fl w-50'><a href="#">場所：　{this.bashoDisplay()}</a>
+                            <li className='ttll fl w-50-ns w-100'><a href="#">場所を選択して下さい：　{this.bashoDisplay()}</a>
                                 <ul className='ttll'>
                                     <li className='' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
                                     <li><p onClick={() => this.setState({searchfield: 'San Jose'})}>San Jose</p></li>
@@ -208,7 +208,7 @@ class FUI extends React.Component {
                         <CardList infos={filterdInfos}　onButtonSubmit={this.onButtonSubmit} onButtonSubmitW={this.onButtonSubmitW} onSubmitForm={this.onSubmitForm} onCommentsChange={this.onCommentsChange}/>
                     </Scroll>
                     <div className="tc">
-                        <button onClick={() => this.props.onRouteChange('form')} className="tc b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">シェアしてみる</button>
+                        <button onClick={() => this.props.onRouteChange('form')} className="b tc ph3 pv2 ma3 btn-outline-light-green input-reset bg-light-green white br-pill grow pointer f6">シェアしてみる</button>
                     </div>
                     <div className='pv6-ns'>
 

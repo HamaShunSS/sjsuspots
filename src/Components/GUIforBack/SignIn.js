@@ -82,7 +82,7 @@ class SignIn extends Component {
                     <div className="pv5-ns pv3">
                         <input
                             onClick={this.onSubmitForm}
-                            className="b ph3-ns pv2-ns pa2 input-reset ba bg-light-green white br-pill grow pointer f6 dib"
+                            className="b ph3-ns pv2-ns pa2 input-reset ba bg-light-green btn-outline-light-green white br-pill grow pointer f6"
                             type="submit"
                             value="Log in"
                         />
