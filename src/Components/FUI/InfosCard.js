@@ -15,17 +15,17 @@ const copyToClipboard =(loc)=> {
 const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsChange} ) => {
     console.log('info is ',info);
     return(
-        <div className='tc bg-white-60 dib ma2-ns ma2 bw2 grow-ns shadow-5 w5-ns br2'>
+        <div className='tc bg-white-60 dib ma2-ns mh2 mv1 bw2 grow-ns shadow-5 w5-ns br2'>
             <div className="black tc ">
                 <div className="tc" >
                     <img id='inputimage' alt='画像' src={info.url}
                          style={{ }}
-                     className="shashin fl h5-ns"  />
+                     className="shashin fl"  />
                 </div>
                 <div className="pa3 tl">
                 <h4>{info.name}</h4>
-                        <input id={info.location} type='text' size='35' className=" f7" value={info.location} onfocus="this.select();" readOnly/>
-                        <button className="btnBa b ph2 pv1 white br2 pointer f7" onClick={()=>{copyToClipboard(info.location)}}>住所 Copy</button>
+                        <input id={info.location} type='text' size='35' className="fl w-100 f6" value={info.location} onfocus="this.select();" readOnly/>
+                        <button className="btnBa b ph1 pv1 white br2 pointer f7" onClick={()=>{copyToClipboard(info.location)}}>Address Copy</button>
                     <p className="f7">
                         <p> {info.price}</p></p>
                     <p className="f7">
