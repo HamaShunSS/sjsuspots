@@ -247,7 +247,7 @@ class Form extends Component {
                             <label className="b db fw6 lh-copy f6 pt2 tl" htmlFor="">場所の名前: </label>
                             <input
                                 placeholder="ex) Twin Peaks"
-                                className='pa2-ns pa2 input-reset hover-black hover-bg-white w-100 w-70-ns btnSS b ba b--white br2 pointer white f6'
+                                className='pa2-ns pa2 input-reset hover-black hover-bg-white w-100 w-70-ns btnSS b br2 pointer white f6'
                                 type="text"
                                 name="name"
                                 id="name"
@@ -281,7 +281,7 @@ class Form extends Component {
                             <label className="tl db fw6 lh-copy f6 pt2" htmlFor="">住所: </label>
                             <input
                                 placeholder="ex) 501 Twin Peaks Blvd, San Francisco, CA 94114"
-                                className='pa2-ns pa2 input-reset hover-black hover-bg-white br2 w-100 w-70-ns btnSS b ba b--white pointer white f6'
+                                className='pa2-ns pa2 input-reset hover-black hover-bg-white br2 w-100 w-70-ns btnSS b pointer white f6'
                                 type="text"
                                 name="location"
                                 id="location"
@@ -358,7 +358,7 @@ class Form extends Component {
                             <label className="tl db fw6 lh-copy f6 pt2" >ネットから写真のURLを貼って下さい: </label>
                             <input
                                 placeholder="ex) https://fa8.com/746/16_dc_z.jpg"
-                                className='pa2-ns pa2 input-reset hover-black hover-bg-white w-100 w-70-ns btnSS b ba b--white br2 pointer white f6'
+                                className='pa2-ns pa2 input-reset hover-black hover-bg-white w-100 w-70-ns btnSS b br2 pointer white f6'
                                 type="text"
                                 name="url"
                                 id="url"
@@ -379,7 +379,7 @@ class Form extends Component {
                             <label className="tl db fw6 lh-copy f6 pt2" >コメント: </label>
                             <input
                                 placeholder="ex) 501 Twin Peaks Blvd, San Francisco, CA 94114"
-                                className='pa2-ns pa2 input-reset hover-black hover-bg-white br2 w-100 w-70-ns btnSS b ba b--white pointer white f6'
+                                className='pa2-ns pa2 input-reset hover-black hover-bg-white br2 w-100 w-70-ns btnSS b pointer white f6'
                                 type="text"
                                 name="comments"
                                 id="comments"
@@ -392,7 +392,7 @@ class Form extends Component {
                     <div className="pv5-ns pv3">
                         <input
                             onClick={this.onSubmitForm}
-                            className='b pa2-ns pa2 input-reset hover-white br-pill w-30 w-10-ns btnSS ba b--white pointer white f6'
+                            className='b pa2-ns pa2 input-reset hover-white br-pill w-30 w-10-ns btnSS pointer white f6'
                             type="submit"
                             value="シェアハピ"
                         />

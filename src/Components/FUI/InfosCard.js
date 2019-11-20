@@ -21,10 +21,10 @@ const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsC
                     <p className="f7">
                         <p> {info.comments}</p></p>
                     <p className="">
-                        <button className="btnSS b ph2 pv1 white br2 pointer f7"
+                        <button className="btnBa b ph2 pv1 white br2 pointer f7"
                         onClick={() => {onButtonSubmit(info.id);}} >良かった！ {info.iine}</button>
                         {' '}
-                        <button type="button" className="btnSS b ph2 pv1 white br2 pointer f7"
+                        <button type="button" className="btnBa b ph2 pv1 white br2 pointer f7"
                                 onClick={() => {onButtonSubmitW(info.id);}} >ビミョー {info.waruiine}</button></p>
                     <input
                         className="ph2 pv1 input-reset bg-white hover-bg-white hover-black br2 f7 w-100 w-50-ns"
@@ -34,7 +34,7 @@ const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsC
                         placeholder= 'Add a comment...'
                         onChange={onCommentsChange}
                     />
-                    <button className="btnSS b ph2 pv1 input-reset white br1 grow pointer f7"
+                    <button className="btnBa b ph2 pv1 input-reset white br1 grow pointer f7"
                             onClick={() => {onSubmitForm(info.id, info.comments);}} > コメント追加</button>
                 </div>
             </div>

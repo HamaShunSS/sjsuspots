@@ -60,7 +60,7 @@ class SignIn extends Component {
                             <label className="db fw6 lh-copy f6 pt2" htmlFor="name">email</label>
                             <input
                                 placeholder=""
-                                className='pa2-ns pa2 input-reset hover-white br-pill w-100 w-70-ns btnSS b ba b--white pointer white f6'
+                                className='pa2-ns pa2 input-reset hover-black hover-bg-white br-pill w-100 w-70-ns btnSS b pointer white f6'
                                 type="text"
                                 name="email"
                                 id="email"
@@ -70,7 +70,7 @@ class SignIn extends Component {
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6" htmlFor="name">password</label>
                             <input
-                                className='pa2-ns pa2 input-reset hover-white br-pill w-100 w-70-ns btnSS b ba b--white pointer white f6'
+                                className='pa2-ns pa2 input-reset hover-black hover-bg-white br-pill w-100 w-70-ns btnSS b pointer white f6'
                                 type="password"
                                 name="password"
                                 id="password"

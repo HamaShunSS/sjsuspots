@@ -155,14 +155,18 @@ img {
 }
 
 .btnSS {
-  border: none;
-  outline: none;
   background-color: #fdc83c;
+  border-style: solid;
+  border-color: white;
 }
 
 .btnS {
-  border: none;
-  outline: none;
+  border-style: solid;
+  border-color: white;
+}
+
+.btnBa {
+  background-color: #fdc83c;
 }
 
 

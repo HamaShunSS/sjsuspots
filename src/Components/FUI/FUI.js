@@ -183,7 +183,7 @@ class FUI extends React.Component {
                     {/*</div>*/}
                     <div className='ma0 fl w-100 w50-ns pb3'>
                             <ul className="ddmenu ">
-                                <button className='tc ph3-ns pv2-ns pa2 btnSS b ba b--white white br-pill pointer'>
+                                <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer'>
                                     <li className='ttll fl f6 '>場所を選択して下さい：　{this.bashoDisplay()}
                                         <ul className='ttll'>
                                             <li className='pa1 b' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
