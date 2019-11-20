@@ -1,7 +1,16 @@
 import React from 'react';
 
 
+const copyToClipboard =(loc)=> {
+    // コピー対象をJavaScript上で変数として定義する
+    var copyTarget = document.getElementById(loc);
+    // コピー対象のテキストを選択する
+    copyTarget.select();
+    // 選択しているテキストをクリップボードにコピーする
+    document.execCommand("Copy");
 
+    alert("住所コピー完了 ");
+}
 
 const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsChange} ) => {
     console.log('info is ',info);
@@ -15,7 +24,8 @@ const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsC
                 </div>
                 <div className="pa3 tl">
                 <h4>{info.name}</h4>
-                        <p className="f7">{info.location}</p>
+                        <input id={info.location} type='text' size='35' className=" f7" value={info.location} onfocus="this.select();" readOnly/>
+                        <button className="btnBa b ph2 pv1 white br2 pointer f7" onClick={()=>{copyToClipboard(info.location)}}>住所 Copy</button>
                     <p className="f7">
                         <p> {info.price}</p></p>
                     <p className="f7">

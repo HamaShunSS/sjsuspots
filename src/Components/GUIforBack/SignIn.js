@@ -83,7 +83,7 @@ class SignIn extends Component {
                     <div className="pv5-ns pv3">
                         <input
                             onClick={this.onSubmitForm}
-                            className="btn b ph3-ns pv2-ns pa2  ba bg-white-10  white br-pill grow pointer f6"
+                            className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6"
                             type="submit"
                             value="Log in"
                         />
