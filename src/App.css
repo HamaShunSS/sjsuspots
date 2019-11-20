@@ -154,6 +154,22 @@ img {
   outline: none;
 }
 
+.btnSS {
+  border: none;
+  outline: none;
+  background-color: #fdc83c;
+}
+
+.btnS {
+  border: none;
+  outline: none;
+}
+
+
+.placeholder {
+  color: white;
+}
+
 .badge {
   font-size: 0.8rem;
   padding: 0.1rem;
@@ -668,13 +684,20 @@ button {
 
 .dib { display: inline-block; }
 
+img.shashin {
+  height: 10rem;
+  border-radius: .25rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 /*dropdown*/
 /* ▼メニューバーの装飾 */
 /* -------------------- */
 ul.ddmenu {
   margin: 0px;               /* メニューバー外側の余白(ゼロ) */
   width: 100%;
-  background-color: rgb(51, 204, 204); /* バーの背景色 */
+  /* バーの背景色 */
 }
 
 /* -------------------------- */
@@ -694,9 +717,8 @@ ul.ttll li {
 }
 
 ul.ddmenu a {
-  background-color: rgb(51, 204, 205); /* メニュー項目の背景色(濃い赤色) */
+   /* メニュー項目の背景色(濃い赤色) */
   color: white;              /* メニュー項目の文字色(白色) */
-
   text-align: center;        /* メインメニューの文字列の配置(中央寄せ) */
   text-decoration: none;     /* メニュー項目の装飾(下線を消す) */
   font-weight: bold;         /* 太字にする */
@@ -704,7 +726,7 @@ ul.ddmenu a {
 }
 ul.ddmenu a:hover {
   background-color: #ffdddd; /* メニュー項目にマウスが載ったときの背景色(淡いピンク) */
-  color: #17a2b8;           /* メニュー項目にマウスが載ったときの文字色(濃い赤色) */
+  color: #fdc44f;           /* メニュー項目にマウスが載ったときの文字色(濃い赤色) */
 }
 
 /* ▼サブメニューは、とりあえず非表示にしておく */
@@ -715,7 +737,8 @@ ul.ddmenu ul {
 /* ▼サブメニューの装飾 */
 /* -------------------- */
 ul.ddmenu ul {
-  display: none;       /* ★1:標準では非表示にする */
+  display: none;
+  /* ★1:標準では非表示にする */
   margin: 0px;         /* ★2:サブメニュー外側の余白(ゼロ) */
   padding: 0px;        /* ★3:サブメニュー内側の余白(ゼロ) */
   position: absolute;  /* ★4:絶対配置にする */
@@ -727,8 +750,17 @@ ul.ddmenu ul {
 ul.ddmenu li:hover ul {
   display: block;      /* ★5:マウスポインタが載っている項目の内部にあるリストを表示する */
   z-index: 1;
-  background-color: #17A2B8; /* メニュー項目の背景色(濃い赤色) */
+  background-color: #fdc44f; /* メニュー項目の背景色(濃い赤色) */
   color: white;              /* メニュー項目の文字色(白色) */
   text-align: center;        /* メインメニューの文字列の配置(中央寄せ) */
   text-decoration: none;     /* メニュー項目の装飾(下線を消す) */
+
+}
+
+h3.moji {
+  font-family: cursive;
+}
+
+div.push {
+  margin-left: auto;
 }

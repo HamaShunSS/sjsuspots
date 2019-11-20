@@ -181,26 +181,29 @@ class FUI extends React.Component {
                             {/*</ScrollMini>*/}
                         {/*</div>*/}
                     {/*</div>*/}
-                    <div className='ma0 tl fl w-100 w50-ns pb3'>
-                        <ul className="ddmenu">
-                            <li className='ttll fl w-50-ns w-100'><a href="#">場所を選択して下さい：　{this.bashoDisplay()}</a>
-                                <ul className='ttll'>
-                                    <li className='' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
-                                    <li><p onClick={() => this.setState({searchfield: 'San Jose'})}>San Jose</p></li>
-                                    <li onClick={() => this.setState({searchfield: 'San Francisco'})}>San Francisco</li>
-                                    <li onClick={() => this.setState({searchfield: 'Santa Cruz'})}>Santa Cruz</li>
-                                    <li onClick={() => this.setState({searchfield: 'Berkeley'})}>Berkeley</li>
-                                    <li onClick={() => this.setState({searchfield: 'Monterey'})}>Monterey</li>
-                                </ul>
-                            </li>
-                            {/*<li className='fl w-50 w25-ns' ><a href="#">製品・技術</a>*/}
+                    <div className='ma0 fl w-100 w50-ns pb3'>
+                            <ul className="ddmenu ">
+                                <button className='tc ph3-ns pv2-ns pa2 btnSS b ba b--white white br-pill pointer'>
+                                    <li className='ttll fl f6 '>場所を選択して下さい：　{this.bashoDisplay()}
+                                        <ul className='ttll'>
+                                            <li className='pa1 b' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
+                                            <li><p className='pa1 b' onClick={() => this.setState({searchfield: 'San Jose'})}>San Jose</p></li>
+                                            <li className='pa1 b' onClick={() => this.setState({searchfield: 'San Francisco'})}>San Francisco</li>
+                                            <li className='b pa1' onClick={() => this.setState({searchfield: 'Santa Cruz'})}>Santa Cruz</li>
+                                            <li className='b pa1' onClick={() => this.setState({searchfield: 'Berkeley'})}>Berkeley</li>
+                                            <li className='b pa1' onClick={() => this.setState({searchfield: 'Monterey'})}>Monterey</li>
+                                        </ul>
+                                    </li>
+                                </button>
+
+                                {/*<li className='fl w-50 w25-ns' ><a href="#">製品・技術</a>*/}
                                 {/*<ul>*/}
-                                    {/*<li><a href="#">ハードウェア</a></li>*/}
-                                    {/*<li><a href="#">ソフトウェア</a></li>*/}
-                                    {/*<li><a href="#">ウェブサービス</a></li>*/}
+                                {/*<li><a href="#">ハードウェア</a></li>*/}
+                                {/*<li><a href="#">ソフトウェア</a></li>*/}
+                                {/*<li><a href="#">ウェブサービス</a></li>*/}
                                 {/*</ul>*/}
-                            {/*</li>*/}
-                        </ul>
+                                {/*</li>*/}
+                            </ul>
                     </div>
 
                     <SearchBox onSearchChange={this.onSearchChange}/>
@@ -208,7 +211,7 @@ class FUI extends React.Component {
                         <CardList infos={filterdInfos}　onButtonSubmit={this.onButtonSubmit} onButtonSubmitW={this.onButtonSubmitW} onSubmitForm={this.onSubmitForm} onCommentsChange={this.onCommentsChange}/>
                     </Scroll>
                     <div className="tc">
-                        <button onClick={() => this.props.onRouteChange('form')} className="b tc ph3 pv2 ma3 btn-outline-light-green input-reset bg-light-green white br-pill grow pointer f6">シェアしてみる</button>
+                        <button onClick={() => this.props.onRouteChange('form')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">シェアしてみる</button>
                     </div>
                     <div className='pv6-ns'>
 

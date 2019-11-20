@@ -177,10 +177,10 @@ class Form extends Component {
     render(){
         return (
             <main className="pa4">
-                <div className="tc fl w-100 w-100-ns tc">
-                    <fieldset id="sign_up" className="ba b--transparent ph0 mh0 mt4-ns ">
+                <div className="fl w-100 w-100-ns tc">
+                    <fieldset id="sign_up" className="ba b--transparent ph0 mh0 mt4-ns">
                         <div className="db f2-ns f5 pv5-ns pv3 fl w-100 w-100-ns tc fw6 ph0 mh0">オススメの場所をシェアして下さい！！</div>
-                            <label className="db fw6 lh-copy f6" htmlFor="name">地域は？</label>
+                            <label className="tl b db fw6 lh-copy f6" >地域:</label>
                             <div className=''>
                                 <label className="f7 ph2">
                                     <input
@@ -189,7 +189,7 @@ class Form extends Component {
                                         value="San Jose"
                                         checked={this.state.region === "San Jose"}
                                         onChange={this.handleRegionChange}
-                                        className="form-check-input"
+                                        className="form-check-input tl"
                                     />
                                     <label> </label>
                                     San Jose
@@ -244,9 +244,10 @@ class Form extends Component {
                                 </label>
                             </div>
                         <div className="pt5-ns pt2">
-                            <label className="db fw6 lh-copy f6" htmlFor="name">場所の名前は？</label>
+                            <label className="b db fw6 lh-copy f6 pt2 tl" htmlFor="">場所の名前: </label>
                             <input
-                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                placeholder="ex) Twin Peaks"
+                                className='pa2-ns pa2 input-reset hover-black hover-bg-white w-100 w-70-ns btnSS b ba b--white br2 pointer white f6'
                                 type="text"
                                 name="name"
                                 id="name"
@@ -254,41 +255,33 @@ class Form extends Component {
                             />
                         </div>
 
-                        <div className="tc pt4-ns pt2">
+                        <div className="tc pt4-ns pt3">
                             <div className="">
                                 <div className="col-sm-12 pb4">
-                                    <label className="db fw6 lh-copy f6" htmlFor="name">ジャンルは？　（複数選択可能）</label>
-                                    <div className="tc fl w-100 w-100-ns tc w-50-ns">
+                                    <label className="db fw6 lh-copy f6 tl" >ジャンル（複数選択可能: </label>
+                                    <div className="tl fl w-100 w-100-ns tc w-50-ns">
                                         <form onSubmit={this.handleFormSubmit}>
                                             {this.createCheckboxes()}
-                                            <div className="form-group pv2">
+                                            {/*<div className="form-group pv2">*/}
                                                 {/*<button*/}
                                                     {/*type="button"*/}
-                                                    {/*className="btn btn-outline-primary ph2 pv2 bg-light-green grow pointer br-pill mr-2 f6 white"*/}
-                                                    {/*onClick={this.selectAll}*/}
+                                                    {/*// className="btn btn-outline-light-green ph3-ns pv2-ns pa2 bg-light-green grow pointer br-pill mr-2 f6 white"*/}
+                                                    {/*className='pa2-ns pa1 input-reset hover-white br-pill w-30 w-60-ns btnSS b ba b--white pointer white f6'*/}
+                                                    {/*onClick={this.deselectAll}*/}
                                                 {/*>*/}
-                                                    {/*全選択*/}
-                                                {/*</button> <label> </label>*/}
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-outline-light-green ph3-ns pv2-ns pa2 bg-light-green grow pointer br-pill mr-2 f6 white"
-                                                    onClick={this.deselectAll}
-                                                >
-                                                    全消し
-                                                </button>
-                                                {/*<button type="submit" className="btn btn-primary">*/}
-                                                {/*Save*/}
+                                                    {/*全消し*/}
                                                 {/*</button>*/}
-                                            </div>
+                                            {/*</div>*/}
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="pt5-ns pt2">
-                            <label className="db fw6 lh-copy f6" htmlFor="name">住所</label>
+                            <label className="tl db fw6 lh-copy f6 pt2" htmlFor="">住所: </label>
                             <input
-                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                placeholder="ex) 501 Twin Peaks Blvd, San Francisco, CA 94114"
+                                className='pa2-ns pa2 input-reset hover-black hover-bg-white br2 w-100 w-70-ns btnSS b ba b--white pointer white f6'
                                 type="text"
                                 name="location"
                                 id="location"
@@ -296,9 +289,9 @@ class Form extends Component {
                             />
                         </div>
 
-                        <form className="pt4">
-                            <label className="db fw6 lh-copy f6" htmlFor="name">値段</label>
-                            <div className=''>
+                        <form className="pt4-ns pt3">
+                            <label className="tl db fw6 lh-copy f6" >値段:</label>
+                            <div className='tl'>
                                 <label className="f7 ph2">
                                     <input
                                         type="radio"
@@ -361,10 +354,11 @@ class Form extends Component {
                                 </label>
                             </div>
                         </form>
-                        <div className="pt3">
-                            <label className="db fw6 lh-copy f6 pt2" htmlFor="name">ネットのImage(写真)からの一番いい写真のURLを貼って下さい</label>
+                        <div className="pt3-ns pt2">
+                            <label className="tl db fw6 lh-copy f6 pt2" >ネットから写真のURLを貼って下さい: </label>
                             <input
-                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                placeholder="ex) https://fa8.com/746/16_dc_z.jpg"
+                                className='pa2-ns pa2 input-reset hover-black hover-bg-white w-100 w-70-ns btnSS b ba b--white br2 pointer white f6'
                                 type="text"
                                 name="url"
                                 id="url"
@@ -372,7 +366,7 @@ class Form extends Component {
                             />
                         </div>
                         {/*<div className="pt4">*/}
-                            {/*<label className="db fw6 lh-copy f6 pt2" htmlFor="name">写真のURLを貼って下さい (アップロード)</label>*/}
+                            {/*<label className="db fw6 lh-copy f6 pt2" >写真のURLを貼って下さい (アップロード)</label>*/}
                             {/*<input*/}
                                 {/*className="pa2 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"*/}
                                 {/*type="file"*/}
@@ -381,10 +375,11 @@ class Form extends Component {
                                 {/*onChange={this.onURLChange}*/}
                             {/*/>*/}
                         {/*</div>*/}
-                        <div className="pt4">
-                            <label className="db fw6 lh-copy f6" htmlFor="name">コメント</label>
+                        <div className="pt4-ns pt2">
+                            <label className="tl db fw6 lh-copy f6 pt2" >コメント: </label>
                             <input
-                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                placeholder="ex) 501 Twin Peaks Blvd, San Francisco, CA 94114"
+                                className='pa2-ns pa2 input-reset hover-black hover-bg-white br2 w-100 w-70-ns btnSS b ba b--white pointer white f6'
                                 type="text"
                                 name="comments"
                                 id="comments"
@@ -397,7 +392,7 @@ class Form extends Component {
                     <div className="pv5-ns pv3">
                         <input
                             onClick={this.onSubmitForm}
-                            className="b ph3-ns pv2-ns pa2 input-reset bg-light-green btn-outline-light-green white br-pill grow pointer f6"
+                            className='b pa2-ns pa2 input-reset hover-white br-pill w-30 w-10-ns btnSS ba b--white pointer white f6'
                             type="submit"
                             value="シェアハピ"
                         />

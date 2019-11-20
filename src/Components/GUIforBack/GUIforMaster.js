@@ -62,16 +62,11 @@ class GUIforMaster extends React.Component {
                 console.log('iine のなかは',count)
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
-        if (this.props.route === 'back') {
-            this.props.onRouteChange('thankyoub');
-        }
+            this.props.onRouteChange('thankyouBM');
     }
 
     //waruiine
     onButtonSubmitW = (id) => {
-        if (this.props.route === 'back') {
-            this.props.onRouteChange('thankyoub');
-        }
         fetch('https://spots-for-sjsu-students.herokuapp.com/buttonW',
             { //fetch connects frontend with the server
                 method: 'put',
@@ -85,6 +80,7 @@ class GUIforMaster extends React.Component {
                 this.setState({waruiine: count})
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
+            this.props.onRouteChange('thankyouBM');
     }
 
     // iine減らす
@@ -104,16 +100,11 @@ class GUIforMaster extends React.Component {
                 console.log('iine のなかは',count)
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
-        if (this.props.route === 'back') {
-            this.props.onRouteChange('thankyoub');
-        }
+            this.props.onRouteChange('thankyouBM');
     }
 
     //waruiine減らす
     onButtonSubmitWD = (id) => {
-        if (this.props.route === 'back') {
-            this.props.onRouteChange('thankyoub');
-        }
         fetch('https://spots-for-sjsu-students.herokuapp.com/buttonWD',
             { //fetch connects frontend with the server
                 method: 'put',
@@ -127,6 +118,7 @@ class GUIforMaster extends React.Component {
                 this.setState({waruiine: count})
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
+            this.props.onRouteChange('thankyouBM');
     }
 
 
@@ -135,7 +127,7 @@ class GUIforMaster extends React.Component {
         if (this.state.com === '' ) {
             alert("コメントを記入してください...");
         } else {
-            if (this.props.route === 'infos') {
+            if (this.props.route === 'backMaster') {
                 this.props.onRouteChange('loading');
             }
             console.log('com のナカは ', this.state.com)
@@ -152,7 +144,7 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyou');
+                        this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
                         this.props.onRouteChange('sorry');
                     }
@@ -165,7 +157,7 @@ class GUIforMaster extends React.Component {
         if (this.state.textB === '' ) {
             alert("コメントを記入してください...");
         } else {
-            if (this.props.route === 'infos') {
+            if (this.props.route === 'backMaster') {
                 this.props.onRouteChange('loading');
             }
             console.log('textB のナカは ', this.state.textB)
@@ -181,7 +173,7 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyoub');
+                        this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
                         this.props.onRouteChange('sorry');
                     }
@@ -194,7 +186,7 @@ class GUIforMaster extends React.Component {
         if (this.state.textB === '' ) {
             alert("コメントを記入してください...");
         } else {
-            if (this.props.route === 'infos') {
+            if (this.props.route === 'backMaster') {
                 this.props.onRouteChange('loading');
             }
             console.log('textB のナカは ', this.state.textB)
@@ -210,7 +202,7 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyoub');
+                        this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
                         this.props.onRouteChange('sorry');
                     }
@@ -223,7 +215,7 @@ class GUIforMaster extends React.Component {
         if (this.state.textB === '' ) {
             alert("コメントを記入してください...");
         } else {
-            if (this.props.route === 'infos') {
+            if (this.props.route === 'backMaster') {
                 this.props.onRouteChange('loading');
             }
             console.log('textB のナカは ', this.state.textB)
@@ -239,7 +231,7 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyoub');
+                        this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
                         this.props.onRouteChange('sorry');
                     }
@@ -252,7 +244,7 @@ class GUIforMaster extends React.Component {
         if (this.state.textB === '' ) {
             alert("コメントを記入してください...");
         } else {
-            if (this.props.route === 'infos') {
+            if (this.props.route === 'backMaster') {
                 this.props.onRouteChange('loading');
             }
             console.log('textB のナカは ', this.state.textB)
@@ -268,7 +260,7 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyoub');
+                        this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
                         this.props.onRouteChange('sorry');
                     }
@@ -278,12 +270,7 @@ class GUIforMaster extends React.Component {
 
     //changePrice
     onSubmitFormBackPrice =(id) => {
-        if (this.state.textB === '' ) {
-            alert("コメントを記入してください...");
-        } else {
-            if (this.props.route === 'infos') {
-                this.props.onRouteChange('loading');
-            }
+            this.props.onRouteChange('loading');
             console.log('textB のナカは ', this.state.textB)
             fetch('https://spots-for-sjsu-students.herokuapp.com/changePrice', {
                 method: 'put',
@@ -297,12 +284,12 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyoub');
+                        this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
                         this.props.onRouteChange('sorry');
                     }
                 })
-        }
+
     }
 
 
@@ -382,8 +369,8 @@ class GUIforMaster extends React.Component {
                                   onCommentsChangeB={this.onCommentsChangeB} />
                     </Scroll>
                     <div className="tc">
-                        <button onClick={() => this.props.onRouteChange('touroku')} className="tc b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">新規ユーザー登録</button>
-                        <button onClick={() => this.props.onRouteChange('back')} className="tc b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">オフィサー用ページに行く</button>
+                        <button onClick={() => this.props.onRouteChange('touroku')} className="tc btn b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">新規ユーザー登録</button>
+                        <button onClick={() => this.props.onRouteChange('back')} className="tc btn b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">オフィサー用ページに行く</button>
                     </div>
                 </div>
             );

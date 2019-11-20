@@ -59,7 +59,8 @@ class SignIn extends Component {
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6 pt2" htmlFor="name">email</label>
                             <input
-                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                placeholder=""
+                                className='pa2-ns pa2 input-reset hover-white br-pill w-100 w-70-ns btnSS b ba b--white pointer white f6'
                                 type="text"
                                 name="email"
                                 id="email"
@@ -69,7 +70,7 @@ class SignIn extends Component {
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6" htmlFor="name">password</label>
                             <input
-                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className='pa2-ns pa2 input-reset hover-white br-pill w-100 w-70-ns btnSS b ba b--white pointer white f6'
                                 type="password"
                                 name="password"
                                 id="password"
@@ -82,7 +83,7 @@ class SignIn extends Component {
                     <div className="pv5-ns pv3">
                         <input
                             onClick={this.onSubmitForm}
-                            className="b ph3-ns pv2-ns pa2 input-reset ba bg-light-green btn-outline-light-green white br-pill grow pointer f6"
+                            className="btn b ph3-ns pv2-ns pa2  ba bg-white-10  white br-pill grow pointer f6"
                             type="submit"
                             value="Log in"
                         />

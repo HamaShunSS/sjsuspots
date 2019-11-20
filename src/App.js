@@ -20,13 +20,7 @@ import Touroku from "./Components/GUIforBack/Touroku";
 import SignIn from "./Components/GUIforBack/SignIn";
 import GUIforMaster from "./Components/GUIforBack/GUIforMaster";
 import Mistake from "./Components/GUIforBack/Mistake";
-import Dropdown, {
-    DropdownToggle,
-    DropdownMenu,
-    DropdownMenuWrapper,
-    MenuItem,
-    DropdownButton
-} from '@trendmicro/react-dropdown';
+import ThankyouBM from "./Components/GUIforBack/ThankyouBM";
 
 
 
@@ -143,7 +137,11 @@ class App extends Component {
                                                                                                                                 route === 'mistake'
                                                                                                                                     ?< Mistake onRouteChange={this.onRouteChange} />
                                                                                                                                     :(
-                                                                                                                                        < Form route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                                                                                                                        route === 'thankyouBM'
+                                                                                                                                            ?< ThankyouBM onRouteChange={this.onRouteChange} />
+                                                                                                                                            :(
+                                                                                                                                                < Form route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                                                                                                                            )
                                                                                                                                     )
                                                                                                                             )
                                                                                                                     )

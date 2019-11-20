@@ -81,11 +81,12 @@ class Touroku extends Component {
                     <div className="pv5-ns pv3">
                         <input
                             onClick={this.onSubmitForm}
-                            className="b ph3-ns pv2-ns pa2 input-reset ba bg-light-green btn-outline-light-green white br-pill grow pointer f6"
+                            className="btn b ph3-ns pv2-ns pa2 input-reset ba bg-light-green btn-outline-light-green white br-pill grow pointer f6"
                             type="submit"
                             value="Register"
                         />
                     </div>
+                    <button onClick={() => this.props.onRouteChange('backMaster')} className="tc btn b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">マスターページに戻る</button>
                 </div>
             </main>
 

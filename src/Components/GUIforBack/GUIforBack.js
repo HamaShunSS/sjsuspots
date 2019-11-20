@@ -62,14 +62,14 @@ class GUIforBack extends React.Component {
                 console.log('iine のなかは',count)
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
-        if (this.props.route === 'back') {
+        if (this.props.route === 'back'|| 'backMaster') {
             this.props.onRouteChange('thankyoub');
         }
     }
 
     //waruiine
     onButtonSubmitW = (id) => {
-        if (this.props.route === 'back') {
+        if (this.props.route === 'back'|| 'backMaster') {
             this.props.onRouteChange('thankyoub');
         }
         fetch('https://spots-for-sjsu-students.herokuapp.com/buttonW',
@@ -104,16 +104,12 @@ class GUIforBack extends React.Component {
                 console.log('iine のなかは',count)
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
-        if (this.props.route === 'back') {
             this.props.onRouteChange('thankyoub');
-        }
+
     }
 
     //waruiine減らす
     onButtonSubmitWD = (id) => {
-        if (this.props.route === 'back') {
-            this.props.onRouteChange('thankyoub');
-        }
         fetch('https://spots-for-sjsu-students.herokuapp.com/buttonWD',
             { //fetch connects frontend with the server
                 method: 'put',
@@ -127,6 +123,7 @@ class GUIforBack extends React.Component {
                 this.setState({waruiine: count})
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
+            this.props.onRouteChange('thankyoub');
     }
 
 
@@ -135,7 +132,7 @@ class GUIforBack extends React.Component {
         if (this.state.com === '' ) {
             alert("コメントを記入してください...");
         } else {
-            if (this.props.route === 'infos') {
+            if (this.props.route === 'back') {
                 this.props.onRouteChange('loading');
             }
             console.log('com のナカは ', this.state.com)
@@ -165,7 +162,7 @@ class GUIforBack extends React.Component {
         if (this.state.textB === '' ) {
             alert("コメントを記入してください...");
         } else {
-            if (this.props.route === 'infos') {
+            if (this.props.route === 'back') {
                 this.props.onRouteChange('loading');
             }
             console.log('textB のナカは ', this.state.textB)
@@ -194,7 +191,7 @@ class GUIforBack extends React.Component {
         if (this.state.textB === '' ) {
             alert("コメントを記入してください...");
         } else {
-            if (this.props.route === 'infos') {
+            if (this.props.route === 'back') {
                 this.props.onRouteChange('loading');
             }
             console.log('textB のナカは ', this.state.textB)
@@ -223,7 +220,7 @@ class GUIforBack extends React.Component {
         if (this.state.textB === '' ) {
             alert("コメントを記入してください...");
         } else {
-            if (this.props.route === 'infos') {
+            if (this.props.route === 'back') {
                 this.props.onRouteChange('loading');
             }
             console.log('textB のナカは ', this.state.textB)
@@ -252,7 +249,7 @@ class GUIforBack extends React.Component {
         if (this.state.textB === '' ) {
             alert("コメントを記入してください...");
         } else {
-            if (this.props.route === 'infos') {
+            if (this.props.route === 'back') {
                 this.props.onRouteChange('loading');
             }
             console.log('textB のナカは ', this.state.textB)
@@ -279,6 +276,7 @@ class GUIforBack extends React.Component {
     //changePrice
     onSubmitFormBackPrice =(id) => {
             console.log('textB のナカは ', this.state.textB)
+            this.props.onRouteChange('loading');
             fetch('https://spots-for-sjsu-students.herokuapp.com/changePrice', {
                 method: 'put',
                 headers: {'Content-Type': 'application/json'},
@@ -376,8 +374,8 @@ class GUIforBack extends React.Component {
                                   onCommentsChangeB={this.onCommentsChangeB} />
                     </Scroll>
                     <div className="tc">
-                        <button onClick={() => this.props.onRouteChange('form')} className="tc b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">シェアする</button>
-                        <button onClick={() => this.props.onRouteChange('/')} className="tc b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">ホームに戻る</button>
+                        <button onClick={() => this.props.onRouteChange('form')} className="tc btn b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">シェアする</button>
+                        <button onClick={() => this.props.onRouteChange('/')} className="tc btn b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">ホームに戻る</button>
                     </div>
                 </div>
             );
