@@ -166,7 +166,9 @@ img {
 }
 
 .btnBa {
+  /*//with no border*/
   background-color: #fdc83c;
+  border: none;
 }
 
 
