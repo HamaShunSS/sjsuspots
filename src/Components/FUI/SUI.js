@@ -68,7 +68,7 @@ class SUI extends React.Component {
                 console.log('iine のなかは',count)
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
-        if (this.props.route === '/') {
+        if (this.props.route === '/' || 'sui') {
             this.props.onRouteChange('iine');
         }
     }
@@ -89,7 +89,7 @@ class SUI extends React.Component {
                 this.setState({waruiine: count})
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
-        if (this.props.route === '/') {
+        if (this.props.route === '/' || 'sui') {
             this.props.onRouteChange('waruiine');
         }
     }
@@ -164,16 +164,6 @@ class SUI extends React.Component {
                 <div className=" ">
                     <label className="fl pv4-ns f3 pv3 w-100 w-100-ns tc db fw6 lh-copy f2-ns"><i className="fas fa-thumbs-down"></i>{' '}リコット</label>
                 </div>
-                {/*<div class="fl w-100 w50-ns bg-dark">*/}
-                {/*<div class="fl w-50 w-35-ns" >*/}
-                {/*<SearchBoxRegion onSearchChangeRegion={this.onSearchChangeRegion}/>*/}
-                {/*</div>*/}
-                {/*<div>*/}
-                {/*<ScrollMini class="fl w-50 w-15-ns">*/}
-                {/*<CardListR infos={filterdRegions}/>*/}
-                {/*</ScrollMini>*/}
-                {/*</div>*/}
-                {/*</div>*/}
                 <div className='ma0 fl w-100 w50-ns pb7-ns pb6'>
                     <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer ' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>場所選びに戻る</p></button>
                 </div>
@@ -194,13 +184,13 @@ class SUI extends React.Component {
         }
         else {
             return (
-                <div className="tc">
+                <div className="tc w-100 w-100-ns">
                     <div className=" ">
-                        <label className="fl pv4-ns f3 pv3 w-100 w-100-ns tc db fw6 lh-copy f2-ns"><i className="fas fa-thumbs-down"></i>{' '}{this.state.results[0].region}</label>
+                        <label className="pv4-ns f3 pv3 w-100 w-100-ns tc db fw6 lh-copy f2-ns">{this.state.results[0].region}</label>
                     </div>
-                    <div className='ma1 fl w-100 w50-ns pb3'>
-                        <ul className="ddmenu">
-                            <button className=' tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer mr2'>
+                    <div className='ma1 tc pb2'>
+                        <ul className="ddmenu ">
+                            <button className='tc ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer mr4 mr6-ns'>
                                 <li className='ttll f6 fl'>カテゴリー：　{this.categoryDisplay()}
                                     <ul className='ttll'>
                                         <li className='pa1 b' onClick={() => this.setState({searchfield: ''})}>All Categories</li>
@@ -211,10 +201,11 @@ class SUI extends React.Component {
                                         <li className='b pa1' onClick={() => this.setState({searchfield: 'Nature'})}>自然</li>
                                         <li className='b pa1' onClick={() => this.setState({searchfield: 'Parks'})}>公園</li>
                                         <li className='b pa1' onClick={() => this.setState({searchfield: 'Amusement'})}>アミューズメント</li>
+                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Salons'})}>サロン</li>
                                     </ul>
                                 </li>
                             </button>
-                            <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer ' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>場所選びに戻る</p></button>
+                            <button className='tc ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer mv1' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>エリアに戻る</p></button>
                             {/*<li className='fl w-50 w25-ns' ><a href="#">製品・技術</a>*/}
                             {/*<ul>*/}
                             {/*<li><a href="#">ハードウェア</a></li>*/}

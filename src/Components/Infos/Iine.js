@@ -4,8 +4,8 @@ const Iine = ({ onRouteChange }) => {
     return (
         <div className="pv4 mb6-ns">
             <label className="db pv6 fw6 lh-copy f1 mt5 mt7-ns ph4" htmlFor="name">”良かった”　頂きました！ありがとうございます！！</label>
-            <p onClick={() => onRouteChange('/')} className='b link dim pa3 grow f4 pointer'>ホームに戻る</p>
-            <p onClick={() => onRouteChange('form')} className='b link dim pa3 grow f4 pointer'>シェアをしてみる</p>
+            <button onClick={() => onRouteChange('/')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">ホームに戻る</button>
+            <button onClick={() => onRouteChange('form')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">シェアをしてみる</button>
         </div>
     );
 }

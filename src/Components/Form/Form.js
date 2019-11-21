@@ -269,7 +269,7 @@ class Form extends Component {
                         <form>
                             <div className="tc pt4-ns pt3">
                                 <div className="">
-                                    <div className="col-sm-12 pb4">
+                                    <div className="col-sm-12 pb4-ns pb1">
                                         <label className="db fw6 lh-copy f6 tl" >カテゴリー: </label>
                                         <div className=''>
                                             <label className="f7 ph2">
@@ -355,6 +355,18 @@ class Form extends Component {
                                                 />
                                                 <label> </label>
                                                 アミューズメント
+                                            </label>
+                                            <label className="f7 ph2">
+                                                <input
+                                                    type="radio"
+                                                    name="react-tips"
+                                                    value="Salons"
+                                                    checked={this.state.category === "Salons"}
+                                                    onChange={this.handleCategoryChange}
+                                                    className="form-check-input"
+                                                />
+                                                <label> </label>
+                                                サロン
                                             </label>
                                         </div>
                                         {/*<div className="tl fl w-100 w-100-ns tc w-50-ns">*/}
