@@ -21,6 +21,7 @@ import SignIn from "./Components/GUIforBack/SignIn";
 import GUIforMaster from "./Components/GUIforBack/GUIforMaster";
 import Mistake from "./Components/GUIforBack/Mistake";
 import ThankyouBM from "./Components/GUIforBack/ThankyouBM";
+import SUI from "./Components/FUI/SUI";
 
 
 
@@ -62,11 +63,11 @@ class App extends Component {
         console.log(cat)
     }
 
-    loadRegion = (region ) => {
+    loadRegion = (region) => {
         this.setState({
             region: region
         })
-        console.log(region)
+        console.log('まさかの　', this.state.region)
     }
 
     onRouteChange = (route) => {
@@ -140,7 +141,11 @@ class App extends Component {
                                                                                                                                         route === 'thankyouBM'
                                                                                                                                             ?< ThankyouBM onRouteChange={this.onRouteChange} />
                                                                                                                                             :(
-                                                                                                                                                < Form route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                                                                                                                                route === 'sui'
+                                                                                                                                                    ?< SUI onRouteChange={this.onRouteChange} route={this.state.route} loadUser={this.loadUser} loadCategory={this.loadCategory} loadRegion={this.loadRegion} category={this.state.category} region={this.state.region}/>
+                                                                                                                                                    :(
+                                                                                                                                                        < Form route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                                                                                                                                    )
                                                                                                                                             )
                                                                                                                                     )
                                                                                                                             )

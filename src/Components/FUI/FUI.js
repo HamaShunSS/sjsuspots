@@ -150,19 +150,58 @@ class FUI extends React.Component {
 
 
         if (this.state.results.length === 0) {
-            return <div className="pt6 pt6-ns">
-                <div className="pv4-ns"><h1 className='pv4 pv4-ns'>Loading...</h1></div>
-                <div className="ph6-ns tc center pb5-ns">
-                    <div className="ph6 ph7-ns tc center pb6">
-                        <Spinner class='justify-center pb6 pb6-ns' size={80} spinnerColor={"white"} spinnerWidth={8} visible={true} />
-                    </div>
-                    <p className="pv7 pv7-ns"> </p>
-                    <p className="pv7-ns"> </p>
-                </div>
-            </div>
+            return <div className="">
 
-        }
-        if (this.state.results.length === 0){
+                <div className=" ">
+                    <label className="fl pv4-ns f3 pv3 w-100 w-100-ns tc db fw6 lh-copy f2-ns"><i className="fas fa-thumbs-down"></i>{' '}リコット</label>
+                </div>
+                {/*<div class="fl w-100 w50-ns bg-dark">*/}
+                {/*<div class="fl w-50 w-35-ns" >*/}
+                {/*<SearchBoxRegion onSearchChangeRegion={this.onSearchChangeRegion}/>*/}
+                {/*</div>*/}
+                {/*<div>*/}
+                {/*<ScrollMini class="fl w-50 w-15-ns">*/}
+                {/*<CardListR infos={filterdRegions}/>*/}
+                {/*</ScrollMini>*/}
+                {/*</div>*/}
+                {/*</div>*/}
+                <div className='ma0 fl w-100 w50-ns pb7-ns pb6'>
+                    <ul className="ddmenu ">
+                        <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer'>
+                            <li className='ttll fl f6 '>場所を選択して下さい：　{this.bashoDisplay()}
+                                <ul className='ttll'>
+                                    <li className='pa1 b link' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
+                                    <li className='pa1 b link' onClick={() => {this.props.loadRegion('San Jose'); this.props.onRouteChange('sui')}}>San Jose</li>
+                                    <li className='pa1 b link' onClick={() =>{this.props.loadRegion('San Francisco'); this.props.onRouteChange('sui')}}>San Francisco</li>
+                                    <li className='b pa1' onClick={() =>{this.props.loadRegion('Santa Cruz'); this.props.onRouteChange('sui')}}>Santa Cruz</li>
+                                    <li className='b pa1' onClick={() =>{this.props.loadRegion('Berkeley'); this.props.onRouteChange('sui')}}>Berkeley</li>
+                                    <li className='b pa1' onClick={() =>{this.props.loadRegion('Monterey'); this.props.onRouteChange('sui')}}>Monterey</li>
+                                </ul>
+                            </li>
+                        </button>
+
+                        {/*<li className='fl w-50 w25-ns' ><a href="#">製品・技術</a>*/}
+                        {/*<ul>*/}
+                        {/*<li><a href="#">ハードウェア</a></li>*/}
+                        {/*<li><a href="#">ソフトウェア</a></li>*/}
+                        {/*<li><a href="#">ウェブサービス</a></li>*/}
+                        {/*</ul>*/}
+                        {/*</li>*/}
+                    </ul>
+                </div>
+
+                <Scroll>
+                    <div className="pv4-ns"><h1 className='pv4 pv4-ns'>Loading...</h1></div>
+                    <div className="ph6-ns tc center pb5-ns">
+                        <div className="ph6 ph7-ns tc center pb6">
+                            <Spinner class='justify-center pb6 pb6-ns' size={80} spinnerColor={"white"} spinnerWidth={8} visible={true} />
+                        </div>
+                        <p className="pv7 pv7-ns"> </p>
+                        <p className="pv7-ns"> </p>
+                    </div>
+                </Scroll>
+
+                    </div>
 
         }
         else {
@@ -186,12 +225,12 @@ class FUI extends React.Component {
                                 <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer'>
                                     <li className='ttll fl f6 '>場所を選択して下さい：　{this.bashoDisplay()}
                                         <ul className='ttll'>
-                                            <li className='pa1 b' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
-                                            <li><p className='pa1 b' onClick={() => this.setState({searchfield: 'San Jose'})}>San Jose</p></li>
-                                            <li className='pa1 b' onClick={() => this.setState({searchfield: 'San Francisco'})}>San Francisco</li>
-                                            <li className='b pa1' onClick={() => this.setState({searchfield: 'Santa Cruz'})}>Santa Cruz</li>
-                                            <li className='b pa1' onClick={() => this.setState({searchfield: 'Berkeley'})}>Berkeley</li>
-                                            <li className='b pa1' onClick={() => this.setState({searchfield: 'Monterey'})}>Monterey</li>
+                                            <li className='pa1 b link' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
+                                            <li className='pa1 b link' onClick={() => {this.props.loadRegion('San Jose'); this.props.onRouteChange('sui')}}>San Jose</li>
+                                            <li className='pa1 b link' onClick={() =>{this.props.loadRegion('San Francisco'); this.props.onRouteChange('sui')}}>San Francisco</li>
+                                            <li className='b pa1' onClick={() =>{this.props.loadRegion('Santa Cruz'); this.props.onRouteChange('sui')}}>Santa Cruz</li>
+                                            <li className='b pa1' onClick={() =>{this.props.loadRegion('Berkeley'); this.props.onRouteChange('sui')}}>Berkeley</li>
+                                            <li className='b pa1' onClick={() =>{this.props.loadRegion('Monterey'); this.props.onRouteChange('sui')}}>Monterey</li>
                                         </ul>
                                     </li>
                                 </button>
@@ -213,7 +252,7 @@ class FUI extends React.Component {
                     <div className="tc">
                         <button onClick={() => this.props.onRouteChange('form')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">シェアしてみる</button>
                     </div>
-                    <div className='pv6-ns'>
+                    <div className='pv6-ns pb3'>
 
                     </div>
                 </div>

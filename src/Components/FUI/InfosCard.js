@@ -9,7 +9,7 @@ const copyToClipboard =(loc)=> {
     // 選択しているテキストをクリップボードにコピーする
     document.execCommand("Copy");
 
-    alert("住所コピー完了 ");
+    alert("アドレスコピー完了");
 }
 
 const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsChange} ) => {

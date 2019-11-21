@@ -51,8 +51,8 @@ class Touroku extends Component {
 
     render(){
         return (
-            <main className="pa4">
-                <div className="tc fl w-100 w-100-ns tc">
+            <main className="pa4 ">
+                <div className="tc fl w-100 w-100-ns tc mb7">
                     <fieldset id="sign_up" className="ba b--transparent ph0 mh0 mt4-ns ">
                         <div className="db f2-ns f6 pv5-ns pv4 fl w-100 w-100-ns tc fw6 ph0 mh0">新規登録</div>
                         <div className="pt4">
@@ -81,12 +81,12 @@ class Touroku extends Component {
                     <div className="pv5-ns pv3">
                         <input
                             onClick={this.onSubmitForm}
-                            className="btn b ph3-ns pv2-ns pa2 input-reset ba bg-light-green btn-outline-light-green white br-pill grow pointer f6"
+                            className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6"
                             type="submit"
                             value="Register"
                         />
                     </div>
-                    <button onClick={() => this.props.onRouteChange('backMaster')} className="tc btn b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">マスターページに戻る</button>
+                    <button onClick={() => this.props.onRouteChange('backMaster')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">マスターページに戻る</button>
                 </div>
             </main>
 

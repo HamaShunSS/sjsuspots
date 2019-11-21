@@ -1,11 +1,8 @@
 import React, { Component }  from 'react';
 import CardList from './CardLIstForB'; //child
-import CardListR from '../FUI/InfosCardListR'; //child
 import Scroll from '../Scroll';
-import ScrollMini from '../ScrollMini';
 import Spinner from 'react-spinner-material';
 import SearchBox from "../SearchBox/SearchBox";
-import SearchBoxRegion from "../SearchBox/SearchBoxRegion";
 
 
 class GUIforBack extends React.Component {
@@ -302,17 +299,8 @@ class GUIforBack extends React.Component {
     onSearchChange = (event) => { //whenever it gets changed
         this.setState({searchfield: event.target.value}) //update "serachfiled is event.target.value"
     }
-    // Search box for region
-    onSearchChangeRegion = (event) => { //whenever it gets changed
-        this.setState({searchfieldRegion: event.target.value}) //update "serachfiledRegion is event.target.value"
-    }
 
-    handleRegionChange = changeEvent => {
-        this.setState({
-            region: changeEvent.target.value
-        });
-        console.log('region は　', this.state.region)
-    };
+
 
     render() {
         const filterdInfos = this.state.results.filter(infos => {
@@ -321,11 +309,6 @@ class GUIforBack extends React.Component {
         })
         // const child = { width: `30em`, height: `100%`}
         // const parent = { width: `60em`, height: `100%`}
-
-        const filterdRegions = this.state.results.filter(infos => {
-            //"filter" is a function to go thorough array in "robots from State", having a parameter "robot"
-            return infos.region.toLowerCase().includes(this.state.searchfieldRegion.toLowerCase())
-        })
         if (this.state.results.length === 0) {
             return <div className="pt6 pt6-ns">
                 <button onClick={() => this.props.onRouteChange('category')} className="tc b ph3 pv3 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">カテゴリーに戻る</button>
@@ -340,23 +323,12 @@ class GUIforBack extends React.Component {
             </div>
 
         }
-        if (this.state.results.length === 0){
-
-        }
         else {
             return (
                 <div className="tc ">
-                    <div class="fl w-75 w-40-ns bg-dark">
-                        <SearchBoxRegion onSearchChangeRegion={this.onSearchChangeRegion}/>
-                    </div>
-                    <div class="fl w-25 w-10-ns ">
-                        <ScrollMini>
-                            <CardListR infos={filterdRegions}/>
-                        </ScrollMini>
-                    </div>
 
                     <div className=" ">
-                        <label className="fl pv4-ns w-100 w-100-ns tc db fw6 lh-copy f2"><i className="fas fa-thumbs-down"></i>{' '}オフィサー用のページ</label>
+                        <label className="fl pv4 ph1 w-100 w-100-ns tc db fw6 lh-copy f3"><i className="fas fa-thumbs-down"></i>{' '}オフィサー用のページ</label>
                     </div>
                     <SearchBox onSearchChange={this.onSearchChange}/>
                     <Scroll>
@@ -374,8 +346,8 @@ class GUIforBack extends React.Component {
                                   onCommentsChangeB={this.onCommentsChangeB} />
                     </Scroll>
                     <div className="tc">
-                        <button onClick={() => this.props.onRouteChange('form')} className="tc btn b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">シェアする</button>
-                        <button onClick={() => this.props.onRouteChange('/')} className="tc btn b ph3 pv2 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">ホームに戻る</button>
+                        <button onClick={() => this.props.onRouteChange('form')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">シェアする</button>
+                        <button onClick={() => this.props.onRouteChange('/')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">ホームに戻る</button>
                     </div>
                 </div>
             );

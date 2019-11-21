@@ -14,6 +14,7 @@ const CardListForB = ({infos,
                           onSubmitFormBackName,
                           onSubmitFormBackLocation,
                           onSubmitFormBackPrice,
+                          onSubmitFormBackCategory,
                           onCommentsChangeB
 }) => {
     return(
@@ -32,6 +33,7 @@ const CardListForB = ({infos,
                             onSubmitFormBackName={onSubmitFormBackName}
                             onSubmitFormBackLocation={onSubmitFormBackLocation}
                             onSubmitFormBackPrice={onSubmitFormBackPrice}
+                            onSubmitFormBackCategory={onSubmitFormBackCategory}
                             onCommentsChange={onCommentsChange}
                             onCommentsChangeB={onCommentsChangeB}
 

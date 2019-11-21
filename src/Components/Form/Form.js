@@ -31,6 +31,7 @@ class Form extends Component {
             others:'',
             location: '',
             url:'',
+            category:'',
             price:'',
             region:'',
             comments: ''
@@ -42,6 +43,10 @@ class Form extends Component {
 
     onNameChange = (event) => {
         this.setState({name: event.target.value}) // updated signInEmail from <input />
+    }
+
+    onCategoryChange = (event) => {
+        this.setState({category: event.target.value}) // updated signInEmail from <input />
     }
 
     onLocationChange = (event) => {
@@ -59,6 +64,12 @@ class Form extends Component {
     handleRegionChange = changeEvent => {
         this.setState({
             region: changeEvent.target.value
+        });
+    };
+
+    handleCategoryChange = changeEvent => {
+        this.setState({
+            category: changeEvent.target.value
         });
     };
 
@@ -84,6 +95,7 @@ class Form extends Component {
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
                         name: this.state.name,
+                        category: this.state.category,
                         ramen: this.state.checkboxes.ラーメン,
                         food: this.state.checkboxes.食事処,
                         view: this.state.checkboxes.景色,
@@ -258,10 +270,96 @@ class Form extends Component {
                         <div className="tc pt4-ns pt3">
                             <div className="">
                                 <div className="col-sm-12 pb4">
-                                    <label className="db fw6 lh-copy f6 tl" >ジャンル（複数選択可能: </label>
-                                    <div className="tl fl w-100 w-100-ns tc w-50-ns">
-                                        <form onSubmit={this.handleFormSubmit}>
-                                            {this.createCheckboxes()}
+                                    <label className="db fw6 lh-copy f6 tl" >カテゴリー: </label>
+                                    <div className=''>
+                                        <label className="f7 ph2">
+                                            <input
+                                                type="radio"
+                                                name="react-tips"
+                                                value="Restaurants"
+                                                checked={this.state.category === "Restaurants"}
+                                                onChange={this.handleCategoryChange}
+                                                className="form-check-input tl"
+                                            />
+                                            <label> </label>
+                                            レストラン
+                                        </label>
+                                        <label className="f7 ph2">
+                                            <input
+                                                type="radio"
+                                                name="react-tips"
+                                                value="Cafes"
+                                                checked={this.state.category === "Cafes"}
+                                                onChange={this.handleCategoryChange}
+                                                className="form-check-input"
+                                            />
+                                            <label> </label>
+                                            カフェ
+                                        </label>
+                                        <label className="f7 ph2">
+                                            <input
+                                                type="radio"
+                                                name="react-tips"
+                                                value="Bars"
+                                                checked={this.state.category === "Bars"}
+                                                onChange={this.handleCategoryChange}
+                                                className="form-check-input"
+                                            />
+                                            <label> </label>
+                                            バー
+                                        </label >
+                                        <label className="f7 ph2">
+                                            <input
+                                                type="radio"
+                                                name="react-tips"
+                                                value="Clubs"
+                                                checked={this.state.category === "Clubs"}
+                                                onChange={this.handleCategoryChange}
+                                                className="form-check-input"
+                                            />
+                                            <label> </label>
+                                            クラブ
+                                        </label>
+                                        <label className="f7 ph2">
+                                            <input
+                                                type="radio"
+                                                name="react-tips"
+                                                value="Nature"
+                                                checked={this.state.category === "Nature"}
+                                                onChange={this.handleCategoryChange}
+                                                className="form-check-input"
+                                            />
+                                            <label> </label>
+                                            自然
+                                        </label>
+                                        <label className="f7 ph2">
+                                            <input
+                                                type="radio"
+                                                name="react-tips"
+                                                value="Parks"
+                                                checked={this.state.category === "Parks"}
+                                                onChange={this.handleCategoryChange}
+                                                className="form-check-input tl"
+                                            />
+                                            <label> </label>
+                                            公園
+                                        </label>
+                                        <label className="f7 ph2">
+                                            <input
+                                                type="radio"
+                                                name="react-tips"
+                                                value="Amusement"
+                                                checked={this.state.category === "Amusement"}
+                                                onChange={this.handleCategoryChange}
+                                                className="form-check-input"
+                                            />
+                                            <label> </label>
+                                            アミューズメント
+                                        </label>
+                                    </div>
+                                    {/*<div className="tl fl w-100 w-100-ns tc w-50-ns">*/}
+                                        {/*<form onSubmit={this.handleFormSubmit}>*/}
+                                            {/*{this.createCheckboxes()}*/}
                                             {/*<div className="form-group pv2">*/}
                                                 {/*<button*/}
                                                     {/*type="button"*/}
@@ -272,8 +370,8 @@ class Form extends Component {
                                                     {/*全消し*/}
                                                 {/*</button>*/}
                                             {/*</div>*/}
-                                        </form>
-                                    </div>
+                                        {/*</form>*/}
+                                    {/*</div>*/}
                                 </div>
                             </div>
                         </div>
