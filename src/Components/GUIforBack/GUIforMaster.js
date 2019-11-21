@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import CardList from './CardLIstForB'; //child
 import Scroll from '../Scroll';
 import Spinner from 'react-spinner-material';

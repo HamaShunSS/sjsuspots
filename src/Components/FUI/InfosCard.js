@@ -9,11 +9,10 @@ const copyToClipboard =(loc)=> {
     // 選択しているテキストをクリップボードにコピーする
     document.execCommand("Copy");
 
-    alert("アドレスコピー完了");
+    alert("Address Copied");
 }
 
 const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsChange} ) => {
-    console.log('info is ',info);
     return(
         <div className='tc bg-white-60 dib ma2-ns mh2 mv1 bw2 grow-ns shadow-5 w5-ns br2'>
             <div className="black tc ">

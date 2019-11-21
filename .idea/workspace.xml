@@ -3,15 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8bf2abe4-f485-47ab-9476-a0a149cf7d2c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/FUI/FUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/FUI.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/FUI/InfosCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/InfosCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/InfosCardListR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/InfosCardR.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/FUI/SUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/SUI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Form/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ScrollMini.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchBox/SearchBoxRegion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/GUIforBack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/GUIforBack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SearchBox/SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchBox/SearchBox.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,11 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1230">
-              <caret line="67" column="10" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="148">
+              <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -39,10 +34,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/FUI/FUI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
+            <state>
+              <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
               <folding>
-                <element signature="e#0#42#0" expanded="true" />
                 <element signature="e#91#122#0" expanded="true" />
               </folding>
             </state>
@@ -52,10 +46,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/FUI/SUI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="811">
-              <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+            <state relative-caret-position="-5068">
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
               <folding>
-                <element signature="e#0#42#0" expanded="true" />
                 <element signature="e#91#122#0" expanded="true" />
               </folding>
             </state>
@@ -63,10 +56,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Components/FUI/InfosCard.js">
+        <entry file="file://$PROJECT_DIR$/src/Components/SearchBox/SearchBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+            <state relative-caret-position="138">
+              <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -157,22 +150,22 @@
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js" />
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/CardForB.js" />
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/Touroku.js" />
-        <option value="$PROJECT_DIR$/src/Components/GUIforBack/GUIforBack.js" />
-        <option value="$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js" />
         <option value="$PROJECT_DIR$/src/Components/Form/Thankyou.js" />
         <option value="$PROJECT_DIR$/src/Components/Infos/Iine.js" />
         <option value="$PROJECT_DIR$/src/Components/Infos/Waruiine.js" />
         <option value="$PROJECT_DIR$/src/Components/Scroll.js" />
         <option value="$PROJECT_DIR$/src/Components/Navigation/Navigation.js" />
         <option value="$PROJECT_DIR$/src/Components/Contact/Contact.js" />
-        <option value="$PROJECT_DIR$/src/Components/SearchBox/SearchBox.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/InfosCardListR.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Components/Form/Form.js" />
-        <option value="$PROJECT_DIR$/src/Components/FUI/SUI.js" />
-        <option value="$PROJECT_DIR$/src/Components/FUI/FUI.js" />
         <option value="$PROJECT_DIR$/src/Components/Infos/InfosCardList.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/InfosCard.js" />
+        <option value="$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js" />
+        <option value="$PROJECT_DIR$/src/Components/GUIforBack/GUIforBack.js" />
+        <option value="$PROJECT_DIR$/src/Components/FUI/SUI.js" />
+        <option value="$PROJECT_DIR$/src/Components/FUI/FUI.js" />
+        <option value="$PROJECT_DIR$/src/Components/SearchBox/SearchBox.js" />
       </list>
     </option>
   </component>
@@ -359,12 +352,12 @@
       <workItem from="1574310907993" duration="145000" />
       <workItem from="1574314601064" duration="13350000" />
       <workItem from="1574329774398" duration="4000" />
-      <workItem from="1574367003746" duration="8308000" />
+      <workItem from="1574367003746" duration="9982000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157784000" />
+    <option name="totallyTimeSpent" value="159458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -561,13 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="717" column="7" selection-start-line="717" selection-start-column="3" selection-end-line="717" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/ThankyouB.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -638,35 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/SearchBox/SearchBox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-            <element signature="e#90#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/GUIforBack.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-            <element signature="e#90#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/FUI/InfosCardR.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -688,41 +645,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1230">
-          <caret line="67" column="10" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/LIst.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/Form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3845">
-          <caret line="139" column="42" lean-forward="true" selection-start-line="139" selection-start-column="42" selection-end-line="139" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/FUI/SUI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="811">
-          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-            <element signature="e#91#122#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,21 +676,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/FUI/FUI.js">
+    <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
+        <state relative-caret-position="177">
+          <caret line="717" column="6" selection-start-line="717" selection-start-column="3" selection-end-line="717" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3845">
+          <caret line="139" column="42" lean-forward="true" selection-start-line="139" selection-start-column="42" selection-end-line="139" selection-end-column="42" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
-            <element signature="e#91#122#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/GUIforBack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+          <folding>
+            <element signature="e#90#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+          <folding>
+            <element signature="e#90#121#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/FUI/InfosCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+        <state relative-caret-position="368">
+          <caret line="16" column="55" lean-forward="true" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/FUI/FUI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+          <folding>
+            <element signature="e#91#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/FUI/SUI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5068">
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+          <folding>
+            <element signature="e#91#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/SearchBox/SearchBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
         </state>
       </provider>
     </entry>

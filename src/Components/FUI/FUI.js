@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import CardList from './InfosCardList'; //child
 import Scroll from '../Scroll';
 import Spinner from 'react-spinner-material';
@@ -187,8 +187,8 @@ class FUI extends React.Component {
                     <div className="">
                         <label className="w-100 w-100-ns pv4-ns f3 pv3 tc db fw6 lh-copy f2-ns">リコット</label>
                     </div>
-                    <div className='ma0 w50-ns pb2'>
-                            <ul className="ddmenu ">
+                    <div className='ma0 w50-ns pb2 ml2'>
+                            <ul className="ddmenu tl tc-ns ">
                                 <button className='tc ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer'>
                                     <li className='ttll fl f6'>エリアを選択して下さい：　{this.bashoDisplay()}
                                         <ul className='ttll'>

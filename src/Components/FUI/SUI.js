@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import CardList from './InfosCardList'; //child
 import Scroll from '../Scroll';
 import Spinner from 'react-spinner-material';
@@ -203,7 +203,7 @@ class SUI extends React.Component {
                                     </ul>
                                 </li>
                             </button>
-                            <button className='tc ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer mv1' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>エリアに戻る</p></button>
+                            <button className='tc ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>エリアに戻る</p></button>
                             {/*<li className='fl w-50 w25-ns' ><a href="#">製品・技術</a>*/}
                             {/*<ul>*/}
                             {/*<li><a href="#">ハードウェア</a></li>*/}
