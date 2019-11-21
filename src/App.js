@@ -60,14 +60,12 @@ class App extends Component {
         this.setState({
             category: cat
         })
-        console.log(cat)
     }
 
     loadRegion = (region) => {
         this.setState({
             region: region
         })
-        console.log('まさかの　', this.state.region)
     }
 
     onRouteChange = (route) => {

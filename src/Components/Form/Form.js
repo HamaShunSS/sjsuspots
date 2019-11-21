@@ -88,8 +88,6 @@ class Form extends Component {
                 if (this.props.route === 'form') {
                     this.props.onRouteChange('loading');
                 }
-                console.log('region は　', this.state.region)
-                console.log('comments は　', this.state.comments)
                 fetch('https://spots-for-sjsu-students.herokuapp.com/register', {
                     method: 'post',
                     headers: {'Content-Type': 'application/json'},
@@ -118,7 +116,6 @@ class Form extends Component {
                 })
                     .then(response => response.json()) // Get response through json, and get data by ".then"
                     .then(response => {
-                        console.log('what is ', response)
                         if (response === 'success') {
                             this.props.onRouteChange('thankyou');
                         } else if (response === 'incorrect form submission') {

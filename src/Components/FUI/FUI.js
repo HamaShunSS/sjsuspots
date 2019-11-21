@@ -1,11 +1,9 @@
 import React, { Component }  from 'react';
 import CardList from './InfosCardList'; //child
-import CardListR from './InfosCardListR'; //child
 import Scroll from '../Scroll';
-import ScrollMini from '../ScrollMini';
 import Spinner from 'react-spinner-material';
 import SearchBox from "../SearchBox/SearchBox";
-import SearchBoxRegion from "../SearchBox/SearchBoxRegion";
+
 
 
 
@@ -40,7 +38,6 @@ class FUI extends React.Component {
 
     // iine
     onButtonSubmit = (id) => {
-        console.log('アイディー', id)
         fetch('https://spots-for-sjsu-students.herokuapp.com/button',
             { //fetch connects frontend with the server
             method: 'put',
@@ -52,7 +49,6 @@ class FUI extends React.Component {
             .then(response => response.json()) // Get response through json, and get data by ".then"
             .then(count => {
                     this.setState({iine: count})
-                    console.log('iine のなかは',count)
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
         if (this.props.route === '/') {
@@ -102,7 +98,6 @@ class FUI extends React.Component {
                 })
                     .then(response => response.json()) // Get response through json, and get data by ".then"
                     .then(response => {
-                        console.log('what is ', response)
                         if (response === 'success') {
                             this.props.onRouteChange('thankyou');
                         } else if (response === 'incorrect form submission') {
@@ -119,7 +114,6 @@ class FUI extends React.Component {
     // Search box for region
     onSearchChangeRegion = (reg) => { //whenever it gets changed
         this.setState({searchfieldRegion: reg.target.value}) //update "serachfiledRegion is event.target.value"
-        console.log('searchfieldRegion は', this.state.searchfieldRegion)
     }
 
     bashoDisplay = () => {
@@ -141,13 +135,6 @@ class FUI extends React.Component {
         })
         // const child = { width: `30em`, height: `100%`}
         // const parent = { width: `60em`, height: `100%`}
-
-        const filterdRegions = this.state.results.filter(infos => {
-            //"filter" is a function to go thorough array in "robots from State", having a parameter "robot"
-            return infos.region.toLowerCase().includes(this.state.searchfieldRegion.toLowerCase())
-        })
-
-
 
         if (this.state.results.length === 0) {
             return <div className="fl w-100 w-100-ns">
@@ -184,7 +171,7 @@ class FUI extends React.Component {
                     <div className="pv4-ns"><h1 className='pv4 pv4-ns'>Loading...</h1></div>
                     <div className="ph6-ns tc center pb5-ns">
                         <div className="ph6 ph7-ns tc center pb6">
-                            <Spinner class='justify-center pb6 pb6-ns' size={80} spinnerColor={"white"} spinnerWidth={8} visible={true} />
+                            <Spinner className='justify-center pb6 pb6-ns' size={80} spinnerColor={"white"} spinnerWidth={8} visible={true} />
                         </div>
                         <p className="pv7 pv7-ns"> </p>
                         <p className="pv7-ns"> </p>

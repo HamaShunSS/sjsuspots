@@ -3,7 +3,7 @@ import CardList from './InfosCardList'; //child
 import Scroll from '../Scroll';
 import Spinner from 'react-spinner-material';
 import SearchBox from "../SearchBox/SearchBox";
-import SearchBoxRegion from "../SearchBox/SearchBoxRegion";
+
 
 
 
@@ -53,7 +53,6 @@ class SUI extends React.Component {
 
     // iine
     onButtonSubmit = (id) => {
-        console.log('アイディー', id)
         fetch('https://spots-for-sjsu-students.herokuapp.com/button',
             { //fetch connects frontend with the server
                 method: 'put',
@@ -65,7 +64,6 @@ class SUI extends React.Component {
             .then(response => response.json()) // Get response through json, and get data by ".then"
             .then(count => {
                 this.setState({iine: count})
-                console.log('iine のなかは',count)
                 // this.setState(Object.assign(this.state.user, {entries: count}))
             })
         if (this.props.route === '/' || 'sui') {

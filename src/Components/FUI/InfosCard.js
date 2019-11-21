@@ -26,10 +26,8 @@ const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsC
                 <h4>{info.name}</h4>
                         <input id={info.location} type='text' size='35' className="fl w-100 f6" value={info.location} onfocus="this.select();" readOnly/>
                         <button className="btnBa b ph1 pv1 white br2 pointer f7" onClick={()=>{copyToClipboard(info.location)}}>Address Copy</button>
-                    <p className="f7">
-                        <p> {info.price}</p></p>
-                    <p className="f7">
-                        <p> {info.comments}</p></p>
+                    <p className="f7">{info.price}</p>
+                    <p className="f7">{info.comments}</p>
                     <p className="">
                         <button className="btnBa b ph2 pv1 white br2 pointer f7"
                         onClick={() => {onButtonSubmit(info.id);}} >良かった！ {info.iine}</button>
