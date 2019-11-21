@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bf2abe4-f485-47ab-9476-a0a149cf7d2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/FUI/SUI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/FUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/FUI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/InfosCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/InfosCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Form/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/CardForB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/CardForB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/CardLIstForB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/CardLIstForB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/GUIforBack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/GUIforBack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouB.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/Touroku.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/Touroku.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/FUI/SUI.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
@@ -60,6 +48,27 @@
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
                 <element signature="e#141#172#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/FUI/InfosCard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Components/Form/Form.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1912">
+              <caret line="377" column="31" selection-start-line="377" selection-start-column="31" selection-end-line="377" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/Components/FUI/InfosCard.js" />
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/CardLIstForB.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/Components/Form/Form.js" />
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouB.js" />
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js" />
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/CardForB.js" />
@@ -163,6 +171,7 @@
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/GUIforBack.js" />
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SUI.js" />
+        <option value="$PROJECT_DIR$/src/Components/Form/Form.js" />
       </list>
     </option>
   </component>
@@ -325,12 +334,12 @@
       <workItem from="1574294312772" duration="194000" />
       <workItem from="1574298532100" duration="201000" />
       <workItem from="1574310907993" duration="145000" />
-      <workItem from="1574314601064" duration="11587000" />
+      <workItem from="1574314601064" duration="12800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147709000" />
+    <option name="totallyTimeSpent" value="148922000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -623,16 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/Form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="356" column="52" selection-start-line="356" selection-start-column="52" selection-end-line="356" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/ThankyouB.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -651,13 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/FUI/InfosCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="17" column="88" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="88" />
         </state>
       </provider>
     </entry>
@@ -725,6 +717,23 @@
           <folding>
             <element signature="e#0#42#0" expanded="true" />
             <element signature="e#141#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/FUI/InfosCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1912">
+          <caret line="377" column="31" selection-start-line="377" selection-start-column="31" selection-end-line="377" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
