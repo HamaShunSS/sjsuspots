@@ -32,12 +32,12 @@ const initialState = {
     region: '',
     route: '/',
     isSignedIn: true,
-    user: {
-        id: '',
-        name: '',
-        email: '',
-        joined: ''
-    }
+    // user: {
+    //     id: '',
+    //     name: '',
+    //     email: '',
+    //     joined: ''
+    // }
 }
 
 class App extends Component {
@@ -91,7 +91,7 @@ class App extends Component {
             <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
             { route === 'home' || route === '/'
                 ? <div>
-                    < FUI route={this.state.route} loadUser={this.loadUser} onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} category={this.state.category} region={this.state.region}/>
+                    < FUI route={this.state.route}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} category={this.state.category} region={this.state.region}/>
                 </div>
                 :(
                     // route === 'category'
@@ -140,9 +140,9 @@ class App extends Component {
                                                                                                                                             ?< ThankyouBM onRouteChange={this.onRouteChange} />
                                                                                                                                             :(
                                                                                                                                                 route === 'sui'
-                                                                                                                                                    ?< SUI onRouteChange={this.onRouteChange} route={this.state.route} loadUser={this.loadUser} loadCategory={this.loadCategory} loadRegion={this.loadRegion} category={this.state.category} region={this.state.region}/>
+                                                                                                                                                    ?< SUI onRouteChange={this.onRouteChange} route={this.state.route} loadCategory={this.loadCategory} loadRegion={this.loadRegion} category={this.state.category} region={this.state.region}/>
                                                                                                                                                     :(
-                                                                                                                                                        < Form route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                                                                                                                                        < Form route={this.state.route} onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
                                                                                                                                                     )
                                                                                                                                             )
                                                                                                                                     )

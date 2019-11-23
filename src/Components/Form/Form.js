@@ -84,7 +84,7 @@ class Form extends Component {
         if (this.state.name === '' || this.state.location === '' || this.state.region === '' || this.state.comments === '' ) {
             alert("場所の名前か地域、住所、コメントのどれかに記入漏れがあるようです...");
         } else {
-            if (this.state.url.includes('jpg') || this.state.url.includes('jpeg')) {
+            if (this.state.url.includes('jpg') || this.state.url.includes('jpeg') || this.state.url.includes('png') || this.state.url.includes('JPG')) {
                 if (this.props.route === 'form') {
                     this.props.onRouteChange('loading');
                 }
@@ -364,6 +364,18 @@ class Form extends Component {
                                                 />
                                                 <label> </label>
                                                 サロン
+                                            </label>
+                                            <label className="f7 ph2">
+                                                <input
+                                                    type="radio"
+                                                    name="react-tips"
+                                                    value="Others"
+                                                    checked={this.state.category === "Others"}
+                                                    onChange={this.handleCategoryChange}
+                                                    className="form-check-input"
+                                                />
+                                                <label> </label>
+                                                その他
                                             </label>
                                         </div>
                                         {/*<div className="tl fl w-100 w-100-ns tc w-50-ns">*/}
