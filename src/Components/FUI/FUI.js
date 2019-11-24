@@ -145,7 +145,7 @@ class FUI extends React.Component {
                 <div className='ma0 fl w-100 w50-ns pb7-ns pb6'>
                     <ul className="ddmenu ">
                         <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer'>
-                            <li className='ttll fl f6 '>場所を選択：　{this.bashoDisplay()}
+                            <li className='ttll fl f6 '>エリアを選択：　{this.bashoDisplay()}
                                 <ul className='ttll'>
                                     <li className='pa1 b link' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
                                     <li className='pa1 b link' onClick={() => {this.props.loadRegion('San Jose'); this.props.onRouteChange('sui')}}>San Jose</li>

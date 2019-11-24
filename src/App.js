@@ -22,6 +22,7 @@ import GUIforMaster from "./Components/GUIforBack/GUIforMaster";
 import Mistake from "./Components/GUIforBack/Mistake";
 import ThankyouBM from "./Components/GUIforBack/ThankyouBM";
 import SUI from "./Components/FUI/SUI";
+import About from"./Components/Contact/About"
 
 
 
@@ -142,7 +143,11 @@ class App extends Component {
                                                                                                                                                 route === 'sui'
                                                                                                                                                     ?< SUI onRouteChange={this.onRouteChange} route={this.state.route} loadCategory={this.loadCategory} loadRegion={this.loadRegion} category={this.state.category} region={this.state.region}/>
                                                                                                                                                     :(
-                                                                                                                                                        < Form route={this.state.route} onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                                                                                                                                        route === 'about'
+                                                                                                                                                            ?< About onRouteChange={this.onRouteChange} />
+                                                                                                                                                            :(
+                                                                                                                                                                < Form route={this.state.route} onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                                                                                                                                            )
                                                                                                                                                     )
                                                                                                                                             )
                                                                                                                                     )

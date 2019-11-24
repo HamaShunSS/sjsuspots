@@ -5,7 +5,7 @@ const Navigation = ({ onRouteChange }) => {
         <nav style={{color: 'white', display: 'flex'}} className='w-100 w-100-ns bg-dark'>
 
             <div className="">
-                    <h3 className='moji ma3 mv4-ns'>All For One</h3></div>
+                    <h3 onClick={() => onRouteChange('about')}  className='moji ma3 mv4-ns'>All For One</h3></div>
             {/*<div className="ml4 ml7-ns">*/}
             {/*</div>*/}
             {/*<div className="ml7-ns">*/}

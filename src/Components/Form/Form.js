@@ -185,7 +185,7 @@ class Form extends Component {
                 <div className="fl w-100 w-100-ns tc">
                     <fieldset id="sign_up" className="ba b--transparent ph0 mh0 mt4-ns">
                         <div className="db f2-ns f5 pv5-ns pv3 fl w-100 w-100-ns tc fw6 ph0 mh0">オススメの場所をシェアして下さい！！</div>
-                            <label className="tl b db fw6 lh-copy f6" >地域:</label>
+                            <label className="tl b db fw6 lh-copy f6" >*エリア:</label>
                             <div className=''>
                                 <label className="f7 ph2">
                                     <input
@@ -249,7 +249,7 @@ class Form extends Component {
                                 </label>
                             </div>
                         <div className="pt5-ns pt2">
-                            <label className="b db fw6 lh-copy f6 pt2 tl" htmlFor="">場所の名前: </label>
+                            <label className="b db fw6 lh-copy f6 pt2 tl" htmlFor="">*場所の名前: </label>
                             <input
                                 placeholder="ex) Twin Peaks"
                                 className='pa2-ns pa2 input-reset hover-black hover-bg-white w-100 w-70-ns btnSS b br2 pointer white f6'
@@ -394,7 +394,7 @@ class Form extends Component {
                             </div>
                         </form>
                         <div className="pt5-ns pt2">
-                            <label className="tl db fw6 lh-copy f6 pt2" htmlFor="">住所: </label>
+                            <label className="tl db fw6 lh-copy f6 pt2" htmlFor="">*住所: </label>
                             <input
                                 placeholder="ex) 501 Twin Peaks Blvd, San Francisco, CA 94114"
                                 className='pa2-ns pa2 input-reset hover-black hover-bg-white br2 w-100 w-70-ns btnSS b pointer white f6'
@@ -492,7 +492,7 @@ class Form extends Component {
                             {/*/>*/}
                         {/*</div>*/}
                         <div className="pt4-ns pt2">
-                            <label className="tl db fw6 lh-copy f6 pt2" >コメント: </label>
+                            <label className="tl db fw6 lh-copy f6 pt2" >*コメント: </label>
                             <input
                                 placeholder="ex) 501 Twin Peaks Blvd, San Francisco, CA 94114"
                                 className='pa2-ns pa2 input-reset hover-black hover-bg-white br2 w-100 w-70-ns btnSS b pointer white f6'
