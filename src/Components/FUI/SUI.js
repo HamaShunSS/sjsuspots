@@ -160,7 +160,7 @@ class SUI extends React.Component {
             return <div className="">
 
                 <div className=" ">
-                    <label className="fl pv4-ns f3 pv3 w-100 w-100-ns tc db fw6 lh-copy f2-ns"><i className="fas fa-thumbs-down"></i>{' '}リコット</label>
+                    <label className="fl pv4-ns f3 pv2 w-100 w-100-ns tc db fw6 lh-copy f2-ns">リコット</label>
                 </div>
                 <div className='ma0 fl w-100 w50-ns pb7-ns pb6'>
                     <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer ' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>場所選びに戻る</p></button>
@@ -184,7 +184,7 @@ class SUI extends React.Component {
             return (
                 <div className="tc w-100 w-100-ns">
                     <div className=" ">
-                        <label className="pv4-ns f3 pv3 w-100 w-100-ns tc db fw6 lh-copy f2-ns">{this.state.results[0].region}</label>
+                        <label className="pv4-ns f3 pt3 pv2 w-100 w-100-ns tc db fw6 lh-copy f2-ns">{this.state.results[0].region}</label>
                     </div>
                     <div className='ma1 tc pb2'>
                         <ul className="ddmenu ">
@@ -219,9 +219,9 @@ class SUI extends React.Component {
                     <Scroll>
                         <CardList infos={filterdInfos}　onButtonSubmit={this.onButtonSubmit} onButtonSubmitW={this.onButtonSubmitW} onSubmitForm={this.onSubmitForm} onCommentsChange={this.onCommentsChange}/>
                     </Scroll>
-                    <div className="tc">
-                        <button onClick={() => this.props.onRouteChange('form')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">シェアしてみる</button>
-                    </div>
+                    {/*<div className="tc">*/}
+                        {/*<button onClick={() => this.props.onRouteChange('form')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">シェアしてみる</button>*/}
+                    {/*</div>*/}
                     <div className='pv6-ns mb3'>
 
                     </div>

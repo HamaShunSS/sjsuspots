@@ -84,7 +84,6 @@ class Form extends Component {
         if (this.state.name === '' || this.state.location === '' || this.state.region === '' || this.state.comments === '' ) {
             alert("場所の名前か地域、住所、コメントのどれかに記入漏れがあるようです...");
         } else {
-            if (this.state.url.includes('jpg') || this.state.url.includes('jpeg') || this.state.url.includes('png') || this.state.url.includes('JPG')) {
                 if (this.props.route === 'form') {
                     this.props.onRouteChange('loading');
                 }
@@ -122,9 +121,6 @@ class Form extends Component {
                             this.props.onRouteChange('sorry');
                         }
                     })
-            } else {
-                alert("画像のURLは jpg 又は jpeg を含むものでお願いします");
-            }
         }
     }
 
@@ -512,7 +508,7 @@ class Form extends Component {
                     <div className="pv5-ns pv3">
                         <input
                             onClick={this.onSubmitForm}
-                            className='b pa2-ns pa2 input-reset hover-white br-pill w-30 w-10-ns btnSS pointer white f6'
+                            className='b pa2-ns pa2 mb2 input-reset hover-white br-pill w-30 w-10-ns btnSS pointer white f6'
                             type="submit"
                             value="シェアハピ"
                         />

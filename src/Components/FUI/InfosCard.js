@@ -17,7 +17,7 @@ const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsC
         <div className='tc bg-white-60 dib ma2-ns mh2 mv1 bw2 grow-ns shadow-5 w5-ns br2'>
             <div className="black tc ">
                 <div className="tc" >
-                    <img id='inputimage' alt='画像' src={info.url}
+                    <img id='inputimage' alt='画像無し' src={info.url}
                          style={{ }}
                      className="shashin fl"  />
                 </div>

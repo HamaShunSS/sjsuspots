@@ -140,12 +140,12 @@ class FUI extends React.Component {
             return <div className="fl w-100 w-100-ns">
 
                 <div className="">
-                    <label className="fl pv4-ns f3 pv3 w-100 w-100-ns tc db fw6 lh-copy f2-ns"><i className="fas fa-thumbs-down"></i>{' '}リコット</label>
+                    <label className="fl pv4-ns f3 pv3 w-100 w-100-ns tc db fw6 lh-copy f2-ns">リコット</label>
                 </div>
                 <div className='ma0 fl w-100 w50-ns pb7-ns pb6'>
                     <ul className="ddmenu ">
                         <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer'>
-                            <li className='ttll fl f6 '>場所を選択して下さい：　{this.bashoDisplay()}
+                            <li className='ttll fl f6 '>場所を選択：　{this.bashoDisplay()}
                                 <ul className='ttll'>
                                     <li className='pa1 b link' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
                                     <li className='pa1 b link' onClick={() => {this.props.loadRegion('San Jose'); this.props.onRouteChange('sui')}}>San Jose</li>
@@ -187,10 +187,10 @@ class FUI extends React.Component {
                     <div className="">
                         <label className="w-100 w-100-ns pv4-ns f3 pv3 tc db fw6 lh-copy f2-ns">リコット</label>
                     </div>
-                    <div className='ma0 w50-ns pb2 ml2'>
+                    <div className='ma0 w50-ns pb2 ml3'>
                             <ul className="ddmenu tl tc-ns ">
                                 <button className='tc ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer'>
-                                    <li className='ttll fl f6'>エリアを選択して下さい：　{this.bashoDisplay()}
+                                    <li className='ttll fl f6'>エリアを選択：　{this.bashoDisplay()}
                                         <ul className='ttll'>
                                             <li className='pa1 b link' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
                                             <li className='pa1 b link' onClick={() => {this.props.loadRegion('San Jose'); this.props.onRouteChange('sui')}}>San Jose</li>
@@ -216,10 +216,10 @@ class FUI extends React.Component {
                     <Scroll className="">
                         <CardList infos={filterdInfos}　onButtonSubmit={this.onButtonSubmit} onButtonSubmitW={this.onButtonSubmitW} onSubmitForm={this.onSubmitForm} onCommentsChange={this.onCommentsChange}/>
                     </Scroll>
-                    <div className="tc">
-                        <button onClick={() => this.props.onRouteChange('form')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">シェアしてみる</button>
+                    <div className="mv6-ns">
+
                     </div>
-                    <div className='pv6-ns pb2'>
+                    <div className='pv7-ns'>
 
                     </div>
                 </div>

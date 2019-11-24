@@ -311,7 +311,6 @@ class GUIforBack extends React.Component {
         // const parent = { width: `60em`, height: `100%`}
         if (this.state.results.length === 0) {
             return <div className="pt6 pt6-ns">
-                <button onClick={() => this.props.onRouteChange('category')} className="tc b ph3 pv3 ma3 input-reset ba bg-light-green white br-pill grow pointer f6 dib">カテゴリーに戻る</button>
                 <div className="pv4-ns"><h1 className='pv4 pv4-ns'>Loading...</h1></div>
                 <div className="ph6-ns tc center pb5-ns">
                     <div className="ph6 ph7-ns tc center pb6">
