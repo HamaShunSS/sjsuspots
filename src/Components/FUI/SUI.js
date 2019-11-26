@@ -200,6 +200,7 @@ class SUI extends React.Component {
                                         <li className='b pa1' onClick={() => this.setState({searchfield: 'Parks'})}>公園</li>
                                         <li className='b pa1' onClick={() => this.setState({searchfield: 'Amusement'})}>アミューズメント</li>
                                         <li className='b pa1' onClick={() => this.setState({searchfield: 'Salons'})}>サロン</li>
+                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Beauty'})}>ビューティー</li>
                                         <li className='b pa1' onClick={() => this.setState({searchfield: 'Others'})}>その他</li>
                                     </ul>
                                 </li>

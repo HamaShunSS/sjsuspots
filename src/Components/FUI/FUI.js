@@ -196,8 +196,9 @@ class FUI extends React.Component {
                                             <li className='pa1 b link' onClick={() => {this.props.loadRegion('San Jose'); this.props.onRouteChange('sui')}}>San Jose</li>
                                             <li className='pa1 b link' onClick={() =>{this.props.loadRegion('San Francisco'); this.props.onRouteChange('sui')}}>San Francisco</li>
                                             <li className='b pa1' onClick={() =>{this.props.loadRegion('Santa Cruz'); this.props.onRouteChange('sui')}}>Santa Cruz</li>
-                                            <li className='b pa1' onClick={() =>{this.props.loadRegion('Berkeley'); this.props.onRouteChange('sui')}}>Berkeley</li>
+                                            {/*<li className='b pa1' onClick={() =>{this.props.loadRegion('Berkeley'); this.props.onRouteChange('sui')}}>Berkeley</li>*/}
                                             <li className='b pa1' onClick={() =>{this.props.loadRegion('Monterey'); this.props.onRouteChange('sui')}}>Monterey</li>
+                                            <li className='b pa1' onClick={() =>{this.props.loadRegion('San Luis Obispo'); this.props.onRouteChange('sui')}}>San Luis Obispo</li>
                                         </ul>
                                     </li>
                                 </button>

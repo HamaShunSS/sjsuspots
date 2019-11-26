@@ -227,6 +227,18 @@ class Form extends Component {
                                     <input
                                         type="radio"
                                         name="react-tips"
+                                        value="San Luis Obispo"
+                                        checked={this.state.region === "San Luis Obispo"}
+                                        onChange={this.handleRegionChange}
+                                        className="form-check-input"
+                                    />
+                                    <label> </label>
+                                    San Luis Obispo
+                                </label >
+                                <label className="f7 ph2">
+                                    <input
+                                        type="radio"
+                                        name="react-tips"
                                         value="Santa Cruz"
                                         checked={this.state.region === "Santa Cruz"}
                                         onChange={this.handleRegionChange}
@@ -235,18 +247,18 @@ class Form extends Component {
                                     <label> </label>
                                     Santa Cruz
                                 </label>
-                                <label className="f7 ph2">
-                                    <input
-                                        type="radio"
-                                        name="react-tips"
-                                        value="Berkeley"
-                                        checked={this.state.region === "Berkeley"}
-                                        onChange={this.handleRegionChange}
-                                        className="form-check-input"
-                                    />
-                                    <label> </label>
-                                    Berkeley
-                                </label>
+                                {/*<label className="f7 ph2">*/}
+                                    {/*<input*/}
+                                        {/*type="radio"*/}
+                                        {/*name="react-tips"*/}
+                                        {/*value="Berkeley"*/}
+                                        {/*checked={this.state.region === "Berkeley"}*/}
+                                        {/*onChange={this.handleRegionChange}*/}
+                                        {/*className="form-check-input"*/}
+                                    {/*/>*/}
+                                    {/*<label> </label>*/}
+                                    {/*Berkeley*/}
+                                {/*</label>*/}
                             </div>
                         <div className="pt5-ns pt2">
                             <label className="b db fw6 lh-copy f6 pt2 tl" htmlFor="">*場所の名前: </label>
@@ -360,6 +372,18 @@ class Form extends Component {
                                                 />
                                                 <label> </label>
                                                 サロン
+                                            </label>
+                                            <label className="f7 ph2">
+                                                <input
+                                                    type="radio"
+                                                    name="react-tips"
+                                                    value="Beauty"
+                                                    checked={this.state.category === "Beauty"}
+                                                    onChange={this.handleCategoryChange}
+                                                    className="form-check-input"
+                                                />
+                                                <label> </label>
+                                                ビューティー
                                             </label>
                                             <label className="f7 ph2">
                                                 <input
