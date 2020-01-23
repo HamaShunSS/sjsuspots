@@ -3,6 +3,7 @@ import CardList from './CardLIstForB'; //child
 import Scroll from '../Scroll';
 import Spinner from 'react-spinner-material';
 import SearchBox from "../SearchBox/SearchBox";
+import CardListU from './CardListUsersB'; //child
 
 
 class GUIforMaster extends React.Component {
@@ -10,6 +11,7 @@ class GUIforMaster extends React.Component {
         super(props);
         this.state = {
             results: [], //必要
+            users: [],
             item:'',
             iine:'',
             waruiine:'',
@@ -17,7 +19,8 @@ class GUIforMaster extends React.Component {
             textB:'',
             searchfield:'',
             searchfieldRegion:'',
-            region:''
+            region:'',
+            email:''
         };
 
     }
@@ -39,6 +42,10 @@ class GUIforMaster extends React.Component {
         fetch('https://spots-for-sjsu-students.herokuapp.com/allData')
             .then(response => response.json())
             .then(informations => this.setState({results: informations})
+            );
+        fetch('https://spots-for-sjsu-students.herokuapp.com/allUsers')
+            .then(response => response.json())
+            .then(users => this.setState({users: users})
             );
     }
 
@@ -236,6 +243,36 @@ class GUIforMaster extends React.Component {
         }
     }
 
+    onDeleteInfo =(id) => {
+        fetch('https://spots-for-sjsu-students.herokuapp.com/deleteInfo', {
+            method: 'delete',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                id: id
+            })
+        })
+            .then(response => response.json()) // Get response through json, and get data by ".then"
+            .then(response => {
+                console.log('what is ', response)
+                this.props.onRouteChange('thankyouBM');
+            })
+    }
+
+    onDeleteUser =(id) => {
+        fetch('https://spots-for-sjsu-students.herokuapp.com/deleteUser', {
+            method: 'delete',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                id: id
+            })
+        })
+            .then(response => response.json()) // Get response through json, and get data by ".then"
+            .then(response => {
+                console.log('what is ', response)
+                this.props.onRouteChange('thankyouBM');
+            })
+    }
+
     //changeLocation
     onSubmitFormBackLocation =(id) => {
         if (this.state.textB === '' ) {
@@ -311,6 +348,236 @@ class GUIforMaster extends React.Component {
             })
 
     }
+    //Data for spots
+    onSubmitFormBackUserName =(id) => {
+        if (this.state.textB === '' ) {
+            alert("コメントを記入してください...");
+        } else {
+            if (this.props.route === 'backMaster') {
+                this.props.onRouteChange('loading');
+            }
+            console.log('textB のナカは ', this.state.textB)
+            fetch('https://spots-for-sjsu-students.herokuapp.com/changeUserN', {
+                method: 'put',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                    id: id,
+                    newComments: this.state.textB,
+                })
+            })
+                .then(response => response.json()) // Get response through json, and get data by ".then"
+                .then(response => {
+                    console.log('what is ', response)
+                    if (response === 'success') {
+                        this.props.onRouteChange('thankyouBM');
+                    } else if (response === 'incorrect form submission') {
+                        this.props.onRouteChange('sorry');
+                    }
+                })
+        }
+    }
+    //Data for spots
+    onSubmitFormBackCountry =(id) => {
+        if (this.state.textB === '' ) {
+            alert("コメントを記入してください...");
+        } else {
+            if (this.props.route === 'backMaster') {
+                this.props.onRouteChange('loading');
+            }
+            console.log('textB のナカは ', this.state.textB)
+            fetch('https://spots-for-sjsu-students.herokuapp.com/changeC', {
+                method: 'put',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                    id: id,
+                    newComments: this.state.textB,
+                })
+            })
+                .then(response => response.json()) // Get response through json, and get data by ".then"
+                .then(response => {
+                    console.log('what is ', response)
+                    if (response === 'success') {
+                        this.props.onRouteChange('thankyouBM');
+                    } else if (response === 'incorrect form submission') {
+                        this.props.onRouteChange('sorry');
+                    }
+                })
+        }
+    }
+
+    //Data for spots
+    onSubmitFormBackEnglish =(id) => {
+        if (this.state.textB === '' ) {
+            alert("コメントを記入してください...");
+        } else {
+            if (this.props.route === 'backMaster') {
+                this.props.onRouteChange('loading');
+            }
+            console.log('textB のナカは ', this.state.textB)
+            fetch('https://spots-for-sjsu-students.herokuapp.com/changeEnglish', {
+                method: 'put',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                    id: id,
+                    newComments: this.state.textB,
+                })
+            })
+                .then(response => response.json()) // Get response through json, and get data by ".then"
+                .then(response => {
+                    console.log('what is ', response)
+                    if (response === 'success') {
+                        this.props.onRouteChange('thankyouBM');
+                    } else if (response === 'incorrect form submission') {
+                        this.props.onRouteChange('sorry');
+                    }
+                })
+        }
+    }
+    //Data for spots
+    onSubmitFormBackDate =(id) => {
+        if (this.state.textB === '' ) {
+            alert("コメントを記入してください...");
+        } else {
+            if (this.props.route === 'backMaster') {
+                this.props.onRouteChange('loading');
+            }
+            console.log('textB のナカは ', this.state.textB)
+            fetch('https://spots-for-sjsu-students.herokuapp.com/changeDate', {
+                method: 'put',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                    id: id,
+                    newComments: this.state.textB,
+                })
+            })
+                .then(response => response.json()) // Get response through json, and get data by ".then"
+                .then(response => {
+                    console.log('what is ', response)
+                    if (response === 'success') {
+                        this.props.onRouteChange('thankyouBM');
+                    } else if (response === 'incorrect form submission') {
+                        this.props.onRouteChange('sorry');
+                    }
+                })
+        }
+    }
+
+
+    //changeUserName for login database
+    onSubmitBackUserName =(id) => {
+        if (this.state.textB === '' ) {
+            alert("コメントを記入してください...");
+        } else {
+            if (this.props.route === 'backMaster') {
+                this.props.onRouteChange('loading');
+            }
+            console.log('textB のナカは ', this.state.textB)
+            fetch('https://spots-for-sjsu-students.herokuapp.com/changeUserName', {
+                method: 'put',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                    id: id,
+                    newUserName: this.state.textB,
+                })
+            })
+                .then(response => response.json()) // Get response through json, and get data by ".then"
+                .then(response => {
+                    console.log('what is ', response)
+                    if (response === 'success') {
+                        this.props.onRouteChange('thankyouBM');
+                    } else if (response === 'incorrect form submission') {
+                        this.props.onRouteChange('sorry');
+                    }
+                })
+        }
+    }
+
+    onSubmitBackStatus =(id) => {
+        if (this.state.textB === '' ) {
+            alert("コメントを記入してください...");
+        } else {
+            if (this.props.route === 'backMaster') {
+                this.props.onRouteChange('loading');
+            }
+            console.log('textB のナカは ', this.state.textB)
+            fetch('https://spots-for-sjsu-students.herokuapp.com/changeStatus', {
+                method: 'put',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                    id: id,
+                    newStatus: this.state.textB,
+                })
+            })
+                .then(response => response.json()) // Get response through json, and get data by ".then"
+                .then(response => {
+                    console.log('what is ', response)
+                    if (response === 'success') {
+                        this.props.onRouteChange('thankyouBM');
+                    } else if (response === 'incorrect form submission') {
+                        this.props.onRouteChange('sorry');
+                    }
+                })
+        }
+    }
+
+    //changeEmail
+    onSubmitBackEmail =(id) => {
+        if (this.state.textB === '' ) {
+            alert("コメントを記入してください...");
+        } else {
+            if (this.props.route === 'backMaster') {
+                this.props.onRouteChange('loading');
+            }
+            console.log('textB のナカは ', this.state.textB)
+            fetch('https://spots-for-sjsu-students.herokuapp.com/changeEmail', {
+                method: 'put',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                    id: id,
+                    newEmail: this.state.textB,
+                })
+            })
+                .then(response => response.json()) // Get response through json, and get data by ".then"
+                .then(response => {
+                    console.log('what is ', response)
+                    if (response === 'success') {
+                        this.props.onRouteChange('thankyouBM');
+                    } else if (response === 'incorrect form submission') {
+                        this.props.onRouteChange('sorry');
+                    }
+                })
+        }
+    }
+
+    //changeCountry
+    onSubmitBackCountry =(id) => {
+        if (this.state.textB === '' ) {
+            alert("コメントを記入してください...");
+        } else {
+            if (this.props.route === 'backMaster') {
+                this.props.onRouteChange('loading');
+            }
+            console.log('textB のナカは ', this.state.textB)
+            fetch('https://spots-for-sjsu-students.herokuapp.com/changeCountry', {
+                method: 'put',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                    id: id,
+                    newCountry: this.state.textB,
+                })
+            })
+                .then(response => response.json()) // Get response through json, and get data by ".then"
+                .then(response => {
+                    console.log('what is ', response)
+                    if (response === 'success') {
+                        this.props.onRouteChange('thankyouBM');
+                    } else if (response === 'incorrect form submission') {
+                        this.props.onRouteChange('sorry');
+                    }
+                })
+        }
+    }
+
 
     onSubmitFormUpdate =(id) => {
         if (this.state.textB === '' ) {
@@ -351,6 +618,10 @@ class GUIforMaster extends React.Component {
             //"filter" is a function to go thorough array in "robots from State", having a parameter "robot"
             return infos.name.toLowerCase().includes(this.state.searchfield.toLowerCase()) // ワンチャン || でよくね？
         })
+        const filterdUsers = this.state.users.filter(users => {
+            //"filter" is a function to go thorough array in "robots from State", having a parameter "robot"
+            return users
+        })
         // const child = { width: `30em`, height: `100%`}
         // const parent = { width: `60em`, height: `100%`}
         if (this.state.results.length === 0) {
@@ -387,7 +658,36 @@ class GUIforMaster extends React.Component {
                                   onSubmitFormBackPrice={this.onSubmitFormBackPrice}
                                   onSubmitFormBackCategory={this.onSubmitFormBackCategory}
                                   onCommentsChange={this.onCommentsChange}
-                                  onCommentsChangeB={this.onCommentsChangeB} />
+                                  onCommentsChangeB={this.onCommentsChangeB}
+                                  onDeleteInfo={this.onDeleteInfo}
+                                  email={this.props.email}
+                                  status={this.props.status}
+                                  onSubmitFormBackUserName={this.onSubmitFormBackUserName}
+                                  onSubmitFormBackCountry={this.onSubmitFormBackCountry}
+                                  onSubmitFormBackEnglish={this.onSubmitFormBackEnglish}
+                                  onSubmitFormBackDate={this.onSubmitFormBackEnglish}
+                        />
+                    </Scroll>
+                    <div className="mv4">
+                        <h3 className="mv2">
+                            Users
+                        </h3>
+                    </div>
+                    <Scroll>
+                        <CardListU
+                            users={filterdUsers}
+                            onCommentsChangeB={this.onCommentsChangeB}
+                            onDeleteUser={this.onDeleteUser}
+                            email={this.props.email}
+                            status={this.props.status}
+
+                            onSubmitBackUserName={this.onSubmitBackUserName }
+                            onSubmitBackStatus={this.onSubmitBackStatus}
+                            onSubmitBackEmail={this.onSubmitBackEmail}
+                            onSubmitBackCountry={this.onSubmitBackCountry}
+
+
+                        />
                     </Scroll>
                     <div className="tc pb6">
                         <button onClick={() => this.props.onRouteChange('touroku')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">新規ユーザー登録</button>

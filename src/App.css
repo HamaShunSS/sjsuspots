@@ -763,10 +763,25 @@ ul.ddmenu li:hover ul {
 
 }
 
-h3.moji {
+.moji {
   font-family: cursive;
 }
 
 div.push {
   margin-left: auto;
+}
+
+.header {
+  background: #fff;
+  box-shadow: 0 4px 8px -3px rgba(17, 17, 17, .06);
+  height: 56px;
+  position: fixed;
+  top: 0;
+  transition: .3s cubic-bezier(.4, 0, .2, 1);
+  width: 100%;
+  z-index: 199999;
+}
+
+.head-animation {
+  transform: translateY(-100%);
 }

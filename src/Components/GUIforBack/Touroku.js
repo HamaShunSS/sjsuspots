@@ -54,7 +54,7 @@ class Touroku extends Component {
             <main className="pa4 ">
                 <div className="tc fl w-100 w-100-ns tc mb7">
                     <fieldset id="sign_up" className="ba b--transparent ph0 mh0 mt4-ns ">
-                        <div className="db f2-ns f6 pv5-ns pv4 fl w-100 w-100-ns tc fw6 ph0 mh0">新規登録</div>
+                        <div className="db f2-ns f6 pv5-ns pv4 fl w-100 w-100-ns tc fw6 ph0 mh0">User Registration</div>
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6 pt2" htmlFor="name">email</label>
                             <input

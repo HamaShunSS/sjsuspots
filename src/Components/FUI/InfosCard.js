@@ -17,7 +17,7 @@ const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsC
         <div className='tc bg-white-60 dib ma2-ns mh2 mv1 bw2 grow-ns shadow-5 w5-ns br2'>
             <div className="black tc ">
                 <div className="tc" >
-                    <img id='inputimage' alt='画像無し' src={info.url}
+                    <img id='inputimage' alt='No image' src={info.url}
                          style={{ }}
                      className="shashin fl"  />
                 </div>
@@ -29,10 +29,10 @@ const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsC
                     <p className="f7">{info.comments}</p>
                     <p className="">
                         <button className="btnBa b ph2 pv1 white br2 pointer f7"
-                        onClick={() => {onButtonSubmit(info.id);}} >良かった！ {info.iine}</button>
+                        onClick={() => {onButtonSubmit(info.id);}} >Great!! {info.iine}</button>
                         {' '}
                         <button type="button" className="btnBa b ph2 pv1 white br2 pointer f7"
-                                onClick={() => {onButtonSubmitW(info.id);}} >ビミョー {info.waruiine}</button></p>
+                                onClick={() => {onButtonSubmitW(info.id);}} >Not really {info.waruiine}</button></p>
                     <input
                         className="ph2 pv1 input-reset bg-white hover-bg-white hover-black br2 f7 w-100 w-50-ns"
                         type="text"
@@ -42,7 +42,7 @@ const Card = ({ info, onButtonSubmit, onButtonSubmitW, onSubmitForm, onCommentsC
                         onChange={onCommentsChange}
                     />
                     <button className="btnBa b ph2 pv1 input-reset white br1 grow pointer f7"
-                            onClick={() => {onSubmitForm(info.id, info.comments);}} > コメント追加</button>
+                            onClick={() => {onSubmitForm(info.id, info.comments);}} > Add a comment</button>
                 </div>
             </div>
         </div>

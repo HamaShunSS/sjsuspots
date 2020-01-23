@@ -13,6 +13,7 @@ class FUI extends React.Component {
         super(props);
         this.state = {
             results: [], //必要
+            userInfo: '',
             item:'',
             iine:'',
             waruiine:'',
@@ -30,10 +31,21 @@ class FUI extends React.Component {
 
 
     componentDidMount() {
-        fetch('https://spots-for-sjsu-students.herokuapp.com/allData')
-            .then(response => response.json())
-            .then(informations => this.setState({results: informations})
-            );
+        if (this.props.isSignedIn === 'true') {
+            fetch('https://spots-for-sjsu-students.herokuapp.com/allData')
+                .then(response => response.json())
+                .then(informations => this.setState({results: informations})
+                );
+            fetch('https://spots-for-sjsu-students.herokuapp.com/profile/:id')
+                .then(response => response.json())
+                .then(informations => this.setState({userInfo: informations})
+                );
+        }
+            fetch('https://spots-for-sjsu-students.herokuapp.com/allData')
+                .then(response => response.json())
+                .then(informations => this.setState({results: informations})
+                );
+
     }
 
     // iine
@@ -124,6 +136,7 @@ class FUI extends React.Component {
     }
 
 
+
     render() {
         const filterdInfos = this.state.results.filter(infos => {
             //"filter" is a function to go thorough array in "robots from State", having a parameter "robot"
@@ -138,35 +151,9 @@ class FUI extends React.Component {
 
         if (this.state.results.length === 0) {
             return <div className="fl w-100 w-100-ns">
-
                 <div className="">
                     <label className="fl pv4-ns f3 pv3 w-100 w-100-ns tc db fw6 lh-copy f2-ns">リコット</label>
                 </div>
-                <div className='ma0 fl w-100 w50-ns pb7-ns pb6'>
-                    <ul className="ddmenu ">
-                        <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer'>
-                            <li className='ttll fl f6 '>エリアを選択：　{this.bashoDisplay()}
-                                <ul className='ttll'>
-                                    <li className='pa1 b link' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
-                                    <li className='pa1 b link' onClick={() => {this.props.loadRegion('San Jose'); this.props.onRouteChange('sui')}}>San Jose</li>
-                                    <li className='pa1 b link' onClick={() =>{this.props.loadRegion('San Francisco'); this.props.onRouteChange('sui')}}>San Francisco</li>
-                                    <li className='b pa1' onClick={() =>{this.props.loadRegion('Santa Cruz'); this.props.onRouteChange('sui')}}>Santa Cruz</li>
-                                    <li className='b pa1' onClick={() =>{this.props.loadRegion('Berkeley'); this.props.onRouteChange('sui')}}>Berkeley</li>
-                                    <li className='b pa1' onClick={() =>{this.props.loadRegion('Monterey'); this.props.onRouteChange('sui')}}>Monterey</li>
-                                </ul>
-                            </li>
-                        </button>
-
-                        {/*<li className='fl w-50 w25-ns' ><a href="#">製品・技術</a>*/}
-                        {/*<ul>*/}
-                        {/*<li><a href="#">ハードウェア</a></li>*/}
-                        {/*<li><a href="#">ソフトウェア</a></li>*/}
-                        {/*<li><a href="#">ウェブサービス</a></li>*/}
-                        {/*</ul>*/}
-                        {/*</li>*/}
-                    </ul>
-                </div>
-
                 <Scroll>
                     <div className="pv4-ns"><h1 className='pv4 pv4-ns'>Loading...</h1></div>
                     <div className="ph6-ns tc center pb5-ns">
@@ -184,13 +171,13 @@ class FUI extends React.Component {
         else {
             return (
                 <div className="tc w-100 w-100-ns">
-                    <div className="">
+                        <div>
                         <label className="w-100 w-100-ns pv4-ns f3 pv3 tc db fw6 lh-copy f2-ns">リコット</label>
                     </div>
                     <div className='ma0 w50-ns pb2 ml3'>
                             <ul className="ddmenu tl tc-ns ">
                                 <button className='tc ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer'>
-                                    <li className='ttll fl f6'>エリアを選択：　{this.bashoDisplay()}
+                                    <li className='ttll fl f6'>Nearby：　{this.bashoDisplay()}
                                         <ul className='ttll'>
                                             <li className='pa1 b link' onClick={() => this.setState({searchfield: ''})}>All Regions</li>
                                             <li className='pa1 b link' onClick={() => {this.props.loadRegion('San Jose'); this.props.onRouteChange('sui')}}>San Jose</li>
@@ -198,7 +185,7 @@ class FUI extends React.Component {
                                             <li className='b pa1' onClick={() =>{this.props.loadRegion('Santa Cruz'); this.props.onRouteChange('sui')}}>Santa Cruz</li>
                                             {/*<li className='b pa1' onClick={() =>{this.props.loadRegion('Berkeley'); this.props.onRouteChange('sui')}}>Berkeley</li>*/}
                                             <li className='b pa1' onClick={() =>{this.props.loadRegion('Monterey'); this.props.onRouteChange('sui')}}>Monterey</li>
-                                            <li className='b pa1' onClick={() =>{this.props.loadRegion('San Luis Obispo'); this.props.onRouteChange('sui')}}>San Luis Obispo</li>
+                                            {/*<li className='b pa1' onClick={() =>{this.props.loadRegion('San Luis Obispo'); this.props.onRouteChange('sui')}}>San Luis Obispo</li>*/}
                                         </ul>
                                     </li>
                                 </button>
@@ -212,6 +199,7 @@ class FUI extends React.Component {
                                 {/*</li>*/}
                             </ul>
                     </div>
+
 
                     <SearchBox onSearchChange={this.onSearchChange}/>
                     <Scroll className="">

@@ -235,7 +235,7 @@ class GUIforBack extends React.Component {
                     if (response === 'success') {
                         this.props.onRouteChange('thankyoub');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.onRouteChange('thankyoub');
                     }
                 })
         }

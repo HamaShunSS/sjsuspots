@@ -72,7 +72,6 @@ class SUI extends React.Component {
     }
 
     //waruiine
-
     onButtonSubmitW = (id) => {
         fetch('https://spots-for-sjsu-students.herokuapp.com/buttonW',
             { //fetch connects frontend with the server
@@ -140,9 +139,9 @@ class SUI extends React.Component {
             return this.state.searchfield
     }
 
-
     render() {
         const filterdInfos = this.state.results.filter(infos => {
+            console.log('data is ', infos);
             //"filter" is a function to go thorough array in "robots from State", having a parameter "robot"
             return (
                 infos.name.toLowerCase().includes(this.state.searchfield.toLowerCase()) ||
@@ -163,7 +162,7 @@ class SUI extends React.Component {
                     <label className="fl pv4-ns f3 pv2 w-100 w-100-ns tc db fw6 lh-copy f2-ns">リコット</label>
                 </div>
                 <div className='ma0 fl w-100 w50-ns pb7-ns pb6'>
-                    <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer ' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>場所選びに戻る</p></button>
+                    <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer ' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>エリア選択へ戻る</p></button>
                 </div>
 
                 <Scroll>
@@ -182,30 +181,30 @@ class SUI extends React.Component {
         }
         else {
             return (
-                <div className="tc w-100 w-100-ns">
+                <div className=" w-100 w-100-ns">
                     <div className=" ">
-                        <label className="pv4-ns f3 pt3 pv2 w-100 w-100-ns tc db fw6 lh-copy f2-ns">{this.state.results[0].region}</label>
+                        <label className="pv4-ns f3 pt3 pv2 w-100 w-100-ns db fw6 lh-copy f2-ns">Nearby {this.state.results[0].region}</label>
                     </div>
-                    <div className='ma1 tc pb2'>
+                    <div className='ma1 ph2 pb2 tl tc-ns'>
                         <ul className="ddmenu ">
-                            <button className='tc ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer mr4 mr6-ns'>
-                                <li className='ttll f6 fl'>カテゴリー：　{this.categoryDisplay()}
+                            <button className=' ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer mr4 mr6-ns'>
+                                <li className='ttll f6 fl'>Category：　{this.categoryDisplay()}
                                     <ul className='ttll'>
                                         <li className='pa1 b' onClick={() => this.setState({searchfield: ''})}>All Categories</li>
-                                        <li><p className='pa1 b' onClick={() => this.setState({searchfield: 'Restaurants'})}>レストラン</p></li>
-                                        <li className='pa1 b' onClick={() => this.setState({searchfield: 'Cafes'})}>カフェ</li>
-                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Bars'})}>バー</li>
-                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Clubs'})}>クラブ</li>
-                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Nature'})}>自然</li>
-                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Parks'})}>公園</li>
-                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Amusement'})}>アミューズメント</li>
-                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Salons'})}>サロン</li>
-                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Beauty'})}>ビューティー</li>
-                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Others'})}>その他</li>
+                                        <li><p className='pa1 b' onClick={() => this.setState({searchfield: 'Restaurants'})}>Restaurants</p></li>
+                                        <li className='pa1 b' onClick={() => this.setState({searchfield: 'Cafes'})}>Cafes</li>
+                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Bars'})}>Bars</li>
+                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Clubs'})}>Clubs</li>
+                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Nature'})}>Nature</li>
+                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Parks'})}>Parks</li>
+                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Amusement'})}>Amusement</li>
+                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Salons'})}>Salons</li>
+                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Second-hand'})}>second-hand clothes</li>
+                                        <li className='b pa1' onClick={() => this.setState({searchfield: 'Others'})}>Others</li>
                                     </ul>
                                 </li>
                             </button>
-                            <button className='tc ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>エリアに戻る</p></button>
+                            <button className=' ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer' onClick={() => {this.props.loadRegion(''); this.props.onRouteChange('/')}}><p className='fl f6'>Back</p></button>
                             {/*<li className='fl w-50 w25-ns' ><a href="#">製品・技術</a>*/}
                             {/*<ul>*/}
                             {/*<li><a href="#">ハードウェア</a></li>*/}

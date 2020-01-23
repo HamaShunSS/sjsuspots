@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from "./CardForB";
+import CardList from "./GUIforMaster";
 
 
 const CardListForB = ({infos,
@@ -15,7 +16,14 @@ const CardListForB = ({infos,
                           onSubmitFormBackLocation,
                           onSubmitFormBackPrice,
                           onSubmitFormBackCategory,
-                          onCommentsChangeB
+                          onCommentsChangeB,
+                          onDeleteInfo,
+                          onSubmitFormBackUserName,
+                          onSubmitFormBackCountry,
+                          onSubmitFormBackEnglish,
+                          onSubmitFormBackDate,
+                          status,
+                          email
 }) => {
     return(
         <div>
@@ -36,7 +44,13 @@ const CardListForB = ({infos,
                             onSubmitFormBackCategory={onSubmitFormBackCategory}
                             onCommentsChange={onCommentsChange}
                             onCommentsChangeB={onCommentsChangeB}
-
+                            onDeleteInfo={onDeleteInfo}
+                            email={email}
+                            status={status}
+                            onSubmitFormBackUserName={onSubmitFormBackUserName}
+                            onSubmitFormBackCountry={onSubmitFormBackCountry}
+                            onSubmitFormBackEnglish={onSubmitFormBackEnglish}
+                            onSubmitFormBackDate={onSubmitFormBackEnglish}
                         />
                     );
                 })

@@ -34,11 +34,24 @@ class Form extends Component {
             category:'',
             price:'',
             region:'',
-            comments: ''
+            comments: '',
         };
         // console.log(this.state.checkboxes)
     }
 
+    componentDidMount() {
+        fetch('https://spots-for-sjsu-students.herokuapp.com/userData',
+            {
+                method: 'post',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    region: this.props.region, // カテゴリーは List => App => FUI で来ている
+                })
+            })
+            .then(response => response.json())
+            .then(informations => this.setState({results: informations})
+            );
+    }
 
 
     onNameChange = (event) => {
@@ -110,7 +123,10 @@ class Form extends Component {
                         url: this.state.url,
                         price: this.state.price,
                         region: this.state.region,
-                        comments: this.state.comments
+                        comments: this.state.comments,
+                        date: new Date(),
+                        username: this.props.username,
+                        country: this.props.country
                     })
                 })
                     .then(response => response.json()) // Get response through json, and get data by ".then"
@@ -371,19 +387,7 @@ class Form extends Component {
                                                     className="form-check-input"
                                                 />
                                                 <label> </label>
-                                                サロン
-                                            </label>
-                                            <label className="f7 ph2">
-                                                <input
-                                                    type="radio"
-                                                    name="react-tips"
-                                                    value="Beauty"
-                                                    checked={this.state.category === "Beauty"}
-                                                    onChange={this.handleCategoryChange}
-                                                    className="form-check-input"
-                                                />
-                                                <label> </label>
-                                                ビューティー
+                                                サロン・ビューティー
                                             </label>
                                             <label className="f7 ph2">
                                                 <input

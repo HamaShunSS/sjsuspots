@@ -39,9 +39,11 @@ class SignIn extends Component {
                 .then(response => response.json()) // Get response through json, and get data by ".then"
                 .then(response => {
                     console.log('what is ', response)
-                    if (response === 'recotto.afo@gmail.com') {
+                    if (response.status === 'mas') {
+                        this.props.onIsSignedInChange(response.username, response.email, response.country, response.status)
                         this.props.onRouteChange('backMaster');
-                    } else if (response === 'so.cal@gmail.com') {
+                    } else if (response.status === 'mem') {
+                        this.props.onIsSignedInChange(response.username, response.email, response.country, response.status)
                         this.props.onRouteChange('back');
                     } else {
                         this.props.onRouteChange('mistake');

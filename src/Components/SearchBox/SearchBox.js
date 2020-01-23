@@ -6,7 +6,7 @@ const SearchBox = ( {searchfiled, onSearchChange}) => {
             <input
                 className='pa2-ns pv1 ph2 ml1 input-reset hover-white w-60 w-70-ns btnSS b br-pill pointer white f6'
                 type= 'search'
-                placeholder= ' 住所からでも検索可能！'
+                placeholder= ' May find by the address'
                 onChange= {onSearchChange}
             />
         </div>
