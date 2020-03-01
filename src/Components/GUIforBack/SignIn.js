@@ -40,10 +40,10 @@ class SignIn extends Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response.status === 'mas') {
-                        this.props.onIsSignedInChange(response.username, response.email, response.country, response.status)
+                        this.props.onIsSignedInChange(response.username, response.email, response.country, response.status, response.id)
                         this.props.onRouteChange('backMaster');
                     } else if (response.status === 'mem') {
-                        this.props.onIsSignedInChange(response.username, response.email, response.country, response.status)
+                        this.props.onIsSignedInChange(response.username, response.email, response.country, response.status, response.id)
                         this.props.onRouteChange('back');
                     } else {
                         this.props.onRouteChange('mistake');
@@ -57,7 +57,7 @@ class SignIn extends Component {
             <main className="pa4">
                 <div className="tc fl w-100 w-100-ns tc">
                     <fieldset id="sign_up" className="ba b--transparent ph0 mh0 mt4-ns ">
-                        <div className="db f2-ns f3 pv5-ns pv4 fl w-100 w-100-ns tc fw6 ph0 mh0">Officer login</div>
+                        <div className="db f2-ns f3 pv5-ns pv4 fl w-100 w-100-ns tc fw6  mv3">Officer login</div>
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6 pt2" htmlFor="name">email</label>
                             <input

@@ -5,10 +5,12 @@ body {
   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
   sans-serif;
   color: white;
-  background: #fdc83c;
+  background: #FFA500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/*Original color: fdc83c*/
 
 button {
   cursor: pointer;

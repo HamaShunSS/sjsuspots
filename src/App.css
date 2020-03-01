@@ -155,9 +155,16 @@ img {
 }
 
 .btnSS {
-  background-color: #fdc83c;
+  background-color: #FFA500;
   border-style: solid;
   border-color: white;
+}
+
+.clickbtnSS {
+    background-color: white;
+    border-style: solid;
+    border-color: white;
+    color: #FFA500
 }
 
 .btnS {
@@ -167,7 +174,7 @@ img {
 
 .btnBa {
   /*//with no border*/
-  background-color: #fdc83c;
+  background-color: #FFA500;
   border: none;
 }
 
@@ -695,6 +702,19 @@ img.shashin {
   border-radius: .25rem;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  object-fit: cover;
+}
+
+img.shashinSquare {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+img.shashinHambun {
+  height: 11.5rem;
+  width: 50%;
+  object-fit: cover;
 }
 
 /*dropdown*/
@@ -763,6 +783,82 @@ ul.ddmenu li:hover ul {
 
 }
 
+
+/*!*(メニューバー)*!*/
+/*!* ▼メニューバーの装飾 (メニューバー) *!*/
+/*!* -------------------- *!*/
+/*ul.dmenu {*/
+  /*margin: 0px;               !* メニューバー外側の余白(ゼロ) *!*/
+  /*width: 100%;*/
+  /*!* バーの背景色 *!*/
+/*}*/
+
+/*!* -------------------------- *!*/
+/*!* ▼メインメニュー項目の装飾 *!*/
+/*!* -------------------------- *!*/
+/*ul.dmenu li {*/
+  /*display: inline-block;  !* ★1:横並びに配置する *!*/
+  /*list-style-type: none;  !* ★2:リストの先頭記号を消す *!*/
+  /*position: relative;     !* ★3:サブメニュー表示の基準位置にする *!*/
+/*}*/
+
+/*ul.tll li {*/
+  /*width: 100%;           !* メニュー項目の横幅(125px) *!*/
+  /*!*display: inline-block;  !* ★1:横並びに配置する *!*!*/
+  /*!*list-style-type: none;  !* ★2:リストの先頭記号を消す *!*!*/
+  /*!*position: relative;     !* ★3:サブメニュー表示の基準位置にする *!*!*/
+
+/*}*/
+
+/*!*ul.dmenu a {*!*/
+  /*!*!* メニュー項目の背景色(濃い赤色) *!*!*/
+  /*!*color: white;              !* メニュー項目の文字色(白色) *!*!*/
+  /*!*text-align: center;        !* メインメニューの文字列の配置(中央寄せ) *!*!*/
+  /*!*text-decoration: none;     !* メニュー項目の装飾(下線を消す) *!*!*/
+  /*!*font-weight: bold;         !* 太字にする *!*!*/
+  /*!*display: block;            !* ★4:項目内全域をリンク可能にする *!*!*/
+/*!*}*!*/
+/*!*ul.dmenu a:hover {*!*/
+  /*!*background-color: #ffdddd; !* メニュー項目にマウスが載ったときの背景色(淡いピンク) *!*!*/
+  /*!*color: #fdc44f;           !* メニュー項目にマウスが載ったときの文字色(濃い赤色) *!*!*/
+/*!*}*!*/
+
+/*!* ▼サブメニューの装飾 (メニューバー) *!*/
+/*!* -------------------- *!*/
+/*ul.dmenu ul {*/
+  /*display: none;*/
+  /*!* ★1:標準では非表示にする *!*/
+  /*margin: 0px;         !* ★2:サブメニュー外側の余白(ゼロ) *!*/
+  /*padding: 0px;        !* ★3:サブメニュー内側の余白(ゼロ) *!*/
+  /*position: absolute;  !* ★4:絶対配置にする *!*/
+/*}*/
+
+/*!* ---------------------------------- *!*/
+/*!* ▼サブメニューがある場合に開く処理 *!   !* ※サブメニューが1階層しか存在しない場合の記述 *!*/
+/*!* ---------------------------------- *!*/
+/*!*ul.dmenu li:hover ul {*!*/
+  /*!*display: block;      !* ★5:マウスポインタが載っている項目の内部にあるリストを表示する *!*!*/
+  /*!*z-index: 1;*!*/
+  /*!*background-color: #fdc44f; !* メニュー項目の背景色(濃い赤色) *!*!*/
+  /*!*color: white;              !* メニュー項目の文字色(白色) *!*!*/
+  /*!*!*text-align: center;        !* メインメニューの文字列の配置(中央寄せ) *!*!*!*/
+  /*!*text-decoration: none;     !* メニュー項目の装飾(下線を消す) *!*!*/
+
+/*!*}*!*/
+/*ul.dmenu li:hover ul {*/
+  /*background-color: #fdc44f;*/
+  /*display: block;      !* ★5:マウスポインタが載っている項目の内部にあるリストを表示する *!*/
+  /*z-index: 1;*/
+  /*color: white;              !* メニュー項目の文字色(白色) *!*/
+  /*!*text-align: center;        !* メインメニューの文字列の配置(中央寄せ) *!*!*/
+  /*text-decoration: none;     !* メニュー項目の装飾(下線を消す) *!*/
+  /*position: absolute;*/
+  /*!*bottom: 8px;*!*/
+  /*right: 0px;*/
+  /*font-size: 12px;*/
+/*}*/
+
+
 .moji {
   font-family: cursive;
 }
@@ -784,4 +880,35 @@ div.push {
 
 .head-animation {
   transform: translateY(-100%);
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }

@@ -12,7 +12,7 @@ import Contact from "./Components/Contact/Contact";
 import FirstPage from "./FirstPage";
 import Iine from "./Components/Infos/Iine";
 import Waruiine from "./Components/Infos/Waruiine";
-import NoData from "./Components/Infos/Nodata";
+import NoData from "./Components/FUI/Nodata";
 import FUI from "./Components/FUI/FUI";
 import GUIforBack from "./Components/GUIforBack/GUIforBack";
 import ThankyouB from "./Components/GUIforBack/ThankyouB";
@@ -25,6 +25,11 @@ import SUI from "./Components/FUI/SUI";
 import About from"./Components/Contact/About"
 import UserLogin from "./Components/Form/UserLogin";
 import UserSignUp from "./Components/Form/UserSignUp";
+import axios from "axios";
+import SecondUI from "./Components/FUI/SecondUI/SecondUI";
+import Menu from "./Components/Navigation/Menu";
+import Mypage from "./Components/Mypage/Mypage";
+import FirstUI from "./Components/FUI/FirstUI/FirstUI"
 
 
 
@@ -38,10 +43,19 @@ const initialState = {
     isSignedIn: '',
     userInfo: '',
     id:'',
+    userid: '',
     username:'',
     email:'',
     country:'',
-    status:''
+    status:'',
+    spot: null,
+    lat: null,
+    lon: null,
+    menu: 'no',
+    longitude: null,
+    latitude: null,
+    currentlon: null,
+    currentlat: null
 
     // user: {
     //     id: '',
@@ -79,23 +93,52 @@ class App extends Component {
         })
     }
 
+    loadLonLat = (lon, lat) => {
+        this.setState({
+            longitude: lon,
+            latitude: lat
+        })
+        console.log(this.state.longitude, this.state.latitude)
+    }
+
+    loadisSignedInChange = (event) => {
+        this.setState({
+            isSignedIn: event,
+            email: '',
+            username: '',
+            country: '',
+            status: '',
+            userid: ''
+        })
+        console.log(this.state.longitude, this.state.latitude)
+    }
+
+
     onRouteChange = (route) => {
         this.setState({route: route});
     }
 
-    onIsSignedInChange = (username, email, country, status) => {
+    onMenuChange = (menu) => {
+        this.setState({
+            menu: menu
+        });
+    }
+
+
+    onIsSignedInChange = (username, email, country, status, id) => {
         this.setState({
 
             isSignedIn: 'yes',
             email: email,
             username:username,
             country: country,
-            status: status
+            status: status,
+            userid: id
             //                             // userName: informations.userName,
             //                             // country: informations.userInfo.country
                                     });
         console.log('ついた!sign　', this.state.isSignedIn)
-        console.log('username is　', this.state.username)
+        console.log('userid is　', this.state.userid)
         // fetch('https://spots-for-sjsu-students.herokuapp.com/user', {
         //     method: 'post',
         //     headers: {'Content-Type': 'application/json'},
@@ -118,8 +161,55 @@ class App extends Component {
         //                 console.log('email ha ', this.state.email);
     }
 
+
+
+
   render() {
       const { isSignedIn, route, email} = this.state;
+      // const num = 100
+      // // //現在地特定
+      //
+      // navigator.geolocation.getCurrentPosition(
+      //         pos => this.setState({
+      //             lat: Math.round(pos.coords.latitude* num)/ num, //numはどの桁で切り上げるか
+      //             lon: Math.round(pos.coords.longitude* num)/ num
+      //         }),
+      //         err => console.log(err)
+      //     );
+      //     console.log('lat and lon', this.state.lat, this.state.lon)
+
+      navigator.geolocation.getCurrentPosition(
+          pos => this.setState({
+              lat: pos.coords.latitude,
+              lon: pos.coords.longitude
+          }),
+          err => console.log(err)
+      );
+      console.log(this.state.lon, this.state.lat)
+
+
+
+      // axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search`, {
+      //     headers: {
+      //         Authorization: `Bearer iUa74dNqkfO5M737VXORC5lPpdKH460feCmM1pNg0VsUCR72lyFXQB84vNGkK3M1yVWcfp1wV0Vu5qTt0DRFm0aFanDBhbIB0nxKnuJe3FmaSne6_5omll6UyTUuXnYx`
+      //     },
+      //     params: {
+      //         latitude: this.state.lat,
+      //         longitude: this.state.lon,
+      //         radius: 3500,
+      //         categories: 'breakfast_brunch',
+      //         limit: 50
+      //     }
+      // })
+      //     .then((res) => {
+      //         console.log(res.data)
+      //     })
+      //     .catch((err) => {
+      //         console.log ('error')
+      //     })
+
+
+
     return (
         <div className="App">
             {/*ラウト変換できるなら*/}
@@ -153,10 +243,15 @@ class App extends Component {
                 {/*</Fragment>*/}
             {/*</Router>*/}
 
-            <Navigation onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn} username={this.state.username}/>
-            { route === 'home' || route === '/'
+            <Navigation onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn} username={this.state.username} onMenuChange={this.onMenuChange} menu={this.state.menu}/>
+            {
+                this.state.menu === 'yes' &&
+                    <Menu onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn} username={this.state.username} onMenuChange={this.onMenuChange} menu={this.state.menu} loadisSignedInChange={this.loadisSignedInChange} onIsSignedInChange={this.onIsSignedInChange}/>
+            }
+            <div onClick={() => {this.onMenuChange('no')}}>
+            { route === 'home'
                 ? <div>
-                    < FUI route={this.state.route}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} isSignedIn={this.state.isSignedIn} category={this.state.category} region={this.state.region}/>
+                    < FUI route={this.state.route}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} isSignedIn={this.state.isSignedIn} category={this.state.category} region={this.state.region} loadLonLat={this.loadLonLat} />
                 </div>
                 :(
                     // route === 'category'
@@ -216,7 +311,19 @@ class App extends Component {
                                                                                                                                                                         route === 'userSignUp'
                                                                                                                                                                             ?< UserSignUp onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} />
                                                                                                                                                                             :(
-                                                                                                                                                                                < Form route={this.state.route} username={this.state.username} country={this.state.country} onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                                                                                                                                                                route === 'secondUI'
+                                                                                                                                                                                    ?< SecondUI onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} lon={this.state.lon} lat={this.state.lat} longitude={this.state.longitude} latitude={this.state.latitude} userId={this.state.userid} username={this.state.username} usercountry={this.state.country}/>
+                                                                                                                                                                                    :(
+                                                                                                                                                                                        route === 'mypage'
+                                                                                                                                                                                            ?< Mypage onRouteChange={this.onRouteChange} userid={this.state.userid} username={this.state.username} usercountry={this.state.country} email={this.state.email} status={this.state.status} />
+                                                                                                                                                                                            :(
+                                                                                                                                                                                                route === '/'
+                                                                                                                                                                                                    ?< FirstUI onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} loadLonLat={this.loadLonLat}  lon={this.state.lon} lat={this.state.lat} longitude={this.state.longitude} latitude={this.state.latitude} userId={this.state.userid} username={this.state.username} usercountry={this.state.country}/>
+                                                                                                                                                                                                    :(
+                                                                                                                                                                                                        < Form route={this.state.route} userid={this.state.userid} username={this.state.username} country={this.state.country} onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
+                                                                                                                                                                                                    )
+                                                                                                                                                                                            )
+                                                                                                                                                                                    )
                                                                                                                                                                             )
                                                                                                                                                                     )
                                                                                                                                                             )
@@ -239,6 +346,7 @@ class App extends Component {
                 // )
             }
             <Contact isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
+        </div>
         </div>
     );
   }

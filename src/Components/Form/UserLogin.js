@@ -59,7 +59,7 @@ class UserLogin extends Component {
                         this.props.onRouteChange('mistake');
                     } else {
                         console.log('ここチェック', response.status);
-                        this.props.onIsSignedInChange(response.username, response.email, response.country, response.status);
+                        this.props.onIsSignedInChange(response.username, response.email, response.country, response.status, response.id);
                         // this.setState({link: '/form'})
                         this.props.onRouteChange('form');
                     }
