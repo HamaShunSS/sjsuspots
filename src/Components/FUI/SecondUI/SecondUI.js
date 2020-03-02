@@ -394,9 +394,9 @@ class SecondUI extends React.Component {
         if (this.state.businesses.length === 0) {
             return <div className="">
 
-                <div className=" mt2">
-                    <label className="fl pv4-ns f4 pv2 ml3 tc db fw6 lh-copy f2-ns">Loading...</label>
-                    <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer ' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>Back</p></button>
+                <div className=" mv2">
+                    <label className="fl pv4-ns f6 ml3 tc pv1 db fw6 lh-copy f2-ns">Loading...</label>
+                    <button className='ph3-ns pv2-ns pv1 ph2 ml4 btnSS b white br-pill pointer' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>Back</p></button>
                 </div>
 
                 <Scroll>

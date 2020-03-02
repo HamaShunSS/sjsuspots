@@ -42,7 +42,7 @@ const Card = ({ info, changeAuthentic, changeNotAuthentic, changeGood, changeBad
                     <h4>{info.name}</h4>
                     <p>
                         <label className="f6">Authentic? </label>
-                        <button className="btnBa b ph1 pv1 white br2 pointer f7">
+                        <button className="btnBa b ph2 pv1 white br2 pointer f7">
                             <FontAwesome
                                 className='super-crazy-colors'
                                 name='thumbs-up'
@@ -67,7 +67,7 @@ const Card = ({ info, changeAuthentic, changeNotAuthentic, changeGood, changeBad
                         {/*size='1x'*/}
                         {/*style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}*/}
                         {/*/> {showNumber(info.good)}</button>*/}
-                        <button className="btnBa b ph1 pv1 white br2 pointer f7">
+                        <button className="btnBa b ph2 pv1 white br2 pointer f7">
                             <FontAwesome
                                 className='super-crazy-colors'
                                 name='thumbs-down'
