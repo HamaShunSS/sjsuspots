@@ -33,18 +33,9 @@ class FirstUI extends React.Component {
             country:'',
             spot: [],
             tobad:'',
-            // currentlat: null,
-            // currentlon: null,
-            userInfo: '',
-            item:'',
-            iine:'',
-            waruiine:'',
             com:'',
             searchfield:'',
             searchfieldArea:'',
-            region:'',
-            lat: '',
-            lon: '',
             informations:[]
         };
 
@@ -274,7 +265,6 @@ class FirstUI extends React.Component {
             return (
                 infos.country
                 // infos.name.toLowerCase().includes(this.state.searchfield.toLowerCase()) ||
-                // infos.region.toLowerCase().includes(this.state.searchfield.toLowerCase()) ||
                 // infos.location.toLowerCase().includes(this.state.searchfield.toLowerCase())
             )
         })
@@ -306,7 +296,6 @@ class FirstUI extends React.Component {
             return (
                 infos.country.toLowerCase().includes(this.state.country.toLowerCase())
                 // infos.name.toLowerCase().includes(this.state.searchfield.toLowerCase()) ||
-                // infos.region.toLowerCase().includes(this.state.searchfield.toLowerCase()) ||
                 // infos.location.toLowerCase().includes(this.state.searchfield.toLowerCase())
             )
         })
@@ -336,13 +325,6 @@ class FirstUI extends React.Component {
             }
         })
 
-        const onLonLat = (lat, lon) => {
-            this.setState({
-                lat: lat,
-                lon: lon
-            })
-            console.log(this.state.lat, this.state.lon)
-        }
 
         const onId = (res) => {
             this.setState({
@@ -453,10 +435,10 @@ class FirstUI extends React.Component {
                                 />
                                 <input
                                     onClick={ ()=>{
-                                        if (this.state.lon === '' || this.state.lat === '') {
+                                        if (this.props.longitude === '' || this.props.latitude === '') {
                                             alert("chose an option below")
                                         } else {
-                                            this.props.loadLonLat(this.state.lon, this.state.lat); this.props.onRouteChange('secondUI')
+                                            this.props.onRouteChange('secondUI')
                                         }
                                     }}
                                     className='b pa2-ns pv2 input-reset br2 w-20 w-20-ns clickbtnSS pointer f6'
@@ -464,12 +446,9 @@ class FirstUI extends React.Component {
                                     value="Search"
                                 />
                                 <div className='b db fw6 lh-copy f6 w-80 w-80-ns'>{
-                                    this.state.city.length > 0 &&
+                                    this.state.city.length > 0 && this.props.lon !== null &&
                                     <div className=' grow-ns shadow-5 br1 bw2 bg-white-80' onClick={()=>{
-                                        onId('Current Location'); this.setState({
-                                            lon: null,
-                                            lat: null
-                                        })
+                                        onId('Current Location'); this.props.loadLonLat(null, null)
                                     }}>
                                         <div className="black tc ">
                                             <div className="pa1 tl">
@@ -481,30 +460,37 @@ class FirstUI extends React.Component {
                                 </div>
                                 <div className='b db fw6 lh-copy f6 w-80 w-80-ns'>{
                                     this.state.city.length > 0 &&
-                                    <SantaClaraCountyList showSantaClara={showSantaClara} onId={onId} onLonLat={onLonLat}/>
+                                    <SantaClaraCountyList showSantaClara={showSantaClara} onId={onId} loadLonLat={this.props.loadLonLat}/>
                                 }
                                 </div>
                                 <div className='b db fw6 lh-copy f6 tl w-80 w-80-ns'>{
                                     this.state.city.length > 0 &&
-                                    <SanMateoCountyList showSanMateo={showSanMateo} onId={onId} onLonLat={onLonLat}/>
+                                    <SanMateoCountyList showSanMateo={showSanMateo} onId={onId} loadLonLat={this.props.loadLonLat}/>
                                 }
                                 </div>
                                 <div className='b db fw6 lh-copy f6 tl w-80 w-80-ns'>{
                                     this.state.city.length > 0 &&
-                                    <SanFranciscoCountyList showSanFrancisco={showSanFrancisco} onId={onId} onLonLat={onLonLat}/>
+                                    <SanFranciscoCountyList showSanFrancisco={showSanFrancisco} onId={onId} loadLonLat={this.props.loadLonLat}/>
                                 }
                                 </div>
                                 <div className='b db fw6 lh-copy f6 tl w-80 w-80-ns'>{
                                     this.state.city.length > 0 &&
-                                    <MontereyCountyList showMonterey={showMonterey} onId={onId} onLonLat={onLonLat}/>
+                                    <MontereyCountyList showMonterey={showMonterey} onId={onId} loadLonLat={this.props.loadLonLat}/>
                                 }
                                 </div>
 
                                 <button className='ph3-ns pv2-ns pv1 ph2 clickbtnSS b br2 pointer mt3 mr6-ns'>
                                     <ul className="ddmenu">
-                                        <li className='ttll f6 fl'>Choose category...
+                                        <li className='ttll f6 fl'>
+                                            <FontAwesome
+                                                className='super-crazy-colors'
+                                                name='list'
+                                                size='1x'
+                                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                                            />{' '}
+                                            Category list
                                             <ul className=' tc w-100 w-100-ns '>
-                                                <div className='shadow-5 br1 bw2 bg-white-80' onClick={() =>{this.onCountryChange('')}}>
+                                                <div className='shadow-5 pv1 br1 bw2 bg-white-80' onClick={() =>{this.onCountryChange('')}}>
                                                     <div className="black tc ">
                                                         <div className="pa1 tl">
                                                             <li className='' >All</li>

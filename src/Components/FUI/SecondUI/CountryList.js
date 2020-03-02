@@ -24,7 +24,7 @@ const CountryList = ({countries, onCountryChange}) => {
                 countries.map((country) => {
                     // console.log(area)
                     return (
-                        <div className='shadow-5 br1 bw2 bg-white-80' onClick={() =>{onCountryChange(country)}}>
+                        <div className='shadow-5 pv1 br1 bw2 bg-white-80' onClick={() =>{onCountryChange(country)}}>
                             <div className="black tc ">
                                 <div className="pa1 tl">
                                     <li className='' >{country}</li>

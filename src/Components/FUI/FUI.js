@@ -373,7 +373,7 @@ class FUI extends React.Component {
                                             if (this.state.lon === '' || this.state.lat === '') {
                                                 alert("chose an option below")
                                             } else {
-                                                this.props.loadLonLat(this.state.lon, this.state.lat); this.props.onRouteChange('secondUI')
+                                                this.props.onRouteChange('secondUI')
                                             }
                                         }}
                                         className='b pa2-ns pv2 input-reset br2 w-20 w-10-ns clickbtnSS pointer f6'

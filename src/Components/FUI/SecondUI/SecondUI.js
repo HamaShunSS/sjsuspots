@@ -7,7 +7,7 @@ import Detail from "./SpotDetail";
 import List from "../../Form/Form";
 import CountryList from "./CountryList";
 
-
+const FontAwesome = require('react-fontawesome');
 
 
 
@@ -394,10 +394,8 @@ class SecondUI extends React.Component {
         if (this.state.businesses.length === 0) {
             return <div className="">
 
-                <div className=" ">
-                    <label className="fl pv4-ns f3 pv2 w-100 w-100-ns tc db fw6 lh-copy f2-ns">Loading...</label>
-                </div>
-                <div className='ma0 fl w-100 w50-ns pb7-ns pb6'>
+                <div className=" mt2">
+                    <label className="fl pv4-ns f4 pv2 ml3 tc db fw6 lh-copy f2-ns">Loading...</label>
                     <button className='tc ph3-ns pv2-ns pa2 btnSS b white br-pill pointer ' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>Back</p></button>
                 </div>
 
@@ -417,7 +415,7 @@ class SecondUI extends React.Component {
         } return (
                 <div className=" w-100 w-100-ns">
                     <div className=" ">
-                        {/*<label className="pv4-ns f3 pt3 pv2 w-100 w-100-ns db fw6 lh-copy f2-ns">Second</label>*/}
+                        <label className="pv4-ns f3 pt3  w-100 w-100-ns db fw6 lh-copy f2-ns">Recommended spots</label>
                     </div>
                     <div className='ma1 ph2 pv3 tl tc-ns'>
                         <ul className="ddmenu">
@@ -440,9 +438,16 @@ class SecondUI extends React.Component {
                             {/*</button>*/}
 
                             <button className=' ph3-ns pv2-ns pv1 ph2 clickbtnSS b br2 pointer mr6 mr6-ns'>
-                                <li className='ttll f6 fl'>Choose category...
+                                <li className='ttll f6 fl'>
+                                    <FontAwesome
+                                        className='super-crazy-colors'
+                                        name='list'
+                                        size='1x'
+                                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                                    />{' '}
+                                    Category list
                                     <ul className=' tc w-100 w-100-ns '>
-                                        <div className='shadow-5 br1 bw2 bg-white-80' onClick={() =>{this.onCountryChange('')}}>
+                                        <div className='shadow-5 pv1 br1 bw2 bg-white-80' onClick={() =>{this.onCountryChange('')}}>
                                             <div className="black tc ">
                                                 <div className="pa1 tl">
                                                     <li className='' >All</li>

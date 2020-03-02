@@ -61,7 +61,7 @@ class UserLogin extends Component {
                         console.log('ここチェック', response.status);
                         this.props.onIsSignedInChange(response.username, response.email, response.country, response.status, response.id);
                         // this.setState({link: '/form'})
-                        this.props.onRouteChange('form');
+                        this.props.onRouteChange('/');
                     }
                 })
         }

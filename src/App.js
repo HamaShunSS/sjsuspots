@@ -52,8 +52,8 @@ const initialState = {
     lat: null,
     lon: null,
     menu: 'no',
-    longitude: null,
-    latitude: null,
+    longitude: '',
+    latitude: '',
     currentlon: null,
     currentlat: null
 
@@ -93,7 +93,7 @@ class App extends Component {
         })
     }
 
-    loadLonLat = (lon, lat) => {
+    loadLonLat = (lat, lon) => {
         this.setState({
             longitude: lon,
             latitude: lat
@@ -251,7 +251,7 @@ class App extends Component {
             <div onClick={() => {this.onMenuChange('no')}}>
             { route === 'home'
                 ? <div>
-                    < FUI route={this.state.route}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} isSignedIn={this.state.isSignedIn} category={this.state.category} region={this.state.region} loadLonLat={this.loadLonLat} />
+                    < FUI route={this.state.route}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} isSignedIn={this.state.isSignedIn} category={this.state.category} region={this.state.region} />
                 </div>
                 :(
                     // route === 'category'
@@ -318,7 +318,7 @@ class App extends Component {
                                                                                                                                                                                             ?< Mypage onRouteChange={this.onRouteChange} userid={this.state.userid} username={this.state.username} usercountry={this.state.country} email={this.state.email} status={this.state.status} />
                                                                                                                                                                                             :(
                                                                                                                                                                                                 route === '/'
-                                                                                                                                                                                                    ?< FirstUI onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} loadLonLat={this.loadLonLat}  lon={this.state.lon} lat={this.state.lat} longitude={this.state.longitude} latitude={this.state.latitude} userId={this.state.userid} username={this.state.username} usercountry={this.state.country}/>
+                                                                                                                                                                                                    ?< FirstUI onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} loadLonLat={this.loadLonLat} lon={this.state.lon} lat={this.state.lat} longitude={this.state.longitude} latitude={this.state.latitude} userId={this.state.userid} username={this.state.username} usercountry={this.state.country}/>
                                                                                                                                                                                                     :(
                                                                                                                                                                                                         < Form route={this.state.route} userid={this.state.userid} username={this.state.username} country={this.state.country} onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
                                                                                                                                                                                                     )
