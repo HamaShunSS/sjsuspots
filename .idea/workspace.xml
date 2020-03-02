@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bf2abe4-f485-47ab-9476-a0a149cf7d2c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/FUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/FUI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/FirstUI/FirstUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/FirstUI/FirstUI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/MontereyList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/MontereyList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/Nodata.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/Nodata.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/SanFranciscoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/SanFranciscoList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/SanMateoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/SanMateoList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/SantaClaraList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/SantaClaraList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/SecondUI/CountryList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/SecondUI/CountryList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/SecondUI/SecondUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/SecondUI/SecondUI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FUI/FirstUI/FUICard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/FirstUI/FUICard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotDetail.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,8 +31,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+            <state relative-caret-position="325">
+              <caret line="66" column="71" lean-forward="true" selection-start-line="66" selection-start-column="71" selection-end-line="66" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Components/FUI/FirstUI/FUICard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="44" column="56" lean-forward="true" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Form/Thankyou.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="18" column="140" selection-start-line="18" selection-start-column="140" selection-end-line="18" selection-end-column="140" />
             </state>
           </provider>
         </entry>
@@ -49,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/FUI/FirstUI/FirstUI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="226">
+              <caret line="490" column="57" lean-forward="true" selection-start-line="490" selection-start-column="57" selection-end-line="490" selection-end-column="57" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -58,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/SecondUI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+            <state relative-caret-position="326">
+              <caret line="446" column="43" lean-forward="true" selection-start-line="446" selection-start-column="43" selection-end-line="446" selection-end-column="43" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#78#112#0" expanded="true" />
@@ -96,7 +105,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>oncountrychange</find>
       <find>loadlon</find>
       <find>countrylist</find>
       <find>state.userid</find>
@@ -124,8 +132,9 @@
       <find>userInfo</find>
       <find>region</find>
       <find>nodata</find>
-      <find>loadlonlat</find>
       <find>list</find>
+      <find>Cate</find>
+      <find>loadlonlat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -138,7 +147,6 @@
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/CardForB.js" />
         <option value="$PROJECT_DIR$/src/Components/Infos/Iine.js" />
         <option value="$PROJECT_DIR$/src/Components/Infos/Waruiine.js" />
-        <option value="$PROJECT_DIR$/src/Components/Form/Thankyou.js" />
         <option value="$PROJECT_DIR$/src/Components/SearchBox/SearchBox.js" />
         <option value="$PROJECT_DIR$/src/Components/Form/AreaCard.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/InfosCard.js" />
@@ -147,7 +155,6 @@
         <option value="$PROJECT_DIR$/src/Components/FUI/CityList.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/CountyArrayList.js" />
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/Mistake.js" />
-        <option value="$PROJECT_DIR$/src/Components/Form/UserLogin.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SecondUI.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SUI.js" />
         <option value="$PROJECT_DIR$/src/Components/Form/BusinessesList.js" />
@@ -161,10 +168,8 @@
         <option value="$PROJECT_DIR$/src/Components/Mypage/Mypage.js" />
         <option value="$PROJECT_DIR$/src/Components/Form/Sorry.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SecondUI/SanFranciscoList.js" />
-        <option value="$PROJECT_DIR$/src/Components/FUI/FirstUI/FUICard.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotCard.js" />
         <option value="$PROJECT_DIR$/src/Components/Mypage/Card.js" />
-        <option value="$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotDetail.js" />
         <option value="$PROJECT_DIR$/src/Components/Mypage/Detail.js" />
         <option value="$PROJECT_DIR$/src/Components/Navigation/Navigation.js" />
         <option value="$PROJECT_DIR$/src/Components/Contact/Contact.js" />
@@ -185,6 +190,10 @@
         <option value="$PROJECT_DIR$/src/Components/FUI/SecondUI/CountryList.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/FirstUI/FirstUI.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SecondUI/SecondUI.js" />
+        <option value="$PROJECT_DIR$/src/Components/Form/Thankyou.js" />
+        <option value="$PROJECT_DIR$/src/Components/Form/UserLogin.js" />
+        <option value="$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotDetail.js" />
+        <option value="$PROJECT_DIR$/src/Components/FUI/FirstUI/FUICard.js" />
       </list>
     </option>
   </component>
@@ -472,12 +481,12 @@
       <workItem from="1582928285789" duration="7553000" />
       <workItem from="1582960763423" duration="7811000" />
       <workItem from="1583005637909" duration="12713000" />
-      <workItem from="1583106132654" duration="4255000" />
+      <workItem from="1583106132654" duration="5187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="516332000" />
+    <option name="totallyTimeSpent" value="517264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -527,7 +536,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/SearchFilter.js" />
     <entry file="file://$PROJECT_DIR$/src/Components/Form/AreaCard.js" />
     <entry file="file://$PROJECT_DIR$/src/Components/SearchBox/SearchBox.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -701,24 +709,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/UserLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="89" column="72" selection-start-line="89" selection-start-column="72" selection-end-line="89" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/SanFranciscoList.js" />
-    <entry file="file://$PROJECT_DIR$/src/Components/FUI/FirstUI/FUICard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="112" column="26" selection-start-line="112" selection-start-column="26" selection-end-line="112" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotCard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -868,6 +859,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/CountryList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/FUI/FirstUI/FirstUI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="490" column="57" lean-forward="true" selection-start-line="490" selection-start-column="57" selection-end-line="490" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/SecondUI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="446" column="43" lean-forward="true" selection-start-line="446" selection-start-column="43" selection-end-line="446" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#78#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -878,38 +897,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/UserLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/Thankyou.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="18" column="140" selection-start-line="18" selection-start-column="140" selection-end-line="18" selection-end-column="140" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+        <state relative-caret-position="325">
+          <caret line="66" column="71" lean-forward="true" selection-start-line="66" selection-start-column="71" selection-end-line="66" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/CountryList.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/FUI/FirstUI/FUICard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/FUI/FirstUI/FirstUI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/SecondUI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#78#112#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="152">
+          <caret line="44" column="56" lean-forward="true" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
         </state>
       </provider>
     </entry>

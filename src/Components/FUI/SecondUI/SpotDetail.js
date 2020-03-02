@@ -64,7 +64,7 @@ const Detail = ({ info, userid, changeAuthentic, changeNotAuthentic, changeGood,
                             {/*not login*/}
                             {
                                 userid === '' &&
-                                <button className="btnBa b ph2 pv1 white br2 pointer f7"
+                                <button className="btnBa b ph2 pv1  white br2 pointer f7"
                                         onClick={() => {alert("Please log in first"); onRouteChange('userLogIn')}} >
                                     <FontAwesome
                                         className='super-crazy-colors'
