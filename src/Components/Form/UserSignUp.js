@@ -1,18 +1,28 @@
 import React, { Component } from "react";
 
+const FontAwesome = require('react-fontawesome');
 
 class UserSignUp extends Component {
     constructor(props){
         super(props);
         this.state = {
+            users:[],
             id: '',
             name: '',
             username: '',
             country: '',
             email:'',
-            password: ''
+            password: '',
+            confirm:''
         };
         // console.log(this.state.checkboxes)
+    }
+
+    componentDidMount() {
+        fetch('https://spots-for-sjsu-students.herokuapp.com/allUsers')
+            .then(response => response.json())
+            .then(users => this.setState({users: users})
+            );
     }
 
     onEmailChange = (event) => {
@@ -21,6 +31,10 @@ class UserSignUp extends Component {
 
     onPasswordChange = (event) => {
         this.setState({password: event.target.value}) // updated signInEmail from <input />
+    }
+
+    onConfirmChange = (event) => {
+        this.setState({confirm: event.target.value}) // updated signInEmail from <input />
     }
 
     onUserNameChange = (event) => {
@@ -43,6 +57,9 @@ class UserSignUp extends Component {
         console.log('check', x)
         if (this.state.username === '' || this.state.email === '' || this.state.password === '' || x === '' ) {
             alert("You forgot to type email or password..");
+        }
+        if (this.state.password !== this.state.confirm ) {
+            alert("Your password does not match with conrirm");
         } else {
             if (this.props.route === 'touroku') {
                 this.props.onRouteChange('loading');
@@ -72,6 +89,15 @@ class UserSignUp extends Component {
     }
 
     render(){
+        const filterdUsers = this.state.users.filter(infos => {
+            //"filter" is a function to go thorough array in "robots from State", having a parameter "robot"
+            //ArrayList<String> cashList = new ArrayList<>(infos.price);
+            return (
+                infos.email.toLowerCase().includes(this.state.email.toLowerCase())
+                // infos.name.toLowerCase().includes(this.state.searchfield.toLowerCase()) ||
+                // infos.location.toLowerCase().includes(this.state.searchfield.toLowerCase())
+            )
+        })
         // this.onCountry();
 
         return (
@@ -97,7 +123,16 @@ class UserSignUp extends Component {
                                 name="email"
                                 id="email"
                                 onChange={this.onEmailChange}
+                            />{
+                            filterdUsers.length > 0 && this.state.email !== '' &&
+                            <label><FontAwesome
+                                className='super-crazy-colors'
+                                name='exclamation-circle'
+                                size='1x'
+                                style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                             />
+                                {' '}email may be taken...</label>
+                        }
                         </div>
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6" htmlFor="name">Password</label>
@@ -109,6 +144,25 @@ class UserSignUp extends Component {
                                 onChange={this.onPasswordChange}
                             />
                         </div>
+                        <div className="pt4">
+                            <label className="db fw6 lh-copy f6" htmlFor="name">Confirm</label>
+                            <input
+                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                type="password"
+                                name="password"
+                                id="password"
+                                onChange={this.onConfirmChange}
+                            />
+                        </div>
+                        {
+                            this.state.password !== this.state.confirm &&
+                                <label><FontAwesome
+                                    className='super-crazy-colors'
+                                    name='exclamation-circle'
+                                    size='1x'
+                                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                                />{' '}password does not match...</label>
+                        }
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6 pt2" htmlFor="name">Which country did you grow up most?</label>
                             {/*<input*/}
