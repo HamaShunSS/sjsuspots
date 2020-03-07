@@ -8,6 +8,7 @@ import Scroll from "../FUI/FUI";
 import Spinner from 'react-spinner-material';
 import Sorry from "./Sorry";
 import Script from 'react-load-script';
+import googlePlacesAPICall from "./googlePlacesAPICall"
 const category = ["ラーメン", "食事処", "景色","カフェ","娯楽", "クラブ", "バー", "勉強する場所", "自然","買い物", "美容系","観光","その他"];
 
 const samplearray = ['san jose', 'santa clara', 'palo alto']
@@ -19,6 +20,7 @@ class Form extends Component {
             id: '',
             restaurantName: '',
             results: [],
+            gglresults: [],
             citys:[],
             lat:null,
             lon: null,
@@ -450,9 +452,34 @@ class Form extends Component {
 
     createCheckboxes = () => category.map(this.createCheckbox);
 
+    // Google Places API
+    googleRes = (results)=>{
+                this.setState({
+                    gglresults: results
+                })
+
+    }
+
+    googleAPIcall =()=> {
+        const googleTrans = require('./googlePlacesAPICall.js');
+        return googleTrans.searchPlaces('La costa', 'Salinas', this.googleRes)
+    }
+
+// .then(response => response.json()) // Get response through json, and get data by ".then"
+// .then(response => {
+//     if (response === 'success') {
+//     this.props.onRouteChange('thankyou');
+// } else if (response === 'incorrect form submission') {
+//     this.props.onRouteChange('sorry');
+// }
+// })
+
 
 
     render(){
+
+
+        console.log(this.state.gglresults)
 
 
         const arrayedComment = this.state.commentInDatabase.split('//');
@@ -563,6 +590,7 @@ class Form extends Component {
                             <div
                                 className="db f2-ns f5 pv5-ns pv2 fl w-100 w-100-ns tc fw6 ph0 mh0">Share your experience!!
                             </div>
+                            {/*<button onClick={this.googleAPIcall}>Click</button>*/}
                             <div className="pt5-ns pt2 pv2">
                                 <label className="b db fw6 lh-copy f6 pt2 tl" htmlFor="">1. Type the name of the restaurant </label>
                                 <input
@@ -579,31 +607,35 @@ class Form extends Component {
                                 <label className="b db fw6 lh-copy f6 pt2 tl" htmlFor="">2. Type the city and search: </label>
                                 <input
                                     placeholder="ex) Saratoga"
-                                    className='pa2-ns pl2 pv2 input-reset hover-black hover-bg-white w-80 w-70-ns btnSS b br2 pointer white f6'
+                                    className='pa2-ns pl2 pv2 input-reset hover-black hover-bg-white w-100 w-70-ns btnSS b br2 pointer white f6'
                                     type="text"
                                     name="city"
                                     id="name"
                                     value={this.state.city}
                                     onChange={this.onCityChange}
                                 />
-                                <input
-                                    onClick={this.onAPIButton}
-                                    className='b pa2-ns pv2 input-reset br2 w-20 w-10-ns clickbtnSS pointer f6'
-                                    type="submit"
-                                    value="Search"
-                                />
-                                <div className='b db fw6 lh-copy f6 w-80 w-70-ns'> {
+                                <div className='b db fw6 lh-copy f6 w-100 w-70-ns'> {
                                     this.state.city.length > 0 &&
                                     <List areas={filtterduniqueCitys} onCity={onCity}/>
                                 }
                                 </div>
+                                <input
+                                    onClick={this.onAPIButton}
+                                    className='b pa2-ns pv2 mt3 input-reset br2 w-20 w-10-ns clickbtnSS pointer f6'
+                                    type="submit"
+                                    value="Search"
+                                />
                             </div>
 
                             <div className='b db fw6 lh-copy f6 tl'>
+                                {
+                                    filterdBusinesses.length > 0 &&
+                                        <p className="mb2">*Tap the place you want to share below</p>
+                                }
                                 <BusinessesList businesses={filterdBusinesses} onId={onId} onBizIdCall={this.onBizIdCall}/>
                             </div>
                             <div className="pt4-ns pv2">
-                                <label className="tl db fw6 lh-copy f6 pt2">3. Comment: </label>
+                                <label className="tl db fw6 lh-copy f6 pt2">3. Your recommendation and/or comment: </label>
                                 <input
                                     placeholder="ex) recommend to eat seafood ramen!! The noodle is made of whole grains, and that is so delicious!"
                                     className='pa2-ns pa2 br2 w-100 w-70-ns btnSS b pointer input-reset hover-black hover-bg-white white f6'
@@ -614,9 +646,10 @@ class Form extends Component {
                                 />
                             </div>
 
-                            <label className="tl db fw6 lh-copy f6 pt2 pt2">4. What country of food is this?: </label>
+                            <label className="tl db fw6 lh-copy f6 pt2 pt2">4. What kind of cuisine is this?: </label>
+                            <h6 className="tl">*Others for not particular restaurants</h6>
                             <select className='btnSS b pa2-ns pa2 br2 w-100 w-70-ns b--white white pointer f6' name="country" id="mySelect">
-                                <option value="">Choose a country...</option>
+                                <option value="">Cuisine from...</option>
                                 <option value="Afganistan">Afghanistan</option>
                                 <option value="Albania">Albania</option>
                                 <option value="Algeria">Algeria</option>
@@ -864,6 +897,7 @@ class Form extends Component {
                                 <option value="Zaire">Zaire</option>
                                 <option value="Zambia">Zambia</option>
                                 <option value="Zimbabwe">Zimbabwe</option>
+                                <option value="Others">Others</option>
                             </select>
 
                             <div className="pv5-ns pv3">

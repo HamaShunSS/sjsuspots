@@ -55,11 +55,11 @@ class UserSignUp extends Component {
     onSubmitForm =() => {
         const x= this.onCountry()
         console.log('check', x)
-        if (this.state.username === '' || this.state.email === '' || this.state.password === '' || x === '' ) {
-            alert("You forgot to type email or password..");
-        }
         if (this.state.password !== this.state.confirm ) {
             alert("Your password does not match with conrirm");
+        }
+        if (this.state.username === '' || this.state.email === '' || this.state.password === '' || x === 'notselected' ) {
+            alert("You forgot username, email, password, and/or country...");
         } else {
             if (this.props.route === 'touroku') {
                 this.props.onRouteChange('loading');
@@ -174,7 +174,7 @@ class UserSignUp extends Component {
                             {/*/>*/}
                         </div>
                         <select className='btnSS b tc ph3 pv2 ma3 ba b--white white br-2 pointer f6' name="country" id="mySelect">
-                            <option value="">Country...</option>
+                            <option value="notselected">Country...</option>
                             <option value="Afganistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
                             <option value="Algeria">Algeria</option>

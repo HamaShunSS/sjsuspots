@@ -84,12 +84,12 @@ const Menu = ({ onRouteChange, isSignedIn, username, onMenuChange, loadisSignedI
                                                 style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                                             /> Sign up</li>
                                     }
-                                    {/*<li className=' b link tc pv2 bb' onClick={() => {onRouteChange('mypage'); onMenuChange('no'); onIsSignedInChange(*/}
-                                        {/*'Shunsuke',*/}
-                                        {/*'shun248301@gmail.com',*/}
-                                        {/*'Japan',*/}
-                                        {/*'mas',*/}
-                                        {/*3)}}>Cheat</li>*/}
+                                    <li className=' b link tc pv2 bb' onClick={() => {onRouteChange('mypage'); onMenuChange('no'); onIsSignedInChange(
+                                        'Shunsuke',
+                                        'shun248301@gmail.com',
+                                        'Japan',
+                                        'mas',
+                                        3)}}>Cheat</li>
                                 </ul>
         </div>
     );

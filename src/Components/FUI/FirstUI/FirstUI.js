@@ -418,9 +418,9 @@ class FirstUI extends React.Component {
         else {
             return (
                 <div className="">
-                    <div className='pb3'>
+                    <div className='pb3 bb-white mb1'>
                         <div className='mv2'>
-                            <label className='moji b f3 f2-ns mv2 ma3-ns pv2-ns'>Recotto</label>
+                            <label className='b f4 f2-ns mv2 ma3-ns pv2-ns'>Discover authentic restaurants!!</label>
                         </div>
                         <div className="w-100 w-100-ns mt2">
                             <div className=' tl ml3 w-80 w-70-ns '>
@@ -488,7 +488,7 @@ class FirstUI extends React.Component {
                                                 size='1x'
                                                 style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                                             />{' '}
-                                            Category list
+                                            Cuisine from
                                             <ul className=' tc w-100 w-100-ns '>
                                                 <div className='shadow-5 pv1 br1 bw2 bg-white-80' onClick={() =>{this.onCountryChange('')}}>
                                                     <div className="black tc ">
@@ -509,9 +509,9 @@ class FirstUI extends React.Component {
 
                     </div>
 
-                    <Scroll className="">
+                    <div className="bg-white-40">
                         <FUICardList infos={filterdSpots} onSpotIdChange={this.onSpotIdChange}　onButtonSubmit={this.onButtonSubmit} onButtonSubmitW={this.onButtonSubmitW} onSubmitForm={this.onSubmitForm} onCommentsChange={this.onCommentsChange}/>
-                    </Scroll>
+                    </div>
                     <div className="mv6-ns">
 
                     </div>

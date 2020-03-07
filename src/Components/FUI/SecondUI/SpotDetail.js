@@ -75,7 +75,7 @@ const Detail = ({ info, userid, changeAuthentic, changeNotAuthentic, changeGood,
                             }
                             {/*authentic user*/}
                             {
-                                userid !== '' && usercountry === info.country &&
+                                userid !== '' && usercountry === info.country && info.country !== 'Others' &&
                                 <button className="btnBa b ph2 pv1 white br2 pointer f7"
                                         onClick={() => {
                                             changeAuthentic(info.id, info.authentic)
@@ -89,10 +89,24 @@ const Detail = ({ info, userid, changeAuthentic, changeNotAuthentic, changeGood,
                             }
                             {/*Not authentic user*/}
                             {
-                                userid !== '' && usercountry !== info.country &&
+                                userid !== '' && usercountry !== info.country && info.country !== 'Others' &&
                                 <button className="btnBa b ph2 pv1 white br2 pointer f7"
                                         onClick={() => {
                                             alert('You may tap for your country food')
+                                        }}>
+                                    <FontAwesome
+                                        className='super-crazy-colors'
+                                        name='thumbs-up'
+                                        size='1x'
+                                        style={{textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)'}}
+                                    /> {showNumber(info.authentic)}</button>
+                            }
+                            {/*Others*/}
+                            {
+                                userid !== '' && info.country === 'Others' &&
+                                <button className="btnBa b ph2 pv1 white br2 pointer f7"
+                                        onClick={() => {
+                                            changeAuthentic(info.id, info.authentic)
                                         }}>
                                     <FontAwesome
                                         className='super-crazy-colors'

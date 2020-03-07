@@ -33,6 +33,7 @@ const BusinessesList = ({businesses, onId, callSpinner, onBizIdCall}) => {
                                      className="shashin fl"  />
                                 <div className="pa1 tl">
                                     <h4 >{biz.name}</h4>
+                                    <h5 >{biz.location.address1}{biz.location.address2}{' '}{biz.location.city}</h5>
                                 </div>
                             </div>
                         </div>

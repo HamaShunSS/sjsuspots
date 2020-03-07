@@ -6,7 +6,7 @@ const fs = require('fs');
 
 const APIkey = "AIzaSyCbV3wfsr4FkxuDtbQH_p5vLJJDEzCoqEg";
 // Base URL
-const urlTextsearch = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=";
+const urlTextsearch = `${'https://cors-anywhere.herokuapp.com/'}https://maps.googleapis.com/maps/api/place/textsearch/json?query=`;
 
 exports.searchPlaces = function(keysearch, city, responseF) { // Maybe pass object instead???
   let requestObject =
@@ -19,7 +19,7 @@ exports.searchPlaces = function(keysearch, city, responseF) { // Maybe pass obje
   // const url = urlTextsearch + keysearch + "&location=" +
   //             requestObject.location[0] + "," + requestObject.location[1] + "&key=" + APIkey;
 
-  const url = urlTextsearch + keysearch + city + "&key=" + APIkey;
+  const url = urlTextsearch + keysearch + "+" + city + "&key=" + APIkey;
 
 
   APIrequest(

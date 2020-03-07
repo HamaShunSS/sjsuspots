@@ -3,6 +3,7 @@ import CardList from './CardList'; //child
 import Scroll from '../Scroll';
 import Spinner from 'react-spinner-material';
 import Detail from "./Detail";
+import FUICardList from "../FUI/FirstUI/FirstUI";
 // import SearchBox from "../SearchBox/SearchBox";
 // import CardListU from './CardListUsersB'; //child
 
@@ -593,10 +594,10 @@ class Mypage extends React.Component {
                 <div className="tc ">
 
                     <div className="">
-                        <label className="pv3 fl ph1 w-100 w-100-ns tc db fw6 lh-copy f3">{this.props.username}'s page</label>
+                        <label className="pv3 fl ph1 w-100 w-100-ns tc db fw6 f3">{this.props.username}'s page</label>
                     </div>
                     {/*<SearchBox onSearchChange={this.onSearchChange}/>*/}
-                    <Scroll>
+                    <div className="">
                         <CardList infos={filterdInfos}
                                   onSpotIdChange={this.onSpotIdChange}
                                   onCommentChange={this.onCommentChange}
@@ -607,7 +608,7 @@ class Mypage extends React.Component {
                                   status={this.props.status}
                                   onSubmitFormBackUserName={this.onSubmitFormBackUserName}
                         />
-                    </Scroll>
+                    </div>
                     {/*<div className="mv4">*/}
                         {/*<h3 className="mv2">*/}
                             {/*Users*/}

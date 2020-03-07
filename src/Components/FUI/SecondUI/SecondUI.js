@@ -6,6 +6,7 @@ import SearchBox from "../../SearchBox/SearchBox";
 import Detail from "./SpotDetail";
 import List from "../../Form/Form";
 import CountryList from "./CountryList";
+import FUICardList from "../FirstUI/FirstUI";
 
 const FontAwesome = require('react-fontawesome');
 
@@ -414,10 +415,10 @@ class SecondUI extends React.Component {
 
         } return (
                 <div className=" w-100 w-100-ns">
-                    <div className=" ">
-                        <label className="pv4-ns f3 pt3  w-100 w-100-ns db fw6 lh-copy f2-ns">Recommended spots</label>
+                    <div className="bb-white">
+                        <label className="pv4-ns f3 pt2 w-100 w-100-ns db fw6 lh-copy f2-ns">Recommended spots</label>
                     </div>
-                    <div className='ma1 ph2 pv3 tl tc-ns'>
+                    <div className='ma1 ph2 pv2 tl tc-ns'>
                         <ul className="ddmenu">
                             {/*<button className=' ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer mr4 mr6-ns'>*/}
                                 {/*<li className='ttll f6 fl'>Category：　{this.categoryDisplay()}*/}
@@ -445,7 +446,7 @@ class SecondUI extends React.Component {
                                         size='1x'
                                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                                     />{' '}
-                                    Category list
+                                    Cuisine from
                                     <ul className=' tc w-100 w-100-ns '>
                                         <div className='shadow-5 pv1 br1 bw2 bg-white-80' onClick={() =>{this.onCountryChange('')}}>
                                             <div className="black tc ">
@@ -477,13 +478,13 @@ class SecondUI extends React.Component {
                         </ul>
                     </div>
 
-                    {/*<SearchBox onSearchChange={this.onSearchChange}/>*/}
-                    <Scroll>
+                    <div className="bg-white-40">
                         <SpotCardList infos={filterdInfos} changeAuthentic={changeAuthentic} changeNotAuthentic={changeNotAuthentic} changeGood={changeGood} changeBad={changeBad} authentic={this.state.authentic} onRouteChange={this.props.onRouteChange} onSpotIdChange={this.onSpotIdChange} onSubmitForm={this.onSubmitForm} onCommentsChange={this.onCommentsChange}/>
-                    </Scroll>
-                    {/*<div className="tc">*/}
-                    {/*<button onClick={() => this.props.onRouteChange('form')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">シェアしてみる</button>*/}
-                    {/*</div>*/}
+                    </div>
+                    {/*<Scroll>*/}
+                        {/*<SpotCardList infos={filterdInfos} changeAuthentic={changeAuthentic} changeNotAuthentic={changeNotAuthentic} changeGood={changeGood} changeBad={changeBad} authentic={this.state.authentic} onRouteChange={this.props.onRouteChange} onSpotIdChange={this.onSpotIdChange} onSubmitForm={this.onSubmitForm} onCommentsChange={this.onCommentsChange}/>*/}
+                    {/*</Scroll>*/}
+
                     <div className='pv6-ns mb3'>
 
                     </div>

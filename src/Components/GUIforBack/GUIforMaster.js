@@ -39,7 +39,7 @@ class GUIforMaster extends React.Component {
 
 
     componentDidMount() {
-        fetch('https://spots-for-sjsu-students.herokuapp.com/allData')
+        fetch('https://spots-for-sjsu-students.herokuapp.com/allSpot')
             .then(response => response.json())
             .then(informations => this.setState({results: informations})
             );
@@ -48,6 +48,40 @@ class GUIforMaster extends React.Component {
             .then(users => this.setState({users: users})
             );
     }
+
+    //New
+    changeComment =(id) => {
+        if (this.state.textB === '' ) {
+            alert("コメントを記入してください...");
+        } else {
+            if (this.props.route === 'backMaster') {
+                this.props.onRouteChange('loading');
+            }
+            console.log('textB のナカは ', this.state.textB)
+            fetch('https://spots-for-sjsu-students.herokuapp.com/changeComment', {
+                method: 'put',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                    id: id,
+                    newComment: this.state.textB,
+                })
+            })
+                .then(response => response.json()) // Get response through json, and get data by ".then"
+                .then(response => {
+                    console.log('what is ', response)
+                    if (response === 'success') {
+                        this.props.onRouteChange('thankyouBM');
+                    } else if (response === 'incorrect form submission') {
+                        this.props.onRouteChange('sorry');
+                    }
+                })
+        }
+    }
+
+
+
+
+
 
     // iine
     onButtonSubmit = (id) => {
@@ -666,6 +700,9 @@ class GUIforMaster extends React.Component {
                                   onSubmitFormBackCountry={this.onSubmitFormBackCountry}
                                   onSubmitFormBackEnglish={this.onSubmitFormBackEnglish}
                                   onSubmitFormBackDate={this.onSubmitFormBackEnglish}
+
+                                  //New
+                                  changeComment={this.changeComment}
                         />
                     </Scroll>
                     <div className="mv4">
