@@ -108,7 +108,7 @@ class UserSignUp extends Component {
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6 pt2" htmlFor="name">User Name</label>
                             <input
-                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className="pa2-ns pa1 input-reset btnSS hover-bg-white br-pill w-100 w-50-ns"
                                 type="text"
                                 name="User Name"
                                 id="username"
@@ -118,7 +118,7 @@ class UserSignUp extends Component {
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6 pt2" htmlFor="name">Email</label>
                             <input
-                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className="pa2-ns pa1 input-reset btnSS hover-bg-white  br-pill w-100 w-50-ns"
                                 type="text"
                                 name="email"
                                 id="email"
@@ -137,7 +137,7 @@ class UserSignUp extends Component {
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6" htmlFor="name">Password</label>
                             <input
-                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className="pa2-ns pa1 input-reset btnSS hover-bg-white  br-pill w-100 w-50-ns"
                                 type="password"
                                 name="password"
                                 id="password"
@@ -147,7 +147,7 @@ class UserSignUp extends Component {
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6" htmlFor="name">Confirm</label>
                             <input
-                                className="pa2-ns pa1 input-reset bg-white hover-bg-black hover-white br-pill w-100 w-50-ns"
+                                className="pa2-ns pa1 input-reset btnSS hover-bg-white br-pill w-100 w-50-ns"
                                 type="password"
                                 name="password"
                                 id="password"

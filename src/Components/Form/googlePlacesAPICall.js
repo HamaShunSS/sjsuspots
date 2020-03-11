@@ -8,6 +8,11 @@ const APIkey = "AIzaSyCbV3wfsr4FkxuDtbQH_p5vLJJDEzCoqEg";
 // Base URL
 const urlTextsearch = `${'https://cors-anywhere.herokuapp.com/'}https://maps.googleapis.com/maps/api/place/textsearch/json?query=`;
 
+
+// https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=YOUR_API_KEY
+// https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAAdwtDivEsN3rGJO9PHPYhy0ngewW-7DSqcGZXcgNCo4U6CVbzzwaYOi81BQ6iQ7JYNIXzGfIdsB414aUZVYmHJZyoTXk6k-F7Mb_JOtPIqcWXJ1H91h2T5BgRffyEeGUYEhCiC9XI9HfEGYclwEg_GN3KGhTD0s2VfUMWJSoFJ85wUd-G19slog&key=AIzaSyCbV3wfsr4FkxuDtbQH_p5vLJJDEzCoqEg
+
+
 exports.searchPlaces = function(keysearch, city, responseF) { // Maybe pass object instead???
   let requestObject =
     {

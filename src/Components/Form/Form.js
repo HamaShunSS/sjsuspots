@@ -26,6 +26,7 @@ class Form extends Component {
             lon: null,
             city: '',
             businesses: [],
+            photos: [],
             name: '',
             phone: '',
             photo1:'',
@@ -452,18 +453,57 @@ class Form extends Component {
 
     createCheckboxes = () => category.map(this.createCheckbox);
 
-    // Google Places API
-    googleRes = (results)=>{
-                this.setState({
-                    gglresults: results
-                })
 
+
+//3. Google Place photo request
+    photoRes = (imgs)=>{
+        this.setState({
+            photos: imgs
+        })
+
+        console.log(imgs)
+    }
+    googlePlacePhotocall =(photos)=> {
+        const placePhoto = require('./googlePlacePhotoRequest');
+        const photoRef = [];
+        photos.map((photo, i) => {
+            return (
+                photoRef[i] = photo.photo_reference
+            )
+        })
+        console.log(photoRef)
+        // photoRef.map((ref) => {
+        //     return placePhoto.searchPlaces(ref, this.photoRes)
+        // })
+        return placePhoto.searchPlaces(photoRef[0], this.photoRes)
+
+    }
+
+    //2. Google Place Detail
+    detailRes = (result)=>{
+        this.googlePlacePhotocall(result.photos);
+        this.setState({
+            placedetail: result
+        })
+    }
+    googlePlaceDetailcall =(place_id)=> {
+        const placeDetail = require('./googlePlaceDetailCall');
+        return placeDetail.searchPlaces(place_id, this.detailRes)
+    }
+
+    // 1. Google Places API
+    googleRes = (results)=>{
+        const detail = this.googlePlaceDetailcall(results[0].place_id);
+        this.setState({
+            gglresults: detail
+        })
     }
 
     googleAPIcall =()=> {
         const googleTrans = require('./googlePlacesAPICall.js');
         return googleTrans.searchPlaces('La costa', 'Salinas', this.googleRes)
     }
+
 
 // .then(response => response.json()) // Get response through json, and get data by ".then"
 // .then(response => {
@@ -477,8 +517,6 @@ class Form extends Component {
 
 
     render(){
-
-
         console.log(this.state.gglresults)
 
 
@@ -591,6 +629,7 @@ class Form extends Component {
                                 className="db f2-ns f5 pv5-ns pv2 fl w-100 w-100-ns tc fw6 ph0 mh0">Share your experience!!
                             </div>
                             {/*<button onClick={this.googleAPIcall}>Click</button>*/}
+                            {/*<img src={"data:image/png;base64," + this.state.photos[0]} />*/}
                             <div className="pt5-ns pt2 pv2">
                                 <label className="b db fw6 lh-copy f6 pt2 tl" htmlFor="">1. Type the name of the restaurant </label>
                                 <input

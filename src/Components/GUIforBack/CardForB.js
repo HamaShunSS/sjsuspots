@@ -25,7 +25,8 @@ const CardForB = ({ info,
                       email,
 
     //new
-                      changeComment
+                      changeComment,
+                      changeCountryOfSpot
 } ) => {
     console.log('info is ',info);
     if (status === 'mas') {
@@ -98,7 +99,7 @@ const CardForB = ({ info,
                             onChange={onCommentsChangeB}
                         />
                         <button className="btnBa b ph2 pv1 white br2 pointer f7"
-                                onClick={() => {onSubmitFormBackCategory(info.id);}} > Country 変更</button>
+                                onClick={() => {changeCountryOfSpot(info.id);}} > Country 変更</button>
 
                         <label className="db fw6 lh-copy f7" htmlFor="name">User Name</label>
                         <p className="f7">{info.by}</p>

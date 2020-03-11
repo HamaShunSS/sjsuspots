@@ -426,7 +426,7 @@ class FirstUI extends React.Component {
                             <div className=' tl ml3 w-80 w-70-ns '>
                                 <input
                                     placeholder="ex) San Jose"
-                                    className=' pa2-ns pl2 pv2 w-80 w-80-ns br2 hover-bg-white input-reset hover-black btnSS b pointer white f6'
+                                    className=' pa2-ns pl2 pv2 w-80 w-80-ns br2 input-reset hover-black btnSS b pointer white f6'
                                     type="text"
                                     name="city"
                                     id="name"

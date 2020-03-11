@@ -11,7 +11,9 @@ const CardUsersB = ({ user,
                         onSubmitBackUserName,
                         onSubmitBackStatus,
                         onSubmitBackEmail,
-                        onSubmitBackCountry
+                        onSubmitBackCountry,
+                        onIsSignedInChange,
+                        onRouteChange
                   } ) => {
     console.log('user (U) is ', user);
     if (status === 'mas') {
@@ -68,6 +70,10 @@ const CardUsersB = ({ user,
                         />
                         <button className="btnBa b ph2 pv1 white br2 pointer f7"
                                 onClick={() => {onSubmitBackCountry(user.id);}} > Country変更</button>
+                        <label className="db fw6 lh-copy f7" htmlFor="name">Login</label>
+                        <button className="btnBa b mb3 ph2 pv1 white br2 pointer f7"
+                                onClick={() => {onIsSignedInChange(user.username, user.email, user.country, user.status, user.id); onRouteChange('/'); console.log(user.username, user.email, user.country, user.status, user.id)}} >Log in</button>
+
                         <div>
                             <label className="db fw6 lh-copy f7" htmlFor="name">データを消す</label>
                             <button className="btnBa b ph2 pv1 white br2 pointer f7"

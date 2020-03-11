@@ -126,19 +126,16 @@ class App extends Component {
 
 
     onIsSignedInChange = (username, email, country, status, id) => {
+        console.log(id)
         this.setState({
-
             isSignedIn: 'yes',
             email: email,
             username:username,
             country: country,
             status: status,
             userid: id
-            //                             // userName: informations.userName,
-            //                             // country: informations.userInfo.country
                                     });
-        console.log('ついた!sign　', this.state.isSignedIn)
-        console.log('userid is　', this.state.userid)
+        console.log('ついた!sign　', this.state.userid, this.state.status, )
         // fetch('https://spots-for-sjsu-students.herokuapp.com/user', {
         //     method: 'post',
         //     headers: {'Content-Type': 'application/json'},
@@ -291,7 +288,7 @@ class App extends Component {
                                                                                                                     ?< SignIn onIsSignedInChange={this.onIsSignedInChange}  onRouteChange={this.onRouteChange} />
                                                                                                                     :(
                                                                                                                         route === 'backMaster'
-                                                                                                                            ?< GUIforMaster onRouteChange={this.onRouteChange} email={this.state.email} status={this.state.status} />
+                                                                                                                            ?< GUIforMaster onRouteChange={this.onRouteChange} email={this.state.email} status={this.state.status} onIsSignedInChange={this.onIsSignedInChange} />
                                                                                                                             :(
                                                                                                                                 route === 'mistake'
                                                                                                                                     ?< Mistake onRouteChange={this.onRouteChange} />

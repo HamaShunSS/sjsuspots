@@ -10,7 +10,9 @@ const CardListForB = ({users,
                           onSubmitBackUserName,
                           onSubmitBackStatus,
                           onSubmitBackEmail,
-                          onSubmitBackCountry
+                          onSubmitBackCountry,
+                          onIsSignedInChange,
+                          onRouteChange
                       }) => {
     return(
         <div>
@@ -27,6 +29,8 @@ const CardListForB = ({users,
                             onSubmitBackStatus={onSubmitBackStatus}
                             onSubmitBackEmail={onSubmitBackEmail}
                             onSubmitBackCountry={onSubmitBackCountry}
+                            onIsSignedInChange={onIsSignedInChange}
+                            onRouteChange={onRouteChange}
                         />
                     );
                 })

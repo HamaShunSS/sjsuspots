@@ -25,7 +25,8 @@ const CardListForB = ({infos,
                           status,
                           email,
 
-                          changeComment
+                          changeComment,
+                          changeCountryOfSpot
 }) => {
     return(
         <div>
@@ -55,6 +56,7 @@ const CardListForB = ({infos,
                             onSubmitFormBackDate={onSubmitFormBackEnglish}
 
                             changeComment={changeComment}
+                            changeCountryOfSpot={changeCountryOfSpot}
                         />
                     );
                 })

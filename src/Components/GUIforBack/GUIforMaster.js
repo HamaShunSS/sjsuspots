@@ -78,6 +78,34 @@ class GUIforMaster extends React.Component {
         }
     }
 
+    changeCountryOfSpot =(id) => {
+        if (this.state.textB === '' ) {
+            alert("コメントを記入してください...");
+        } else {
+            if (this.props.route === 'backMaster') {
+                this.props.onRouteChange('loading');
+            }
+            console.log('textB のナカは ', this.state.textB)
+            fetch('https://spots-for-sjsu-students.herokuapp.com/changeCountryOfSpot', {
+                method: 'put',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                    id: id,
+                    newCountry: this.state.textB,
+                })
+            })
+                .then(response => response.json()) // Get response through json, and get data by ".then"
+                .then(response => {
+                    console.log('what is ', response)
+                    if (response === 'success') {
+                        this.props.onRouteChange('thankyouBM');
+                    } else if (response === 'incorrect form submission') {
+                        this.props.onRouteChange('sorry');
+                    }
+                })
+        }
+    }
+
 
 
 
@@ -613,33 +641,33 @@ class GUIforMaster extends React.Component {
     }
 
 
-    onSubmitFormUpdate =(id) => {
-        if (this.state.textB === '' ) {
-            alert("コメントを記入してください...");
-        } else {
-            if (this.props.route === 'backMaster') {
-                this.props.onRouteChange('loading');
-            }
-            console.log('textB のナカは ', this.state.textB)
-            fetch('https://spots-for-sjsu-students.herokuapp.com/updateCategory', {
-                method: 'put',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
-                    id: id,
-                    newComments: this.state.textB,
-                })
-            })
-                .then(response => response.json()) // Get response through json, and get data by ".then"
-                .then(response => {
-                    console.log('what is ', response)
-                    if (response === 'success') {
-                        this.props.onRouteChange('thankyouBM');
-                    } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
-                    }
-                })
-        }
-    }
+    // onSubmitFormUpdate =(id) => {
+    //     if (this.state.textB === '' ) {
+    //         alert("コメントを記入してください...");
+    //     } else {
+    //         if (this.props.route === 'backMaster') {
+    //             this.props.onRouteChange('loading');
+    //         }
+    //         console.log('textB のナカは ', this.state.textB)
+    //         fetch('https://spots-for-sjsu-students.herokuapp.com/updateCategory', {
+    //             method: 'put',
+    //             headers: {'Content-Type': 'application/json'},
+    //             body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+    //                 id: id,
+    //                 newComments: this.state.textB,
+    //             })
+    //         })
+    //             .then(response => response.json()) // Get response through json, and get data by ".then"
+    //             .then(response => {
+    //                 console.log('what is ', response)
+    //                 if (response === 'success') {
+    //                     this.props.onRouteChange('thankyouBM');
+    //                 } else if (response === 'incorrect form submission') {
+    //                     this.props.onRouteChange('sorry');
+    //                 }
+    //             })
+    //     }
+    // }
 
 
     // Search box
@@ -703,6 +731,7 @@ class GUIforMaster extends React.Component {
 
                                   //New
                                   changeComment={this.changeComment}
+                                  changeCountryOfSpot={this.changeCountryOfSpot}
                         />
                     </Scroll>
                     <div className="mv4">
@@ -722,7 +751,8 @@ class GUIforMaster extends React.Component {
                             onSubmitBackStatus={this.onSubmitBackStatus}
                             onSubmitBackEmail={this.onSubmitBackEmail}
                             onSubmitBackCountry={this.onSubmitBackCountry}
-
+                            onIsSignedInChange={this.props.onIsSignedInChange}
+                            onRouteChange={this.props.onRouteChange}
 
                         />
                     </Scroll>
