@@ -266,7 +266,7 @@ class Form extends Component {
     onSubmitToSpot =() => {
         //API呼ぶやつ
         const x= this.onCountry()
-        console.log('check', x);
+        console.log('check', x, this.props.userid);
         if (this.state.restaurantName === '' || this.state.comments === ''|| x === '' ) {
             alert("場所の名前、コメントのどれかに記入漏れがあるようです...");
         } else {
@@ -304,9 +304,10 @@ class Form extends Component {
                 .then(response => response.json()) // Get response through json, and get data by ".then"
                 .then(response => {
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyou');
+                        this.props.routeCheck('/thankyou')
+                        // this.props.onRouteChange('thankyou');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry')
                     }
                 })
         }
@@ -392,9 +393,10 @@ class Form extends Component {
                     .then(response => response.json()) // Get response through json, and get data by ".then"
                     .then(response => {
                         if (response === 'success') {
-                            this.props.onRouteChange('thankyou');
+                            this.props.routeCheck('/thankyou')
+                            // this.props.onRouteChange('thankyou');
                         } else if (response === 'incorrect form submission') {
-                            this.props.onRouteChange('sorry');
+                            this.props.routeCheck('/sorry')
                         }
                     })
         }
@@ -617,7 +619,8 @@ class Form extends Component {
             </div>
 
         } else if (this.state.load === 'err') {
-            return <Sorry onRouteChange={this.props.onRouteChange}/>
+            return this.props.routeCheck('/sorry')
+
         }
         else {
 
@@ -643,7 +646,7 @@ class Form extends Component {
                                 />
                             </div>
                             <div className="pt5-ns pv2">
-                                <label className="b db fw6 lh-copy f6 pt2 tl" htmlFor="">2. Type the city and search: </label>
+                                <label className="b db fw6 lh-copy f6 pt2 tl" htmlFor="">2. Type the city and Search it: </label>
                                 <input
                                     placeholder="ex) Saratoga"
                                     className='pa2-ns pl2 pv2 input-reset hover-black hover-bg-white w-100 w-70-ns btnSS b br2 pointer white f6'
@@ -658,9 +661,10 @@ class Form extends Component {
                                     <List areas={filtterduniqueCitys} onCity={onCity}/>
                                 }
                                 </div>
+                                <label className="b db fw6 lh-copy f6 pt2 tl" htmlFor="">3. Search and find the spot!: </label>
                                 <input
                                     onClick={this.onAPIButton}
-                                    className='b pa2-ns pv2 mt3 input-reset br2 w-20 w-10-ns clickbtnSS pointer f6'
+                                    className='b pa2-ns pv2 ph3 mv1 input-reset br2 w-30 w-20-ns clickbtnSS pointer f6'
                                     type="submit"
                                     value="Search"
                                 />
@@ -669,12 +673,12 @@ class Form extends Component {
                             <div className='b db fw6 lh-copy f6 tl'>
                                 {
                                     filterdBusinesses.length > 0 &&
-                                        <p className="mb2">*Tap the place you want to share below</p>
+                                        <p className="mb2">*Tap the spot you want to share below</p>
                                 }
                                 <BusinessesList businesses={filterdBusinesses} onId={onId} onBizIdCall={this.onBizIdCall}/>
                             </div>
                             <div className="pt4-ns pv2">
-                                <label className="tl db fw6 lh-copy f6 pt2">3. Your recommendation and/or comment: </label>
+                                <label className="tl db fw6 lh-copy f6 pt2">4. Your recommendation and/or comment: </label>
                                 <input
                                     placeholder="ex) recommend to eat seafood ramen!! The noodle is made of whole grains, and that is so delicious!"
                                     className='pa2-ns pa2 br2 w-100 w-70-ns btnSS b pointer input-reset hover-black hover-bg-white white f6'
@@ -685,7 +689,7 @@ class Form extends Component {
                                 />
                             </div>
 
-                            <label className="tl db fw6 lh-copy f6 pt2 pt2">4. What kind of cuisine is this?: </label>
+                            <label className="tl db fw6 lh-copy f6 pt2 pt2">5. What kind of cuisine is this?: </label>
                             <h6 className="tl">*Others for not particular restaurants</h6>
                             <select className='btnSS b pa2-ns pa2 br2 w-100 w-70-ns b--white white pointer f6' name="country" id="mySelect">
                                 <option value="">Cuisine from...</option>

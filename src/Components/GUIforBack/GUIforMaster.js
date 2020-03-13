@@ -70,9 +70,10 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyouBM');
+                        this.props.routeCheck('/thankyouBM');
+                        // this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
@@ -98,9 +99,10 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyouBM');
+                        this.props.routeCheck('/thankyouBM');
+                        // this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
@@ -210,9 +212,10 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyouBM');
+                        this.props.routeCheck('/thankyouBM');
+                        // this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
@@ -239,9 +242,10 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyouBM');
+                        this.props.routeCheck('/thankyouBM');
+                        // this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
@@ -306,7 +310,7 @@ class GUIforMaster extends React.Component {
     }
 
     onDeleteInfo =(id) => {
-        fetch('https://spots-for-sjsu-students.herokuapp.com/deleteInfo', {
+        fetch('https://spots-for-sjsu-students.herokuapp.com/deleteSpot', {
             method: 'delete',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
@@ -316,7 +320,8 @@ class GUIforMaster extends React.Component {
             .then(response => response.json()) // Get response through json, and get data by ".then"
             .then(response => {
                 console.log('what is ', response)
-                this.props.onRouteChange('thankyouBM');
+                this.props.routeCheck('/thankyouBM');
+                // this.props.onRouteChange('thankyouBM');
             })
     }
 
@@ -331,7 +336,7 @@ class GUIforMaster extends React.Component {
             .then(response => response.json()) // Get response through json, and get data by ".then"
             .then(response => {
                 console.log('what is ', response)
-                this.props.onRouteChange('thankyouBM');
+                this.props.routeCheck('/thankyouBM');
             })
     }
 
@@ -546,9 +551,10 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyouBM');
+                        this.props.routeCheck('/thankyouBM');
+                        // this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
@@ -574,9 +580,10 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyouBM');
+                        this.props.routeCheck('/thankyouBM');
+                        // this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
@@ -603,9 +610,10 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyouBM');
+                        this.props.routeCheck('/thankyouBM');
+                        // this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
@@ -632,9 +640,10 @@ class GUIforMaster extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyouBM');
+                        this.props.routeCheck('/thankyouBM');
+                        // this.props.onRouteChange('thankyouBM');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }

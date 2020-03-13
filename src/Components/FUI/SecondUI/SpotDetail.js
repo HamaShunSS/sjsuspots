@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const FontAwesome = require('react-fontawesome');
 
@@ -20,7 +21,7 @@ const showNumber = (array) => {
     return ((arrayedReal.length - 1))
 }
 const string = ''
-const Detail = ({ info, userid, changeAuthentic, changeNotAuthentic, changeGood, changeBad, authentic, onAddComment, onAddBadComment, tobad, onCommentsChange, toCommentBad, onRouteChange, usercountry } ) => {
+const Detail = ({ info, userid, changeAuthentic, changeNotAuthentic, changeGood, changeBad, authentic, onAddComment, onAddBadComment, tobad, com, onCommentsChange, toCommentBad, onRouteChange, usercountry } ) => {
     const arrayedComment = info.comment.split('||');
     const arrayedBadComment = info.badcomment.split('||');
 
@@ -36,7 +37,7 @@ const Detail = ({ info, userid, changeAuthentic, changeNotAuthentic, changeGood,
 
     return(
         <div className=''>
-            <div className="black tc bg-white-60">
+            <div className="black tc bg-white-60 mb7-ns">
                 <div className="tc w-100 w-100-ns" >
                     <img id='inputimage' alt='No image' src={info.photo1}
                          style={{ }}
@@ -65,13 +66,15 @@ const Detail = ({ info, userid, changeAuthentic, changeNotAuthentic, changeGood,
                             {
                                 userid === '' &&
                                 <button className="btnBa b ph2 pv1  white br2 pointer f7"
-                                        onClick={() => {alert("Please log in first"); onRouteChange('userLogIn')}} >
+                                        onClick={() => {alert("Please log in first"); }} >
+                                    <Link to="/userLogIn" style={{color: 'white'}}>
                                     <FontAwesome
                                         className='super-crazy-colors'
                                         name='thumbs-up'
                                         size='1x'
                                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                                    /> {showNumber(info.authentic)}</button>
+                                    /> {showNumber(info.authentic)}</Link>
+                                </button>
                             }
                             {/*authentic user*/}
                             {
@@ -189,13 +192,15 @@ const Detail = ({ info, userid, changeAuthentic, changeNotAuthentic, changeGood,
                             {
                                 userid === '' &&
                                 <button className="btnBa b ph2 pv1 white br2 pointer f7"
-                                        onClick={() => {alert("Please log in first"); onRouteChange('userLogIn')}} >
+                                        onClick={() => {alert("Please log in first"); }} >
+                                    <Link to="/userLogIn" style={{color: 'white'}}>
                                     <FontAwesome
                                         className='super-crazy-colors'
                                         name='thumbs-down'
                                         size='1x'
                                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                                    /> {showNumber(info.bad)}</button>
+                                    /> {showNumber(info.bad)}
+                                    </Link></button>
                             }
                             {
                                 userid !== '' &&
@@ -225,8 +230,12 @@ const Detail = ({ info, userid, changeAuthentic, changeNotAuthentic, changeGood,
                                     />
                                     <button className="btnBa b ph2 pv1 input-reset white br1 grow pointer f7"
                                             onClick={() => {
-                                                onAddBadComment(info.id, info.badcomment); //badcomment 追加
-                                                changeBad(info.id, info.bad)　//bad 追加
+                                                if (com === ''){
+                                                    alert('Tell us the reason')
+                                                } else  {
+                                                    onAddBadComment(info.id, info.badcomment); //badcomment 追加
+                                                    changeBad(info.id, info.bad)　//bad 追加
+                                                }
                                             }} > Add a comment</button>
                                 </div>
                             }
@@ -313,7 +322,8 @@ const Detail = ({ info, userid, changeAuthentic, changeNotAuthentic, changeGood,
                     {
                         userid === '' &&
                         <button className="btnBa b ph2 pv1 input-reset white br1 grow pointer f7"
-                                onClick={() => {alert("Please log in first"); onRouteChange('userLogIn')}} > Add a comment</button>
+                                onClick={() => {alert("Please log in first") }} >
+                            <Link to="/userLogIn" style={{color: 'white'}}>Add a comment</Link></button>
                     }
                     {
                         userid !== '' &&
@@ -332,7 +342,7 @@ const Detail = ({ info, userid, changeAuthentic, changeNotAuthentic, changeGood,
                     }
                     <div className="ml2 ml7-ns"> </div>
                     <div style={{}} className="push ma2 mb2 f7 mt3">
-                        Food of{' '}
+                        Cuisine from{' '}
                         <label className='f7'>{info.country}</label>{' '}
                         shared by{' '}<FontAwesome
                         className='super-crazy-colors'
@@ -344,6 +354,7 @@ const Detail = ({ info, userid, changeAuthentic, changeNotAuthentic, changeGood,
                     </div>
                 </div>
             </div>
+            <div></div>
         </div>
     );
 }

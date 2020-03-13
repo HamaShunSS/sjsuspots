@@ -7,6 +7,7 @@ import Detail from "./SpotDetail";
 import List from "../../Form/Form";
 import CountryList from "./CountryList";
 import FUICardList from "../FirstUI/FirstUI";
+import {Link} from "react-router-dom";
 
 const FontAwesome = require('react-fontawesome');
 
@@ -57,7 +58,7 @@ class SecondUI extends React.Component {
                 .then(response => response.json())
                 .then(informations => {
                     if (informations === 'no data') {
-                        this.props.onRouteChange('nodata');
+                        this.props.routeCheck('/nodata');
                     } else  {
                         this.setState({businesses: informations})
                     }
@@ -77,7 +78,7 @@ class SecondUI extends React.Component {
                 .then(response => response.json())
                 .then(informations => {
                     if (informations === 'no data') {
-                        this.props.onRouteChange('nodata');
+                        this.props.routeCheck('/nodata');
                     } else  {
                         this.setState({businesses: informations})
                     }
@@ -109,7 +110,7 @@ class SecondUI extends React.Component {
                 }
             })
         if (this.props.route === '/' || 'secondUI') {
-            this.props.onRouteChange('iine');
+            this.props.routeCheck('/thankyou');
         }
     }
 
@@ -134,7 +135,7 @@ class SecondUI extends React.Component {
                 }
             })
         if (this.props.route === '/' || 'secondUI') {
-            this.props.onRouteChange('iine');
+            this.props.routeCheck('/thankyou');
         }
     }
 
@@ -159,7 +160,7 @@ class SecondUI extends React.Component {
                 }
             })
         if (this.props.route === '/' || 'secondUI') {
-            this.props.onRouteChange('iine');
+            this.props.routeCheck('/thankyou');
         }
     }
 
@@ -184,7 +185,7 @@ class SecondUI extends React.Component {
                 }
             })
         if (this.props.route === '/' || 'secondUI') {
-            this.props.onRouteChange('iine');
+            this.props.routeCheck('/thankyou');
         }
     }
 
@@ -201,7 +202,7 @@ class SecondUI extends React.Component {
     //comments
     onAddComment =(id, com) => {
         if (this.state.com === '' ) {
-            alert("コメントを記入してください...");
+            alert("Please state your reason...");
         } else {
             if (this.props.route === 'secondUI') {
                 this.props.onRouteChange('loading');
@@ -223,9 +224,9 @@ class SecondUI extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyou');
+                        this.props.routeCheck('/thankyou');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
@@ -234,7 +235,7 @@ class SecondUI extends React.Component {
     //comments
     onAddBadComment =(id, com) => {
         if (this.state.com === '' ) {
-            alert("コメントを記入してください...");
+            alert("Please state your reason...");
         } else {
             if (this.props.route === 'secondUI') {
                 this.props.onRouteChange('loading');
@@ -256,9 +257,9 @@ class SecondUI extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyou');
+                        this.props.routeCheck('/thankyou');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
@@ -385,10 +386,12 @@ class SecondUI extends React.Component {
             return (
                 <div>
                     <div className=" w-100 w-100-ns mv2">
-                            <label className="pv4-ns f3 pt3 pv2 fw6 f2-ns mh2">Recommended spot</label>
-                        <button className='ph3-ns pv2-ns pv1 ph2 ml4 btnSS b white br-pill pointer' onClick={() => {this.setState({detail: 'no'})}}><p className='fl f6'>Back</p></button>
-                        </div>
-                        <Detail info={this.state.spot} userid={this.props.userId} usercountry={this.props.usercountry} changeAuthentic={changeAuthentic} changeNotAuthentic={changeNotAuthentic} changeGood={changeGood} changeBad={changeBad} authentic={this.state.authentic} onRouteChange={this.props.onRouteChange} onSpotIdChange={this.onSpotIdChange} onButtonSubmit={this.onButtonSubmit} onButtonSubmitW={this.onButtonSubmitW} onAddComment={this.onAddComment} onAddBadComment={this.onAddBadComment} onCommentsChange={this.onCommentsChange} toCommentBad={this.toCommentBad} tobad={this.state.tobad} />
+                            <label className="pv4-ns f3 pt3 b pv2 f2-ns mh2">Recommended spot</label>
+                        <button className='btnSS b ph3-ns pv2-ns ml3 pv1 ph2 btnSS white br-pill pointer f6'>
+                            <Link to="/secondUI" style={{color: 'white'}}
+                                  onClick={() => {this.setState({detail: 'no'})}}>Back</Link></button>
+                    </div>
+                        <Detail info={this.state.spot} userid={this.props.userId} usercountry={this.props.usercountry} com={this.state.com} changeAuthentic={changeAuthentic} changeNotAuthentic={changeNotAuthentic} changeGood={changeGood} changeBad={changeBad} authentic={this.state.authentic} onRouteChange={this.props.onRouteChange} onSpotIdChange={this.onSpotIdChange} onButtonSubmit={this.onButtonSubmit} onButtonSubmitW={this.onButtonSubmitW} onAddComment={this.onAddComment} onAddBadComment={this.onAddBadComment} onCommentsChange={this.onCommentsChange} toCommentBad={this.toCommentBad} tobad={this.state.tobad} />
                 </div>
                 )
         }
@@ -397,7 +400,9 @@ class SecondUI extends React.Component {
 
                 <div className=" mv2">
                     <label className="fl pv4-ns f6 ml3 tc pv1 db fw6 lh-copy f2-ns">Loading...</label>
-                    <button className='ph3-ns pv2-ns pv1 ph2 ml4 btnSS b white br-pill pointer' onClick={() => this.props.onRouteChange('/')}><p className='fl f6'>Back</p></button>
+                    <button className='btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6'>
+                        <Link to="/form" style={{color: 'white'}} onClick={() => this.props.routeCheck('')}>Back</Link></button>
+
                 </div>
 
                 <Scroll>
@@ -415,8 +420,8 @@ class SecondUI extends React.Component {
 
         } return (
                 <div className=" w-100 w-100-ns">
-                    <div className="bb-white">
-                        <label className="pv4-ns f3 pt2 w-100 w-100-ns db fw6 lh-copy f2-ns">Recommended spots</label>
+                    <div className="">
+                        <label className="pv4-ns f3 pt2 w-100 w-100-ns db fw6 f2-ns">Recommended spots</label>
                     </div>
                     <div className='ma1 ph2 pv2 tl tc-ns'>
                         <ul className="ddmenu">
@@ -437,29 +442,36 @@ class SecondUI extends React.Component {
                                     {/*</ul>*/}
                                 {/*</li>*/}
                             {/*</button>*/}
-
-                            <button className=' ph3-ns pv2-ns pv1 ph2 clickbtnSS b br2 pointer mr6 mr6-ns'>
-                                <li className='ttll f6 fl'>
-                                    <FontAwesome
-                                        className='super-crazy-colors'
-                                        name='list'
-                                        size='1x'
-                                        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                                    />{' '}
-                                    Cuisine from
-                                    <ul className=' tc w-100 w-100-ns '>
-                                        <div className='shadow-5 pv1 br1 bw2 bg-white-80' onClick={() =>{this.onCountryChange('')}}>
-                                            <div className="black tc ">
-                                                <div className="pa1 tl">
-                                                    <li className='' >All</li>
+                            <div className="w-100 w-100-ns">
+                                <button className='ph3-ns pv2-ns pv1 ph2 clickbtnSS b br2 pointer mr6 mr6-ns'>
+                                    <li className='ttll f6 '>
+                                        <FontAwesome
+                                            className='super-crazy-colors'
+                                            name='list'
+                                            size='1x'
+                                            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                                        />{' '}
+                                        Cuisine from
+                                        <ul className=' tc w-100 w-100-ns '>
+                                            <div className='shadow-5 pv1 br1 bw2 bg-white-80' onClick={() =>{this.onCountryChange('')}}>
+                                                <div className="black tc ">
+                                                    <div className="pa1 tl">
+                                                        <li className='' >All</li>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <CountryList countries={filtterduniqueCountries} onCountryChange={this.onCountryChange}/>
-                                    </ul>
-                                </li>
-                            </button>
-                            <button className=' ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer' onClick={() => {this.props.onRouteChange('/')}}><p className='fl f6'>Back</p></button>
+                                            <CountryList countries={filtterduniqueCountries} onCountryChange={this.onCountryChange}/>
+                                        </ul>
+                                    </li>
+                                </button>
+                                <button className='btnSS b ph3-ns pv2-ns p12 pv1 ph2 btnSS white br-pill pointer f6'>
+                                    <Link to="/" onClick={() => {this.props.routeCheck(''); this.props.routeCheck('')}}>Back</Link></button>
+                            </div>
+
+                            {/*<button className=' ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer' */}
+                                    {/*onClick={() => {this.props.onRouteChange('/')}}><p className='fl f6'>Back</p></button>*/}
+
+
                             {/*<input*/}
                                 {/*placeholder="ex) San Jose"*/}
                                 {/*className='pa2-ns pl2 pv2 input-reset hover-black hover-bg-white w-80 w-70-ns btnSS b br2 pointer white f6'*/}

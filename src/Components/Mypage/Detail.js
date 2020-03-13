@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const FontAwesome = require('react-fontawesome');
 
 const copyToClipboard =(loc)=> {
@@ -47,7 +47,7 @@ const Detail = ({ info, changeAuthentic, changeNotAuthentic, changeGood, changeB
 
     return(
         <div className=''>
-            <div className="black tc bg-white-60">
+            <div className="black tc bg-white-60 mb4-ns">
                 <div className="tc w-100 w-100-ns" >
                     <img id='inputimage' alt='No image' src={info.photo1}
                          style={{ }}
@@ -75,17 +75,16 @@ const Detail = ({ info, changeAuthentic, changeNotAuthentic, changeGood, changeB
                             {/*not login*/}
                             {
                                 userid === '' &&
-                                <button className="btnBa b ph2 pv1 white br2 pointer f7"
-                                        onClick={() => {
-                                            alert("Please log in first");
-                                            onRouteChange('userLogIn')
-                                        }}>
-                                    <FontAwesome
-                                        className='super-crazy-colors'
-                                        name='thumbs-up'
-                                        size='1x'
-                                        style={{textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)'}}
-                                    /> {showNumber(info.authentic)}</button>
+                                <button className="btnBa b ph2 pv1  white br2 pointer f7"
+                                        onClick={() => {alert("Please log in first"); }} >
+                                    <Link to="/userLogIn" >
+                                        <FontAwesome
+                                            className='super-crazy-colors'
+                                            name='thumbs-up'
+                                            size='1x'
+                                            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                                        /> {showNumber(info.authentic)}</Link>
+                                </button>
                             }
                             {/*authentic user*/}
                             {
@@ -189,16 +188,15 @@ const Detail = ({ info, changeAuthentic, changeNotAuthentic, changeGood, changeB
                             {
                                 userid === '' &&
                                 <button className="btnBa b ph2 pv1 white br2 pointer f7"
-                                        onClick={() => {
-                                            alert("Please log in first");
-                                            onRouteChange('userLogIn')
-                                        }}>
-                                    <FontAwesome
-                                        className='super-crazy-colors'
-                                        name='thumbs-down'
-                                        size='1x'
-                                        style={{textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)'}}
-                                    /> {showNumber(info.bad)}</button>
+                                        onClick={() => {alert("Please log in first"); }} >
+                                    <Link to="/userLogIn" >
+                                        <FontAwesome
+                                            className='super-crazy-colors'
+                                            name='thumbs-down'
+                                            size='1x'
+                                            style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                                        /> {showNumber(info.bad)}
+                                    </Link></button>
                             }
                             {
                                 userid !== '' &&
@@ -322,7 +320,7 @@ const Detail = ({ info, changeAuthentic, changeNotAuthentic, changeGood, changeB
                     {
                         userid === '' &&
                         <button className="btnBa b ph2 pv1 input-reset white br1 grow pointer f7"
-                                onClick={() => {alert("Please log in first"); onRouteChange('userLogIn')}} > Add a comment</button>
+                                onClick={() => {alert("Please log in first") }} ><Link to="/userLogIn" >Add a comment</Link></button>
                     }
                     {
                         userid !== '' &&
@@ -341,7 +339,7 @@ const Detail = ({ info, changeAuthentic, changeNotAuthentic, changeGood, changeB
                     }
                     <div className="ml2 ml7-ns mb2"> </div>
 
-                    <label className="tl db fw6 lh-copy f6 pt2 f7">What country of food is this? </label>
+                    <label className="tl db fw6 f6 pt2 f7">What country of food is this? </label>
                     <select className='f7 ph3-ns pv2-ns pv1 ttll b br2 pointer' name="country" id="mySelect">
                         <option value="">Choose a country...</option>
                         <option value="Afganistan">Afghanistan</option>

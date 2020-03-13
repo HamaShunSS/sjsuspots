@@ -1,10 +1,12 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
-const NoData = ({ onRouteChange }) => {
+const NoData = ({ routeCheck }) => {
     return (
         <div className="pv4 mb6-ns">
             <label className="db pv6 fw6 lh-copy f1 mt5 mt7-ns ph4" htmlFor="name">There is no data around the location yet...</label>
-            <button onClick={() => onRouteChange('/')} className='ph3-ns pv2-ns pv1 ph2 btnSS b white br-pill pointer'>Back to Home</button>
+            <button className='btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6'>
+                <Link to="/" onClick={() => routeCheck('')}>Back to home</Link></button>
         </div>
     );
 }

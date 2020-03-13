@@ -51,21 +51,18 @@ class UserLogin extends Component {
                 .then(response => response.json()) // Get response through json, and get data by ".then"
                 .then(response => {
                     if (response === 'wrong credentials') {
-                        //ラウト変更可能時
-                        // this.setState({
-                        //     link: '/'
-                        // });
-                        // console.log('test ha', this.state.link)
-                        this.props.onRouteChange('mistake');
+                        // this.props.onRouteChange('mistake');
+                        console.log('ここチェック', response);
+                        this.props.routeCheck('/mistake');
                     } else {
-                        console.log('ここチェック', response.status);
+                        console.log('ここチェック', response);
                         this.props.onIsSignedInChange(response.username, response.email, response.country, response.status, response.id);
-                        // this.setState({link: '/form'})
-                        this.props.onRouteChange('/');
+                        // this.props.onRouteChange('/');
                     }
                 })
         }
     }
+
 
     render() {
             return (
@@ -98,17 +95,23 @@ class UserLogin extends Component {
 
 
                         <div className="pv5-ns pv3">
-                            <input
-                                // to={this.state.link}
-                                  onClick={this.onSubmitForm}
-                                  className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6"
-                                  type="submit"
-                                  value="Log in"
-                            />
+                            {/*<Link to={this.onSubmitForm} onClick={this.onSubmitForm()} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6"*/}
+                            {/*>Log in</Link>*/}
+                            <button onClick={this.onSubmitForm} className='btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6'>Log in</button>
+                            {/*<input*/}
+                                {/*// to={this.state.link}*/}
+                                  {/*onClick={this.onSubmitForm}*/}
+                                  {/*className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6"*/}
+                                  {/*type="submit"*/}
+                                  {/*value="Log in"*/}
+                            {/*/>*/}
                         </div>
                         <label className="">New to Recotto?</label>
-                        <button onClick={() => this.props.onRouteChange('userSignUp')}  className="btnSS b tc ph2 pv1 ma3 ba b--white white br-pill pointer f6">Sign
-                            up</button>
+                        <button className='btnSS b tc ph2 pv1 ma3 ba b--white white br-pill pointer f6'>
+                            <Link to="/userSignUp" style={{color: 'white'}}>Sign
+                                up</Link></button>
+                        {/*<button onClick={() => this.props.onRouteChange('userSignUp')}  className="btnSS b tc ph2 pv1 ma3 ba b--white white br-pill pointer f6">Sign*/}
+                            {/*up</button>*/}
                         <div className='pv7-ns pv6'>
 
                         </div>

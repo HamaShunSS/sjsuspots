@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CardList from './CardList'; //child
 import Scroll from '../Scroll';
 import Spinner from 'react-spinner-material';
@@ -87,7 +88,7 @@ class Mypage extends React.Component {
                 }
             })
         if (this.props.route === '/' || 'secondUI') {
-            this.props.onRouteChange('iine');
+            this.props.routeCheck('/thankyou');
         }
     }
 
@@ -112,7 +113,7 @@ class Mypage extends React.Component {
                 }
             })
         if (this.props.route === '/' || 'secondUI') {
-            this.props.onRouteChange('iine');
+            this.props.routeCheck('/thankyou');
         }
     }
 
@@ -137,8 +138,7 @@ class Mypage extends React.Component {
                 }
             })
         if (this.props.route === '/' || 'secondUI') {
-            this.props.onRouteChange('iine');
-        }
+            this.props.routeCheck('/thankyou');        }
     }
 
     //Bad fetch
@@ -162,8 +162,7 @@ class Mypage extends React.Component {
                 }
             })
         if (this.props.route === '/' || 'secondUI') {
-            this.props.onRouteChange('iine');
-        }
+            this.props.routeCheck('/thankyou');        }
     }
 
     onSpotIdChange = (spot) => {
@@ -179,7 +178,7 @@ class Mypage extends React.Component {
         if (this.state.com === '' ) {
             alert("コメントを記入してください...");
         } else {
-            if (this.props.route === 'backMaster') {
+            if (this.props.route === 'secondUI') {
                 this.props.onRouteChange('loading');
             }
             console.log('com のナカは ', this.state.com)
@@ -196,9 +195,9 @@ class Mypage extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyouBM');
+                        this.props.routeCheck('/thankyou');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
@@ -228,21 +227,21 @@ class Mypage extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyou');
+                        this.props.routeCheck('/thankyou');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
     }
 
 
-    //GUI for Backend changeComments
+
     onCommentChange =(id) => {
         if (this.state.com === '' ) {
             alert("コメントを記入してください...");
         } else {
-            if (this.props.route === 'backMaster') {
+            if (this.props.route === 'secondUI') {
                 this.props.onRouteChange('loading');
             }
             console.log('textB のナカは ', this.state.com)
@@ -258,9 +257,9 @@ class Mypage extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyouBM');
+                        this.props.routeCheck('/thankyou');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
@@ -279,7 +278,7 @@ class Mypage extends React.Component {
             .then(response => response.json()) // Get response through json, and get data by ".then"
             .then(response => {
                 console.log('what is ', response)
-                this.props.onRouteChange('thankyouBM');
+                this.props.routeCheck('/thankyou');
             })
     }
 
@@ -294,7 +293,7 @@ class Mypage extends React.Component {
             .then(response => response.json()) // Get response through json, and get data by ".then"
             .then(response => {
                 console.log('what is ', response)
-                this.props.onRouteChange('thankyouBM');
+                this.props.routeCheck('/thankyou');
             })
     }
 
@@ -321,9 +320,9 @@ class Mypage extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyouBM');
+                        this.props.routeCheck('/thankyou');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry');
                     }
                 })
         }
@@ -551,7 +550,9 @@ class Mypage extends React.Component {
                 <div>
                     <div className=" w-100 w-100-ns mv2">
                         <label className="pv4-ns f3 pt3 pv2 fw6 f2-ns mh2">Shared info</label>
-                        <button className='ph3-ns pv2-ns pv1 ph2 ml4 btnSS b white br-pill pointer' onClick={() => {this.setState({detail: 'no'})}}><p className='fl f6'>Back</p></button>
+                        <button className='ph3-ns pv2-ns pv1 ph2 ml4 btnSS b white br-pill pointer' >
+
+                                <Link to="/mypage" style={{color: 'white'}} onClick={() => {this.setState({detail: 'no'})}}>Back</Link></button>
                     </div>
                     <Detail
                         info={this.state.spot}
@@ -593,11 +594,11 @@ class Mypage extends React.Component {
             return (
                 <div className="tc ">
 
-                    <div className="">
+                    <div className="bb">
                         <label className="pv3 fl ph1 w-100 w-100-ns tc db fw6 f3">{this.props.username}'s page</label>
                     </div>
                     {/*<SearchBox onSearchChange={this.onSearchChange}/>*/}
-                    <div className="">
+                    <div className="bg-dark-20">
                         <CardList infos={filterdInfos}
                                   onSpotIdChange={this.onSpotIdChange}
                                   onCommentChange={this.onCommentChange}

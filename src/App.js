@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import Navigation from './Components/Navigation/Navigation';
 import Category from './Components/Search/Category';
 import Infos from './Components/Infos/Infos';
@@ -48,6 +49,8 @@ const initialState = {
     email:'',
     country:'',
     status:'',
+    //
+    routeCheck:'',
     spot: null,
     lat: null,
     lon: null,
@@ -124,6 +127,12 @@ class App extends Component {
         });
     }
 
+    routeCheck = (e) => {
+        this.setState({
+            routeCheck: e
+        });
+    }
+
 
     onIsSignedInChange = (username, email, country, status, id) => {
         console.log(id)
@@ -162,6 +171,7 @@ class App extends Component {
 
 
   render() {
+        console.log('safdsdaf', this.state.longitude, this.state.latitude)
       const { isSignedIn, route, email} = this.state;
       // const num = 100
       // // //現在地特定
@@ -210,140 +220,274 @@ class App extends Component {
     return (
         <div className="App">
             {/*ラウト変換できるなら*/}
-            {/*<Router>*/}
-                {/*<Fragment>*/}
-                    {/*<Navigation onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn} username={this.state.username}/>*/}
-                    {/*<Route exact path="/" route={this.state.route}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} isSignedIn={this.state.isSignedIn} category={this.state.category} region={this.state.region} component={ FUI } />*/}
-                    {/*<section className="container">*/}
-                        {/*<Switch>*/}
-                            {/*<Route exact path='/form'  component={ Form }/>*/}
-                            {/*<Route exact path='/thankyou'  component={ Thankyou }/>*/}
-                            {/*<Route exact path='/iine'  component={ Iine }/>*/}
-                            {/*<Route exact path='/waruiine'  component={ Waruiine }/>*/}
-                            {/*<Route exact path='/loading'  component={ Loading }/>*/}
-                            {/*<Route exact path='/back' status={this.state.status}  component={ GUIforBack }/>*/}
-                            {/*<Route exact path='/sorry'  component={ Sorry }/>*/}
-                            {/*<Route exact path='/thankyoub'  component={ ThankyouB }/>*/}
-                            {/*<Route exact path='/nodata'  component={ NoData }/>*/}
-                            {/*<Route exact path='/touroku' onIsSignedInChange={this.onIsSignedInChange} component={ Touroku }/>*/}
-                            {/*<Route exact path='/signin' onIsSignedInChange={this.onIsSignedInChange}  component={ SignIn }/>*/}
-                            {/*<Route exact path='/backMaster' email={this.state.email} status={this.state.status}  component={ GUIforMaster }/>*/}
-                            {/*<Route exact path='/mistake'  component={ Mistake }/>*/}
-                            {/*<Route exact path='/thankyouBM'  component={ ThankyouBM }/>*/}
-                            {/*<Route exact path='/sui' onRouteChange={this.onRouteChange} route={this.state.route} loadCategory={this.loadCategory} loadRegion={this.loadRegion} isSignedIn={this.state.isSignedIn} category={this.state.category} region={this.state.region} component={ SUI }/>*/}
-                            {/*<Route exact path='/userLogIn' onIsSignedInChange={this.onIsSignedInChange} component={ UserLogin }/>*/}
-                            {/*<Route exact path='/about'  component={ About }/>*/}
-                            {/*<Route exact path='/userSignUp' onIsSignedInChange={this.onIsSignedInChange}  component={ UserSignUp }/>*/}
-                            {/*<Route exact path='/iine'  component={ Iine }/>*/}
-                        {/*</Switch>*/}
-                    {/*</section>*/}
-                {/*</Fragment>*/}
-            {/*</Router>*/}
-
-            <Navigation onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn} username={this.state.username} onMenuChange={this.onMenuChange} menu={this.state.menu}/>
-            {
-                this.state.menu === 'yes' &&
-                    <Menu onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn} username={this.state.username} onMenuChange={this.onMenuChange} menu={this.state.menu} loadisSignedInChange={this.loadisSignedInChange} onIsSignedInChange={this.onIsSignedInChange}/>
-            }
-            <div onClick={() => {this.onMenuChange('no')}}>
-            { route === 'home'
-                ? <div>
-                    < FUI route={this.state.route}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} isSignedIn={this.state.isSignedIn} category={this.state.category} region={this.state.region} />
-                </div>
-                :(
-                    // route === 'category'
-                    //     ?< Category loadUser={this.loadUser} onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} region={this.state.region}/>
-                    //     :(
-                    //         route === 'infos'
-                    //             ?< Infos route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} category={this.state.category} region={this.state.region}/>
-                    //             :(
-                                    route === 'thankyou'
-                                        ?< Thankyou onRouteChange={this.onRouteChange} region={this.state.region} />
-                                        :(
-                                            route === 'iine'
-                                                ?< Iine onRouteChange={this.onRouteChange} region={this.state.region}/>
-                                                :(
-                                                    route === 'waruiine'
-                                                        ?< Waruiine onRouteChange={this.onRouteChange} region={this.state.region}/>
-                                                        :(
-                                                            route === 'loading'
-                                                                ?< Loading onRouteChange={this.onRouteChange} />
-                                                                    :(
-                                                                        route === 'back'
-                                                                            ?< GUIforBack onRouteChange={this.onRouteChange} status={this.state.status} />
-                                                                            :(
-                                                                                route === 'sorry'
-                                                                                    ?< Sorry onRouteChange={this.onRouteChange} />
-                                                                                    :(
-                                                                                        route === 'thankyoub'
-                                                                                            ?< ThankyouB onRouteChange={this.onRouteChange} />
-                                                                                            :(
-                                                                                                route === 'nodata'
-                                                                                                    ?< NoData onRouteChange={this.onRouteChange} />
-                                                                                                    :(
-                                                                                                        route === 'touroku'
-                                                                                                            ?< Touroku onIsSignedInChange={this.onIsSignedInChange}  onRouteChange={this.onRouteChange} />
-                                                                                                            :(
-                                                                                                                route === 'signin'
-                                                                                                                    ?< SignIn onIsSignedInChange={this.onIsSignedInChange}  onRouteChange={this.onRouteChange} />
-                                                                                                                    :(
-                                                                                                                        route === 'backMaster'
-                                                                                                                            ?< GUIforMaster onRouteChange={this.onRouteChange} email={this.state.email} status={this.state.status} onIsSignedInChange={this.onIsSignedInChange} />
-                                                                                                                            :(
-                                                                                                                                route === 'mistake'
-                                                                                                                                    ?< Mistake onRouteChange={this.onRouteChange} />
-                                                                                                                                    :(
-                                                                                                                                        route === 'thankyouBM'
-                                                                                                                                            ?< ThankyouBM onRouteChange={this.onRouteChange} />
-                                                                                                                                            :(
-                                                                                                                                                route === 'sui'
-                                                                                                                                                    ?< SUI onRouteChange={this.onRouteChange} route={this.state.route} loadCategory={this.loadCategory} loadRegion={this.loadRegion} isSignedIn={this.state.isSignedIn} category={this.state.category} region={this.state.region}/>
-                                                                                                                                                    :(
-                                                                                                                                                        route === 'userLogIn'
-                                                                                                                                                            ?< UserLogin onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} />
-                                                                                                                                                            :(
-                                                                                                                                                                route === 'about'
-                                                                                                                                                                    ?< About onRouteChange={this.onRouteChange} />
-                                                                                                                                                                    :(
-                                                                                                                                                                        route === 'userSignUp'
-                                                                                                                                                                            ?< UserSignUp onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} />
-                                                                                                                                                                            :(
-                                                                                                                                                                                route === 'secondUI'
-                                                                                                                                                                                    ?< SecondUI onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} lon={this.state.lon} lat={this.state.lat} longitude={this.state.longitude} latitude={this.state.latitude} userId={this.state.userid} username={this.state.username} usercountry={this.state.country}/>
-                                                                                                                                                                                    :(
-                                                                                                                                                                                        route === 'mypage'
-                                                                                                                                                                                            ?< Mypage onRouteChange={this.onRouteChange} userid={this.state.userid} username={this.state.username} usercountry={this.state.country} email={this.state.email} status={this.state.status} />
-                                                                                                                                                                                            :(
-                                                                                                                                                                                                route === '/'
-                                                                                                                                                                                                    ?< FirstUI onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} loadLonLat={this.loadLonLat} lon={this.state.lon} lat={this.state.lat} longitude={this.state.longitude} latitude={this.state.latitude} userId={this.state.userid} username={this.state.username} usercountry={this.state.country}/>
-                                                                                                                                                                                                    :(
-                                                                                                                                                                                                        < Form route={this.state.route} userid={this.state.userid} username={this.state.username} country={this.state.country} onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />
-                                                                                                                                                                                                    )
-                                                                                                                                                                                            )
-                                                                                                                                                                                    )
-                                                                                                                                                                            )
-                                                                                                                                                                    )
-                                                                                                                                                            )
-                                                                                                                                                    )
-                                                                                                                                            )
-                                                                                                                                    )
-                                                                                                                            )
-                                                                                                                    )
-                                                                                                            )
-                                                                                                    )
-                                                                                            )
-                                                                                    )
-                                                                            )
-                                                                    )
-                                                          )
-                                                    )
-                                        )
+            <Router>
+                <Fragment>
+                    <Navigation onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn} username={this.state.username} onMenuChange={this.onMenuChange} menu={this.state.menu}/>
+                    {
+                        this.state.menu === 'yes' &&
+                        <Menu onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn} routeCheck={this.routeCheck} username={this.state.username} onMenuChange={this.onMenuChange} menu={this.state.menu} loadisSignedInChange={this.loadisSignedInChange} onIsSignedInChange={this.onIsSignedInChange}/>
+                    }
+                    <div onClick={() => {this.onMenuChange('no')}}>
+                        {
+                            <Route exact path="/" render={() => (
+                                this.state.routeCheck === '/thankyou' ? (
+                                    <Redirect to="/thankyou"/>
+                                ) : (
+                                    this.state.routeCheck === '/sorry' ? (
+                                        <Redirect to="/sorry"/>
+                                    ) : (
+                                        this.state.routeCheck === '/secondUI' ? (
+                                            <Redirect to="/secondUI" />
+                                        ) : (
+                                            < FirstUI onIsSignedInChange={this.onIsSignedInChange}
+                                                      onRouteChange={this.onRouteChange}
+                                                      routeCheck={this.routeCheck}
+                                                      loadLonLat={this.loadLonLat} lon={this.state.lon}
+                                                      lat={this.state.lat}
+                                                      longitude={this.state.longitude} latitude={this.state.latitude}
+                                                      userId={this.state.userid}
+                                                      username={this.state.username} usercountry={this.state.country}/>
+                                            )
+                                    )
                                 )
-                //         )
-                // )
-            }
-            <Contact isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
-        </div>
+                            )
+                            }/>
+                        }
+                        <section className="">
+                            <Switch>
+                                <Route exact path='/form' render={() => (
+                                    this.state.routeCheck ==='/thankyou' ? (
+                                        <Redirect to="/thankyou"/>
+                                    ) : (
+                                        this.state.routeCheck ==='/sorry' ? (
+                                            <Redirect to="/sorry"/>
+                                        ) : (
+                                            this.state.isSignedIn === 'yes' ? (
+                                                    < Form route={this.state.route} userid={this.state.userid} username={this.state.username} country={this.state.country} onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} routeCheck={this.routeCheck} />
+                                                ) : (
+                                                <Redirect to="/"/>
+                                                )
+                                        )
+                                    )
+                                )}/>
+                                <Route exact path='/thankyou' render={()=> < Thankyou routeCheck={this.routeCheck}/>} />
+                                <Route exact path='/iine' render={()=> < Iine routeCheck={this.routeCheck}/>} />
+                                <Route exact path='/waruiine'  component={ Waruiine }/>
+                                <Route exact path='/loading'  component={ Loading }/>
+                                <Route exact path='/back' status={this.state.status} render={()=> < GUIforBack onRouteChange={this.onRouteChange} status={this.state.status} />} />
+                                <Route exact path='/sorry' render={()=> < Sorry routeCheck={this.routeCheck}/>} />
+                                <Route exact path='/thankyoub'  component={ ThankyouB }/>
+                                <Route exact path='/nodata'  component={ NoData }/>
+                                <Route exact path='/touroku' onIsSignedInChange={this.onIsSignedInChange} component={ Touroku }/>
+                                <Route exact path='/signin' onIsSignedInChange={this.onIsSignedInChange}  render={() => (
+                                    this.state.routeCheck ==='/backMaster' ? (
+                                        <Redirect to="/backMaster"/>
+                                        ) : (
+                                            this.state.routeCheck ==='/back' ? (
+                                                <Redirect to="/back" />
+                                            ) : (
+                                                this.state.routeCheck ==='/mistake' ? (
+                                                    <Redirect to="/mistake"/>
+                                            ) : (
+                                                    < SignIn onIsSignedInChange={this.onIsSignedInChange} routeCheck={this.routeCheck} onRouteChange={this.onRouteChange} />
+                                            )
+                                        )
+                                    )
+                                )}/>
+                                <Route exact path='/backMaster' email={this.state.email} status={this.state.status}  render={()=> (
+                                    this.state.routeCheck ==='/thankyouBM' ? (
+                                        <Redirect to="/thankyouBM"/>
+                                    ) : (
+                                            this.state.routeCheck ==='/sorry' ? (
+                                                <Redirect to="/sorry"/>
+                                            ) : (
+                                                this.state.isSignedIn === 'yes' ? (
+                                                    < GUIforMaster onRouteChange={this.onRouteChange} email={this.state.email} status={this.state.status}
+                                                                   routeCheck={this.routeCheck} onIsSignedInChange={this.onIsSignedInChange} />
+                                                    ) : (
+                                                    <Redirect to="/"/>
+                                                )
+                                            )
+                                        )
+                                )} />
+                                <Route exact path='/mistake'  render={() => < Mistake onRouteChange={this.onRouteChange} routeCheck={this.routeCheck}/>} />
+                                <Route exact path='/thankyouBM' render={()=> < ThankyouBM routeCheck={this.routeCheck}/>} />
+                                <Route exact path='/nodata' render={()=> < NoData routeCheck={this.routeCheck} />} />
+                                <Route exact path='/secondUI' render={()=> (
+                                    this.state.routeCheck ==='/thankyou' ? (
+                                        <Redirect to="/thankyou"/>
+                                        ) : (
+                                                this.state.routeCheck ==='/nodata' ? (
+                                                <Redirect to="/nodata"/>
+                                                ) : (
+                                                    this.state.routeCheck ==='/sorry' ? (
+                                                        <Redirect to="/sorry"/>
+                                                        ) : (
+                                                            this.state.longitude === '' && this.state.latitude === '' ? (
+                                                                <Redirect to="/"/>
+                                                                ) : (
+                                                            < SecondUI onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange}
+                                                            routeCheck={this.routeCheck} lon={this.state.lon} lat={this.state.lat} longitude={this.state.longitude}
+                                                            latitude={this.state.latitude} userId={this.state.userid} username={this.state.username}
+                                                            usercountry={this.state.country}/>                                                          )
+                                                        )
+                                                    )
+                                            )
+                                    )}  />
+
+                                <Route exact path='/userLogIn' render={() => (
+                                    this.state.isSignedIn ==='yes' ? (
+                                        <Redirect to="/"/>
+                                    ) : (
+                                        this.state.routeCheck ==='/mistake' ? (
+                                            <Redirect to="/mistake"/>
+                                            ) : (
+                                        < UserLogin onIsSignedInChange={this.onIsSignedInChange} routeCheck={this.routeCheck} onRouteChange={this.onRouteChange} />
+                                    )
+                                        )
+                                )}/>
+                                <Route exact path='/about' render={()=> < About routeCheck={this.routeCheck}/>} />
+                                {/*<Route exact path='/userSignUp' onIsSignedInChange={this.onIsSignedInChange}  component={ UserSignUp }/>*/}
+                                <Route exact path='/userSignUp' render={() => (
+                                    this.state.isSignedIn ==='yes' ? (
+                                        <Redirect to="/"/>
+                                    ) : (
+                                        this.state.routeCheck ==='/mistake' ? (
+                                            <Redirect to="/mistake"/>
+                                        ) : (
+                                            < UserSignUp onIsSignedInChange={this.onIsSignedInChange} routeCheck={this.routeCheck} onRouteChange={this.onRouteChange} />
+                                        )
+                                    )
+                                )}/>
+                                <Route exact path='/mypage' render={() => (
+                                        this.state.routeCheck ==='/thankyou' ? (
+                                            <Redirect to="/thankyou"/>
+                                        ) : (
+                                            this.state.routeCheck ==='/sorry' ? (
+                                                <Redirect to="/sorry"/>
+                                            ) : (
+                                                this.state.isSignedIn === 'yes' ? (
+                                                    <Mypage onRouteChange={this.onRouteChange} userid={this.state.userid} routeCheck={this.routeCheck}
+                                                            username={this.state.username} usercountry={this.state.country} email={this.state.email}
+                                                            status={this.state.status} />
+                                                ) : (
+                                                    <Redirect to="/"/>
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    } />
+                            </Switch>
+                        </section>
+                        <Contact isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
+                    </div>
+                </Fragment>
+            </Router>
+
+            {/*<Navigation onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn} username={this.state.username} onMenuChange={this.onMenuChange} menu={this.state.menu}/>*/}
+            {/*{*/}
+                {/*this.state.menu === 'yes' &&*/}
+                    {/*<Menu onRouteChange={this.onRouteChange} isSignedIn={this.state.isSignedIn} username={this.state.username} onMenuChange={this.onMenuChange} menu={this.state.menu} loadisSignedInChange={this.loadisSignedInChange} onIsSignedInChange={this.onIsSignedInChange}/>*/}
+            {/*}*/}
+            {/*<div onClick={() => {this.onMenuChange('no')}}>*/}
+            {/*{ route === 'home'*/}
+                {/*? <div>*/}
+                    {/*< FUI route={this.state.route}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} isSignedIn={this.state.isSignedIn} category={this.state.category} region={this.state.region} />*/}
+                {/*</div>*/}
+                {/*:(*/}
+                    {/*// route === 'category'*/}
+                    {/*//     ?< Category loadUser={this.loadUser} onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} loadRegion={this.loadRegion} region={this.state.region}/>*/}
+                    {/*//     :(*/}
+                    {/*//         route === 'infos'*/}
+                    {/*//             ?< Infos route={this.state.route} loadUser={this.loadUser}  onRouteChange={this.onRouteChange} loadCategory={this.loadCategory} category={this.state.category} region={this.state.region}/>*/}
+                    {/*//             :(*/}
+                                    {/*route === 'thankyou'*/}
+                                        {/*?< Thankyou onRouteChange={this.onRouteChange} region={this.state.region} />*/}
+                                        {/*:(*/}
+                                            {/*route === 'iine'*/}
+                                                {/*?< Iine onRouteChange={this.onRouteChange} region={this.state.region}/>*/}
+                                                {/*:(*/}
+                                                    {/*route === 'waruiine'*/}
+                                                        {/*?< Waruiine onRouteChange={this.onRouteChange} region={this.state.region}/>*/}
+                                                        {/*:(*/}
+                                                            {/*route === 'loading'*/}
+                                                                {/*?< Loading onRouteChange={this.onRouteChange} />*/}
+                                                                    {/*:(*/}
+                                                                        {/*route === 'back'*/}
+                                                                            {/*?< GUIforBack onRouteChange={this.onRouteChange} status={this.state.status} />*/}
+                                                                            {/*:(*/}
+                                                                                {/*route === 'sorry'*/}
+                                                                                    {/*?< Sorry onRouteChange={this.onRouteChange} />*/}
+                                                                                    {/*:(*/}
+                                                                                        {/*route === 'thankyoub'*/}
+                                                                                            {/*?< ThankyouB onRouteChange={this.onRouteChange} />*/}
+                                                                                            {/*:(*/}
+                                                                                                {/*route === 'nodata'*/}
+                                                                                                    {/*?< NoData onRouteChange={this.onRouteChange} />*/}
+                                                                                                    {/*:(*/}
+                                                                                                        {/*route === 'touroku'*/}
+                                                                                                            {/*?< Touroku onIsSignedInChange={this.onIsSignedInChange}  onRouteChange={this.onRouteChange} />*/}
+                                                                                                            {/*:(*/}
+                                                                                                                {/*route === 'signin'*/}
+                                                                                                                    {/*?< SignIn onIsSignedInChange={this.onIsSignedInChange}  onRouteChange={this.onRouteChange} />*/}
+                                                                                                                    {/*:(*/}
+                                                                                                                        {/*route === 'backMaster'*/}
+                                                                                                                            {/*?< GUIforMaster onRouteChange={this.onRouteChange} email={this.state.email} status={this.state.status} onIsSignedInChange={this.onIsSignedInChange} />*/}
+                                                                                                                            {/*:(*/}
+                                                                                                                                {/*route === 'mistake'*/}
+                                                                                                                                    {/*?< Mistake onRouteChange={this.onRouteChange} />*/}
+                                                                                                                                    {/*:(*/}
+                                                                                                                                        {/*route === 'thankyouBM'*/}
+                                                                                                                                            {/*?< ThankyouBM onRouteChange={this.onRouteChange} />*/}
+                                                                                                                                            {/*:(*/}
+                                                                                                                                                {/*route === 'sui'*/}
+                                                                                                                                                    {/*?< SUI onRouteChange={this.onRouteChange} route={this.state.route} loadCategory={this.loadCategory} loadRegion={this.loadRegion} isSignedIn={this.state.isSignedIn} category={this.state.category} region={this.state.region}/>*/}
+                                                                                                                                                    {/*:(*/}
+                                                                                                                                                        {/*route === 'userLogIn'*/}
+                                                                                                                                                            {/*?< UserLogin onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} />*/}
+                                                                                                                                                            {/*:(*/}
+                                                                                                                                                                {/*route === 'about'*/}
+                                                                                                                                                                    {/*?< About onRouteChange={this.onRouteChange} />*/}
+                                                                                                                                                                    {/*:(*/}
+                                                                                                                                                                        {/*route === 'userSignUp'*/}
+                                                                                                                                                                            {/*?< UserSignUp onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} />*/}
+                                                                                                                                                                            {/*:(*/}
+                                                                                                                                                                                {/*route === 'secondUI'*/}
+                                                                                                                                                                                    {/*?< SecondUI onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} lon={this.state.lon} lat={this.state.lat} longitude={this.state.longitude} latitude={this.state.latitude} userId={this.state.userid} username={this.state.username} usercountry={this.state.country}/>*/}
+                                                                                                                                                                                    {/*:(*/}
+                                                                                                                                                                                        {/*route === 'mypage'*/}
+                                                                                                                                                                                            {/*?< Mypage onRouteChange={this.onRouteChange} userid={this.state.userid} username={this.state.username} usercountry={this.state.country} email={this.state.email} status={this.state.status} />*/}
+                                                                                                                                                                                            {/*:(*/}
+                                                                                                                                                                                                {/*route === '/'*/}
+                                                                                                                                                                                                    {/*?< FirstUI onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange} loadLonLat={this.loadLonLat} lon={this.state.lon} lat={this.state.lat} longitude={this.state.longitude} latitude={this.state.latitude} userId={this.state.userid} username={this.state.username} usercountry={this.state.country}/>*/}
+                                                                                                                                                                                                    {/*:(*/}
+                                                                                                                                                                                                        {/*< Form route={this.state.route} userid={this.state.userid} username={this.state.username} country={this.state.country} onRouteChange={this.onRouteChange} onInputChange={this.onInputChange} />*/}
+                                                                                                                                                                                                    {/*)*/}
+                                                                                                                                                                                            {/*)*/}
+                                                                                                                                                                                    {/*)*/}
+                                                                                                                                                                            {/*)*/}
+                                                                                                                                                                    {/*)*/}
+                                                                                                                                                            {/*)*/}
+                                                                                                                                                    {/*)*/}
+                                                                                                                                            {/*)*/}
+                                                                                                                                    {/*)*/}
+                                                                                                                            {/*)*/}
+                                                                                                                    {/*)*/}
+                                                                                                            {/*)*/}
+                                                                                                    {/*)*/}
+                                                                                            {/*)*/}
+                                                                                    {/*)*/}
+                                                                            {/*)*/}
+                                                                    {/*)*/}
+                                                          {/*)*/}
+                                                    {/*)*/}
+                                        {/*)*/}
+                                {/*)*/}
+                {/*//         )*/}
+                {/*// )*/}
+            {/*}*/}
+            {/*<Contact isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>*/}
+        {/*</div>*/}
         </div>
     );
   }

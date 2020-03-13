@@ -53,10 +53,10 @@ const Navigation = ({ onRouteChange, isSignedIn, username, onMenuChange, menu}) 
         <nav style={{color: 'white', display: 'flex'}} className='w-100 w-100-ns bg-dark'>
             <div className="ma2 ma2-ns">
                 {/*ラウト変更可能時*/}
-                {/*<Link to="/about" className='moji b f4 pv1 ma3-ns pv2-ns'>Recotto</Link>*/}
+                <Link to="/about" style={{color: 'white'}} className='moji b f4 pv1 ma3-ns pv2-ns'>Recotto</Link>
                 {/*<label className=' f5 ma3 mv4-ns'>{username}</label>*/}
 
-                <label onClick={() => onRouteChange('about')} className='moji b ml1 f4 pv1 ma3-ns'>Recotto</label>
+                {/*<label onClick={() => onRouteChange('about')} className='moji b ml1 f4 pv1 ma3-ns'>Recotto</label>*/}
                 <label className='ml4 f5 ma2 ma3-ns'>
                     {
                         isSignedIn === 'yes' &&

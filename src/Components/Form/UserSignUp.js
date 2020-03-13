@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 
 const FontAwesome = require('react-fontawesome');
 
@@ -57,8 +58,7 @@ class UserSignUp extends Component {
         console.log('check', x)
         if (this.state.password !== this.state.confirm ) {
             alert("Your password does not match with conrirm");
-        }
-        if (this.state.username === '' || this.state.email === '' || this.state.password === '' || x === 'notselected' ) {
+        } else if (this.state.username === '' || this.state.email === '' || this.state.password === '' || x === 'notselected' ) {
             alert("You forgot username, email, password, and/or country...");
         } else {
             if (this.props.route === 'touroku') {
@@ -80,10 +80,29 @@ class UserSignUp extends Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/mistake');
                     }
-                    this.props.onIsSignedInChange(response.username, response.email, response.country, response.status, response.id);
-                    this.props.onRouteChange('form');
+
+                    fetch('https://spots-for-sjsu-students.herokuapp.com/signin', {
+                        method: 'post',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({ // Send email and password updated at "onEmailChange" and "onPasswordChange" to the database through JSON.stringify
+                            email: response.email,
+                            password: response.password
+                        })
+                    })
+                        .then(response => response.json()) // Get response through json, and get data by ".then"
+                        .then(response => {
+                            if (response === 'wrong credentials') {
+                                console.log(response)
+                                this.props.routeCheck('/mistake');
+                                // this.props.onRouteChange('mistake');
+                            } else {
+                                console.log('ここチェック', response.status);
+                                this.props.onIsSignedInChange(response.username, response.email, response.country, response.status, response.id);
+                                // this.props.onRouteChange('/');
+                            }
+                        })
                 })
         }
     }
@@ -103,7 +122,7 @@ class UserSignUp extends Component {
         return (
             <main className="pa4 ">
                 <div className="tc fl w-100 w-100-ns tc mb7">
-                    <fieldset id="sign_up" className="ba b--transparent ph0 mh0 mt4-ns ">
+                    <div id="sign_up" className="ba b--transparent ph0 mh0 mt4-ns ">
                         <div className="db f2-ns f3 pv5-ns pv4 fl w-100 w-100-ns tc fw6 ph0 mh0">User Registration</div>
                         <div className="pt4">
                             <label className="db fw6 lh-copy f6 pt2" htmlFor="name">User Name</label>
@@ -131,7 +150,7 @@ class UserSignUp extends Component {
                                 size='1x'
                                 style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
                             />
-                                {' '}email may be taken...</label>
+                                {' '}This email is already taken...</label>
                         }
                         </div>
                         <div className="pt4">
@@ -173,7 +192,7 @@ class UserSignUp extends Component {
                                 {/*onChange={this.onCountryChange}*/}
                             {/*/>*/}
                         </div>
-                        <select className='btnSS b tc ph3 pv2 ma3 ba b--white white br-2 pointer f6' name="country" id="mySelect">
+                        <select className='btnSS b ph3 pv2 ba b--white white br-2 pointer f6' name="country" id="mySelect">
                             <option value="notselected">Country...</option>
                             <option value="Afganistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
@@ -423,7 +442,7 @@ class UserSignUp extends Component {
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
-                    </fieldset>
+                    </div>
 
 
                     <div className="pv5-ns pv3">
@@ -434,7 +453,8 @@ class UserSignUp extends Component {
                             value="Register"
                         />
                     </div>
-                    <button onClick={() => this.props.onRouteChange('userLogIn')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">Back to the Login page</button>
+                    <Link to="/userLogIn" className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">Back to the Login page</Link>
+                    {/*<button onClick={() => this.props.onRouteChange('userLogIn')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">Back to the Login page</button>*/}
                 </div>
             </main>
 

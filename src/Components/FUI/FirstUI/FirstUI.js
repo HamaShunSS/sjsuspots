@@ -2,6 +2,7 @@ import React from 'react';
 import Scroll from '../../Scroll';
 import Spinner from 'react-spinner-material';
 
+import {Link} from "react-router-dom";
 import axios from 'axios';
 import CityList from "../CityList";
 import SanMateoCountyList from "../SanMateoList";
@@ -81,7 +82,9 @@ class FirstUI extends React.Component {
                 }
             })
         if (this.props.route === '/' || 'secondUI') {
-            this.props.onRouteChange('iine');
+
+            this.props.routeCheck('/thankyou');
+            // this.props.onRouteChange('thankyou');
         }
     }
 
@@ -106,7 +109,8 @@ class FirstUI extends React.Component {
                 }
             })
         if (this.props.route === '/' || 'secondUI') {
-            this.props.onRouteChange('iine');
+            this.props.routeCheck('/thankyou');
+
         }
     }
 
@@ -131,7 +135,7 @@ class FirstUI extends React.Component {
                 }
             })
         if (this.props.route === '/' || 'secondUI') {
-            this.props.onRouteChange('iine');
+            this.props.routeCheck('/thankyou');
         }
     }
 
@@ -156,7 +160,7 @@ class FirstUI extends React.Component {
                 }
             })
         if (this.props.route === '/' || 'secondUI') {
-            this.props.onRouteChange('iine');
+            this.props.routeCheck('/thankyou');
         }
     }
 
@@ -195,9 +199,10 @@ class FirstUI extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyou');
+                        this.props.routeCheck('/thankyou')
+                        // this.props.onRouteChange('thankyou');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry')
                     }
                 })
         }
@@ -206,7 +211,7 @@ class FirstUI extends React.Component {
     //comments
     onAddBadComment =(id, com) => {
         if (this.state.com === '' ) {
-            alert("コメントを記入してください...");
+            alert("Tell us the reason...");
         } else {
             if (this.props.route === 'secondUI') {
                 this.props.onRouteChange('loading');
@@ -228,9 +233,10 @@ class FirstUI extends React.Component {
                 .then(response => {
                     console.log('what is ', response)
                     if (response === 'success') {
-                        this.props.onRouteChange('thankyou');
+                        this.props.routeCheck('/thankyou')
+                        // this.props.onRouteChange('thankyou');
                     } else if (response === 'incorrect form submission') {
-                        this.props.onRouteChange('sorry');
+                        this.props.routeCheck('/sorry')
                     }
                 })
         }
@@ -259,6 +265,7 @@ class FirstUI extends React.Component {
 
 
     render() {
+
         const filterdCountrys = this.state.results.filter(infos => {
             //"filter" is a function to go thorough array in "robots from State", having a parameter "robot"
             //ArrayList<String> cashList = new ArrayList<>(infos.price);
@@ -392,7 +399,7 @@ class FirstUI extends React.Component {
                         <label className="pv4-ns f3 pt3 pv2 fw6 f2-ns mh2">Detail</label>
                         <button className='ph3-ns pv2-ns pv1 ph2 ml4 btnSS b white br-pill pointer' onClick={() => {this.setState({detail: 'no'})}}><p className='fl f6'>Back</p></button>
                     </div>
-                    <Detail info={this.state.spot} userid={this.props.userId} usercountry={this.props.usercountry} changeAuthentic={changeAuthentic} changeNotAuthentic={changeNotAuthentic} changeGood={changeGood} changeBad={changeBad} authentic={this.state.authentic} onRouteChange={this.props.onRouteChange} onSpotIdChange={this.onSpotIdChange} onButtonSubmit={this.onButtonSubmit} onButtonSubmitW={this.onButtonSubmitW} onAddComment={this.onAddComment} onAddBadComment={this.onAddBadComment} onCommentsChange={this.onCommentsChange} toCommentBad={this.toCommentBad} tobad={this.state.tobad} />
+                    <Detail info={this.state.spot} userid={this.props.userId} usercountry={this.props.usercountry} com={this.state.com} changeAuthentic={changeAuthentic} changeNotAuthentic={changeNotAuthentic} changeGood={changeGood} changeBad={changeBad} authentic={this.state.authentic} onRouteChange={this.props.onRouteChange} onSpotIdChange={this.onSpotIdChange} onButtonSubmit={this.onButtonSubmit} onButtonSubmitW={this.onButtonSubmitW} onAddComment={this.onAddComment} onAddBadComment={this.onAddBadComment} onCommentsChange={this.onCommentsChange} toCommentBad={this.toCommentBad} tobad={this.state.tobad} />
                 </div>
             )
         }
@@ -423,28 +430,32 @@ class FirstUI extends React.Component {
                             <label className='b f4 f2-ns mv2 ma3-ns pv2-ns'>Discover authentic restaurants!!</label>
                         </div>
                         <div className="w-100 w-100-ns mt2">
-                            <div className=' tl ml3 w-80 w-70-ns '>
+                            <div className=' tl ml3 w-90 w-70-ns '>
                                 <input
                                     placeholder="ex) San Jose"
-                                    className=' pa2-ns pl2 pv2 w-80 w-80-ns br2 input-reset hover-black btnSS b pointer white f6'
-                                    type="text"
+                                    className=' pa2-ns ph2 pv2 w-80 w-80-ns br2 input-reset hover-black btnSS b pointer white f6'
+                                    type="search"
                                     name="city"
                                     id="name"
                                     value={this.state.city}
                                     onChange={this.onCityChange}
                                 />
-                                <input
-                                    onClick={ ()=>{
-                                        if (this.props.longitude === '' || this.props.latitude === '') {
-                                            alert("chose an option below")
-                                        } else {
-                                            this.props.onRouteChange('secondUI')
-                                        }
-                                    }}
-                                    className='b pa2-ns pv2 input-reset br2 w-20 w-20-ns clickbtnSS pointer f6'
-                                    type="submit"
-                                    value="Search"
-                                />
+                                {
+                                    this.props.longitude === '' && this.props.latitude === '' &&
+                                    <button
+                                        onClick={ ()=>{
+                                                alert("choose an option below")
+                                        }}
+                                        className='b pa2-ns pv2 input-reset br2 w-20 w-20-ns clickbtnSS pointer f6'
+                                    >Search</button>
+                                }
+                                {
+                                    this.props.longitude !== '' && this.props.latitude !== '' &&
+                                    <button
+                                        className='b pa2-ns pv2 input-reset br2 w-20 w-20-ns clickbtnSS pointer f6'
+                                    ><Link to="/secondUI">Search</Link></button>
+                                }
+
                                 <div className='b db fw6 lh-copy f6 w-80 w-80-ns'>{
                                     this.state.city.length > 0 && this.props.lon !== null &&
                                     <div className=' grow-ns shadow-5 br1 bw2 bg-white-80' onClick={()=>{

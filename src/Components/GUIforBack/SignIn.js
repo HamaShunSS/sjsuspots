@@ -41,12 +41,15 @@ class SignIn extends Component {
                     console.log('what is ', response)
                     if (response.status === 'mas') {
                         this.props.onIsSignedInChange(response.username, response.email, response.country, response.status, response.id)
-                        this.props.onRouteChange('backMaster');
+                        this.props.routeCheck('/backMaster');
+                        // this.props.onRouteChange('backMaster');
                     } else if (response.status === 'mem') {
                         this.props.onIsSignedInChange(response.username, response.email, response.country, response.status, response.id)
-                        this.props.onRouteChange('back');
+                        this.props.routeCheck('/back');
+                        // this.props.onRouteChange('back');
                     } else {
-                        this.props.onRouteChange('mistake');
+                        this.props.routeCheck('/mistake');
+                        // this.props.onRouteChange('mistake');
                     }
                 })
         }

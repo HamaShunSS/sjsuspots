@@ -1,8 +1,9 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const FontAwesome = require('react-fontawesome');
 
-const About = ({ onRouteChange }) => {
+const About = ({ routeCheck }) => {
     return (
         <div className="ma3-ns ma2">
             <label className="moji db b pv3 lh-copy f3 mt4 mt5-ns ph4" htmlFor="name">Recotto</label>
@@ -41,7 +42,8 @@ const About = ({ onRouteChange }) => {
                 </div>
 
                 <div className='ma7-ns mv5'>
-                    <button onClick={() => onRouteChange('/')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">Back to home</button>
+                    <Link to="/" className='btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6' onClick={() => routeCheck('')}>Back to home</Link>
+                    {/*<button onClick={() => onRouteChange('/')} className="btnSS b tc ph3 pv2 ma3 ba b--white white br-pill pointer f6">Back to home</button>*/}
                 </div>
             </div>
         </div>
