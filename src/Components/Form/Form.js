@@ -17,7 +17,7 @@ class Form extends Component {
     constructor(props){
         super(props);
         this.state = {
-            id: '',
+            id: '', //Biz id
             restaurantName: '',
             results: [],
             gglresults: [],
@@ -268,8 +268,11 @@ class Form extends Component {
         const x= this.onCountry()
         console.log('check', x, this.props.userid);
         if (this.state.restaurantName === '' || this.state.comments === ''|| x === '' ) {
-            alert("場所の名前、コメントのどれかに記入漏れがあるようです...");
-        } else {
+            alert("You forgot to Search and find the spot (3.), to type your recommendation and/or comment (4.), AND/OR to choose what kind of cuisine that is");
+        } else if (this.state.id === ''){
+            alert("You forgot to Search and find the spot (3.)");
+        }
+        else {
             if (this.props.route === 'form') {
                 this.props.onRouteChange('loading');
             }
@@ -352,7 +355,7 @@ class Form extends Component {
                 console.log('error')
             })
         if (this.state.name === '' || this.state.location === '' || this.state.region === '' || this.state.comment === '' ) {
-            alert("場所の名前か地域、住所、コメントのどれかに記入漏れがあるようです...");
+            alert("You might forget to tap 場所の名前か地域、住所、コメントのどれかに記入漏れがあるようです...");
         } else {
                 if (this.props.route === 'form') {
                     this.props.onRouteChange('loading');
@@ -946,7 +949,7 @@ class Form extends Component {
                             <div className="pv5-ns pv3">
                                 <input
                                     onClick={this.onSubmitToSpot}
-                                    className='b pa2-ns pa2 mb2 input-reset hover-white br-pill w-30 w-10-ns clickbtnSS pointer f6'
+                                    className='b pa2-ns pa2 mb2 br-pill w-30 w-10-ns clickbtnSS pointer f6'
                                     type="submit"
                                     value="Share"
                                 />

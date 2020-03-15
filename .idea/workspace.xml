@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bf2abe4-f485-47ab-9476-a0a149cf7d2c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Contact/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Contact/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Contact/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Contact/Contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/FirstUI/FirstUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/FirstUI/FirstUI.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/FUI/Nodata.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/Nodata.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/SecondUI/SecondUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/SecondUI/SecondUI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Form/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/Form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Form/Sorry.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/Sorry.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Form/Thankyou.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/Thankyou.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Form/UserLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/UserLogin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Form/UserSignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/UserSignUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/Mistake.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/Mistake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/SignIn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Mypage/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mypage/Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Mypage/Mypage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Mypage/Mypage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Navigation/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navigation/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navigation/Navigation.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -56,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="369" column="122" selection-start-line="369" selection-start-column="122" selection-end-line="369" selection-end-column="122" />
+            <state relative-caret-position="2288">
+              <caret line="373" column="106" lean-forward="true" selection-start-line="373" selection-start-column="106" selection-end-line="373" selection-end-column="106" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -65,51 +51,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/FUI/FirstUI/FirstUI.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="396" column="20" selection-start-line="396" selection-start-column="20" selection-end-line="396" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotDetail.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="869">
-              <caret line="68" column="62" lean-forward="true" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/SecondUI.js">
+        <entry file="file://$PROJECT_DIR$/src/Components/Form/Form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="389" column="67" selection-start-line="389" selection-start-column="67" selection-end-line="389" selection-end-column="67" />
+            <state relative-caret-position="975">
+              <caret line="951" column="79" lean-forward="true" selection-start-line="951" selection-start-column="79" selection-end-line="951" selection-end-column="79" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#78#112#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Navigation/Menu.js">
+        <entry file="file://$PROJECT_DIR$/src/Components/Form/BusinessesList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-886">
-              <caret line="69" column="61" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="35">
+              <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -127,10 +85,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>comment</find>
-      <find>onCommentsChangeB</find>
-      <find>isSig</find>
-      <find>onIsSignedInChange</find>
       <find>delete</find>
       <find>onDeleteInfo</find>
       <find>menu</find>
@@ -157,6 +111,10 @@
       <find>コメント</find>
       <find>if</find>
       <find>onAdd</find>
+      <find>bizid</find>
+      <find>onBizIdCal</find>
+      <find>onBiz</find>
+      <find>id</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -195,20 +153,11 @@
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/SignIn.js" />
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js" />
         <option value="$PROJECT_DIR$/src/Components/Contact/About.js" />
-        <option value="$PROJECT_DIR$/src/Components/Form/Thankyou.js" />
-        <option value="$PROJECT_DIR$/src/Components/GUIforBack/Mistake.js" />
-        <option value="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js" />
-        <option value="$PROJECT_DIR$/src/Components/Form/Sorry.js" />
-        <option value="$PROJECT_DIR$/src/Components/FUI/Nodata.js" />
         <option value="$PROJECT_DIR$/src/Components/Form/UserSignUp.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SanFranciscoList.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SanMateoList.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SantaClaraList.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/MontereyList.js" />
-        <option value="$PROJECT_DIR$/src/Components/Form/Form.js" />
-        <option value="$PROJECT_DIR$/src/Components/Mypage/Mypage.js" />
-        <option value="$PROJECT_DIR$/src/Components/Mypage/Detail.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/FirstUI/FirstUI.js" />
         <option value="$PROJECT_DIR$/src/Components/Contact/Contact.js" />
         <option value="$PROJECT_DIR$/src/Components/Navigation/Navigation.js" />
@@ -216,6 +165,15 @@
         <option value="$PROJECT_DIR$/src/Components/Navigation/Menu.js" />
         <option value="$PROJECT_DIR$/src/Components/Form/UserLogin.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SecondUI/SecondUI.js" />
+        <option value="$PROJECT_DIR$/src/Components/Mypage/Mypage.js" />
+        <option value="$PROJECT_DIR$/src/Components/Mypage/Detail.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/Components/Form/Thankyou.js" />
+        <option value="$PROJECT_DIR$/src/Components/Form/Sorry.js" />
+        <option value="$PROJECT_DIR$/src/Components/FUI/Nodata.js" />
+        <option value="$PROJECT_DIR$/src/Components/GUIforBack/Mistake.js" />
+        <option value="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js" />
+        <option value="$PROJECT_DIR$/src/Components/Form/Form.js" />
       </list>
     </option>
   </component>
@@ -535,12 +493,12 @@
       <workItem from="1583954290161" duration="7905000" />
       <workItem from="1584059697318" duration="24146000" />
       <workItem from="1584116108444" duration="7609000" />
-      <workItem from="1584129805961" duration="8914000" />
+      <workItem from="1584129805961" duration="11025000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="603436000" />
+    <option name="totallyTimeSpent" value="605547000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="798" extended-state="0" />
@@ -560,31 +518,11 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.18550725" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.18550725" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987715" visible="true" weight="0.121212125" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.5012285" side_tool="true" weight="0.121212125" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3280116" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32923833" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3980344" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.18550725" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -644,13 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/BusinessesList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -776,26 +707,6 @@
         <state relative-caret-position="-27" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="83" lean-forward="true" selection-start-line="10" selection-start-column="83" selection-end-line="10" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/FUI/Nodata.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="88" lean-forward="true" selection-start-line="8" selection-start-column="88" selection-end-line="8" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/CardForB.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
@@ -807,23 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="920">
           <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/Mistake.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/googlePlaceDetailCall.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -852,66 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/Sorry.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/Thankyou.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="20" column="109" selection-start-line="20" selection-start-column="109" selection-end-line="20" selection-end-column="109" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/Form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="674" column="67" lean-forward="true" selection-start-line="674" selection-start-column="67" selection-end-line="674" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Mypage/Mypage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="596" column="40" lean-forward="true" selection-start-line="596" selection-start-column="40" selection-end-line="596" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Mypage/Detail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="50" column="52" lean-forward="true" selection-start-line="50" selection-start-column="52" selection-end-line="50" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="369" column="122" selection-start-line="369" selection-start-column="122" selection-end-line="369" selection-end-column="122" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -962,26 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/UserSignUp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="61" column="15" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/FUI/FirstUI/FirstUI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="396" column="20" selection-start-line="396" selection-start-column="20" selection-end-line="396" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotDetail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="869">
@@ -992,13 +806,137 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Mypage/Mypage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="584" column="53" selection-start-line="584" selection-start-column="53" selection-end-line="584" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Mypage/Detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="341" column="56" selection-start-line="341" selection-start-column="56" selection-end-line="341" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/FUI/FirstUI/FirstUI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="414" column="70" lean-forward="true" selection-start-line="414" selection-start-column="70" selection-end-line="414" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/FUI/SecondUI/SecondUI.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="389" column="67" selection-start-line="389" selection-start-column="67" selection-end-line="389" selection-end-column="67" />
+        <state relative-caret-position="260">
+          <caret line="387" column="34" selection-start-line="387" selection-start-column="34" selection-end-line="387" selection-end-column="34" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#78#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/UserSignUp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2554">
+          <caret line="61" column="15" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/Thankyou.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/Sorry.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/FUI/Nodata.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/googlePlaceDetailCall.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/Mistake.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2288">
+          <caret line="373" column="106" lean-forward="true" selection-start-line="373" selection-start-column="106" selection-end-line="373" selection-end-column="106" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/BusinessesList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="951" column="79" lean-forward="true" selection-start-line="951" selection-start-column="79" selection-end-line="951" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

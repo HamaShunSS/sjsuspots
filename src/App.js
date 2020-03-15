@@ -255,6 +255,45 @@ class App extends Component {
                         }
                         <section className="">
                             <Switch>
+                                <Route exact path='/secondUI' render={()=> (
+                                    this.state.routeCheck ==='/thankyou' ? (
+                                        <Redirect to="/thankyou"/>
+                                    ) : (
+                                        this.state.routeCheck ==='/nodata' ? (
+                                            <Redirect to="/nodata"/>
+                                        ) : (
+                                            this.state.routeCheck ==='/sorry' ? (
+                                                <Redirect to="/sorry"/>
+                                            ) : (
+                                                this.state.longitude === '' && this.state.latitude === '' ? (
+                                                    <Redirect to="/"/>
+                                                ) : (
+                                                    < SecondUI onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange}
+                                                               routeCheck={this.routeCheck} lon={this.state.lon} lat={this.state.lat} longitude={this.state.longitude}
+                                                               latitude={this.state.latitude} userId={this.state.userid} username={this.state.username}
+                                                               usercountry={this.state.country}/>                                                          )
+                                            )
+                                        )
+                                    )
+                                )}  />
+                                <Route exact path='/mypage' render={() => (
+                                    this.state.routeCheck ==='/thankyou' ? (
+                                        <Redirect to="/thankyou"/>
+                                    ) : (
+                                        this.state.routeCheck ==='/sorry' ? (
+                                            <Redirect to="/sorry"/>
+                                        ) : (
+                                            this.state.isSignedIn === 'yes' ? (
+                                                <Mypage onRouteChange={this.onRouteChange} userid={this.state.userid} routeCheck={this.routeCheck}
+                                                        username={this.state.username} usercountry={this.state.country} email={this.state.email}
+                                                        status={this.state.status} />
+                                            ) : (
+                                                <Redirect to="/"/>
+                                            )
+                                        )
+                                    )
+                                )
+                                } />
                                 <Route exact path='/form' render={() => (
                                     this.state.routeCheck ==='/thankyou' ? (
                                         <Redirect to="/thankyou"/>
@@ -270,84 +309,6 @@ class App extends Component {
                                         )
                                     )
                                 )}/>
-                                <Route exact path='/thankyou' render={()=> < Thankyou routeCheck={this.routeCheck}/>} />
-                                <Route exact path='/iine' render={()=> < Iine routeCheck={this.routeCheck}/>} />
-                                <Route exact path='/waruiine'  component={ Waruiine }/>
-                                <Route exact path='/loading'  component={ Loading }/>
-                                <Route exact path='/back' status={this.state.status} render={()=> < GUIforBack onRouteChange={this.onRouteChange} status={this.state.status} />} />
-                                <Route exact path='/sorry' render={()=> < Sorry routeCheck={this.routeCheck}/>} />
-                                <Route exact path='/thankyoub'  component={ ThankyouB }/>
-                                <Route exact path='/nodata'  component={ NoData }/>
-                                <Route exact path='/touroku' onIsSignedInChange={this.onIsSignedInChange} component={ Touroku }/>
-                                <Route exact path='/signin' onIsSignedInChange={this.onIsSignedInChange}  render={() => (
-                                    this.state.routeCheck ==='/backMaster' ? (
-                                        <Redirect to="/backMaster"/>
-                                        ) : (
-                                            this.state.routeCheck ==='/back' ? (
-                                                <Redirect to="/back" />
-                                            ) : (
-                                                this.state.routeCheck ==='/mistake' ? (
-                                                    <Redirect to="/mistake"/>
-                                            ) : (
-                                                    < SignIn onIsSignedInChange={this.onIsSignedInChange} routeCheck={this.routeCheck} onRouteChange={this.onRouteChange} />
-                                            )
-                                        )
-                                    )
-                                )}/>
-                                <Route exact path='/backMaster' email={this.state.email} status={this.state.status}  render={()=> (
-                                    this.state.routeCheck ==='/thankyouBM' ? (
-                                        <Redirect to="/thankyouBM"/>
-                                    ) : (
-                                            this.state.routeCheck ==='/sorry' ? (
-                                                <Redirect to="/sorry"/>
-                                            ) : (
-                                                this.state.isSignedIn === 'yes' ? (
-                                                    < GUIforMaster onRouteChange={this.onRouteChange} email={this.state.email} status={this.state.status}
-                                                                   routeCheck={this.routeCheck} onIsSignedInChange={this.onIsSignedInChange} />
-                                                    ) : (
-                                                    <Redirect to="/"/>
-                                                )
-                                            )
-                                        )
-                                )} />
-                                <Route exact path='/mistake'  render={() => < Mistake onRouteChange={this.onRouteChange} routeCheck={this.routeCheck}/>} />
-                                <Route exact path='/thankyouBM' render={()=> < ThankyouBM routeCheck={this.routeCheck}/>} />
-                                <Route exact path='/nodata' render={()=> < NoData routeCheck={this.routeCheck} />} />
-                                <Route exact path='/secondUI' render={()=> (
-                                    this.state.routeCheck ==='/thankyou' ? (
-                                        <Redirect to="/thankyou"/>
-                                        ) : (
-                                                this.state.routeCheck ==='/nodata' ? (
-                                                <Redirect to="/nodata"/>
-                                                ) : (
-                                                    this.state.routeCheck ==='/sorry' ? (
-                                                        <Redirect to="/sorry"/>
-                                                        ) : (
-                                                            this.state.longitude === '' && this.state.latitude === '' ? (
-                                                                <Redirect to="/"/>
-                                                                ) : (
-                                                            < SecondUI onIsSignedInChange={this.onIsSignedInChange} onRouteChange={this.onRouteChange}
-                                                            routeCheck={this.routeCheck} lon={this.state.lon} lat={this.state.lat} longitude={this.state.longitude}
-                                                            latitude={this.state.latitude} userId={this.state.userid} username={this.state.username}
-                                                            usercountry={this.state.country}/>                                                          )
-                                                        )
-                                                    )
-                                            )
-                                    )}  />
-
-                                <Route exact path='/userLogIn' render={() => (
-                                    this.state.isSignedIn ==='yes' ? (
-                                        <Redirect to="/"/>
-                                    ) : (
-                                        this.state.routeCheck ==='/mistake' ? (
-                                            <Redirect to="/mistake"/>
-                                            ) : (
-                                        < UserLogin onIsSignedInChange={this.onIsSignedInChange} routeCheck={this.routeCheck} onRouteChange={this.onRouteChange} />
-                                    )
-                                        )
-                                )}/>
-                                <Route exact path='/about' render={()=> < About routeCheck={this.routeCheck}/>} />
-                                {/*<Route exact path='/userSignUp' onIsSignedInChange={this.onIsSignedInChange}  component={ UserSignUp }/>*/}
                                 <Route exact path='/userSignUp' render={() => (
                                     this.state.isSignedIn ==='yes' ? (
                                         <Redirect to="/"/>
@@ -359,24 +320,61 @@ class App extends Component {
                                         )
                                     )
                                 )}/>
-                                <Route exact path='/mypage' render={() => (
-                                        this.state.routeCheck ==='/thankyou' ? (
-                                            <Redirect to="/thankyou"/>
+                                <Route exact path='/userLogIn' render={() => (
+                                    this.state.isSignedIn ==='yes' ? (
+                                        <Redirect to="/"/>
+                                    ) : (
+                                        this.state.routeCheck ==='/mistake' ? (
+                                            <Redirect to="/mistake"/>
                                         ) : (
-                                            this.state.routeCheck ==='/sorry' ? (
-                                                <Redirect to="/sorry"/>
+                                            < UserLogin onIsSignedInChange={this.onIsSignedInChange} routeCheck={this.routeCheck} onRouteChange={this.onRouteChange} />
+                                        )
+                                    )
+                                )}/>
+                                <Route exact path='/backMaster' email={this.state.email} status={this.state.status}  render={()=> (
+                                    this.state.routeCheck ==='/thankyouBM' ? (
+                                        <Redirect to="/thankyouBM"/>
+                                    ) : (
+                                        this.state.routeCheck ==='/sorry' ? (
+                                            <Redirect to="/sorry"/>
+                                        ) : (
+                                            this.state.isSignedIn === 'yes' ? (
+                                                < GUIforMaster onRouteChange={this.onRouteChange} email={this.state.email} status={this.state.status}
+                                                               routeCheck={this.routeCheck} onIsSignedInChange={this.onIsSignedInChange} />
                                             ) : (
-                                                this.state.isSignedIn === 'yes' ? (
-                                                    <Mypage onRouteChange={this.onRouteChange} userid={this.state.userid} routeCheck={this.routeCheck}
-                                                            username={this.state.username} usercountry={this.state.country} email={this.state.email}
-                                                            status={this.state.status} />
-                                                ) : (
-                                                    <Redirect to="/"/>
-                                                    )
-                                                )
+                                                <Redirect to="/"/>
                                             )
                                         )
-                                    } />
+                                    )
+                                )} />
+                                <Route exact path='/signin' onIsSignedInChange={this.onIsSignedInChange}  render={() => (
+                                    this.state.routeCheck ==='/backMaster' ? (
+                                        <Redirect to="/backMaster"/>
+                                    ) : (
+                                        this.state.routeCheck ==='/back' ? (
+                                            <Redirect to="/back" />
+                                        ) : (
+                                            this.state.routeCheck ==='/mistake' ? (
+                                                <Redirect to="/mistake"/>
+                                            ) : (
+                                                < SignIn onIsSignedInChange={this.onIsSignedInChange} routeCheck={this.routeCheck} onRouteChange={this.onRouteChange} />
+                                            )
+                                        )
+                                    )
+                                )}/>
+                                <Route exact path='/thankyou' render={()=> < Thankyou routeCheck={this.routeCheck}/>} />
+                                <Route exact path='/loading'  component={ Loading }/>
+                                <Route exact path='/back' status={this.state.status} render={()=> < GUIforBack onRouteChange={this.onRouteChange} status={this.state.status} />} />
+                                <Route exact path='/sorry' render={()=> < Sorry routeCheck={this.routeCheck}/>} />
+                                <Route exact path='/thankyoub'  component={ ThankyouB }/>
+                                <Route exact path='/nodata'  component={ NoData }/>
+                                <Route exact path='/touroku' onIsSignedInChange={this.onIsSignedInChange} component={ Touroku }/>
+                                <Route exact path='/mistake'  render={() => < Mistake onRouteChange={this.onRouteChange} routeCheck={this.routeCheck}/>} />
+                                <Route exact path='/thankyouBM' render={()=> < ThankyouBM routeCheck={this.routeCheck}/>} />
+                                <Route exact path='/nodata' render={()=> < NoData routeCheck={this.routeCheck} />} />
+                                <Route exact path='/about' render={()=> < About routeCheck={this.routeCheck}/>} />
+                                {/*<Route exact path='/iine' render={()=> < Iine routeCheck={this.routeCheck}/>} />*/}
+                                {/*<Route exact path='/waruiine'  component={ Waruiine }/>*/}
                             </Switch>
                         </section>
                         <Contact isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
