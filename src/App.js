@@ -30,7 +30,8 @@ import axios from "axios";
 import SecondUI from "./Components/FUI/SecondUI/SecondUI";
 import Menu from "./Components/Navigation/Menu";
 import Mypage from "./Components/Mypage/Mypage";
-import FirstUI from "./Components/FUI/FirstUI/FirstUI"
+import FirstUI from "./Components/FUI/FirstUI/FirstUI";
+import Reset from './Components/Form/Reset';
 
 
 
@@ -171,7 +172,6 @@ class App extends Component {
 
 
   render() {
-        console.log('safdsdaf', this.state.longitude, this.state.latitude)
       const { isSignedIn, route, email} = this.state;
       // const num = 100
       // // //現在地特定
@@ -373,6 +373,17 @@ class App extends Component {
                                 <Route exact path='/thankyouBM' render={()=> < ThankyouBM routeCheck={this.routeCheck}/>} />
                                 <Route exact path='/nodata' render={()=> < NoData routeCheck={this.routeCheck} />} />
                                 <Route exact path='/about' render={()=> < About routeCheck={this.routeCheck}/>} />
+                                <Route exact path='/reset' render={() => (
+                                    this.state.routeCheck ==='/userLogIn' ? (
+                                        <Redirect to="/userLogIn"/>
+                                    ) : (
+                                        this.state.routeCheck ==='/mistake' ? (
+                                            <Redirect to="/mistake"/>
+                                        ) : (
+                                            < Reset routeCheck={this.routeCheck} onRouteChange={this.onRouteChange} />
+                                        )
+                                    )
+                                )} />
                                 {/*<Route exact path='/iine' render={()=> < Iine routeCheck={this.routeCheck}/>} />*/}
                                 {/*<Route exact path='/waruiine'  component={ Waruiine }/>*/}
                             </Switch>

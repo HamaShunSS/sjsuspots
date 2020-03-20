@@ -108,10 +108,14 @@ class UserLogin extends Component {
                         </div>
                         <label className="">New to Recotto?</label>
                         <button className='btnSS b tc ph2 pv1 ma3 ba b--white white br-pill pointer f6'>
-                            <Link to="/userSignUp" style={{color: 'white'}}>Sign
-                                up</Link></button>
+                            <Link to="/userSignUp" style={{color: 'white'}}>Sign up</Link></button>
                         {/*<button onClick={() => this.props.onRouteChange('userSignUp')}  className="btnSS b tc ph2 pv1 ma3 ba b--white white br-pill pointer f6">Sign*/}
                             {/*up</button>*/}
+                        <div className="mv2">
+                            <label className="">Forgot password?</label>
+                            <button className='btnSS b tc ph2 pv1 ma3 ba b--white white br-pill pointer f6'>
+                                <Link to="/reset" style={{color: 'white'}}>Reset</Link></button>
+                        </div>
                         <div className='pv7-ns pv6'>
 
                         </div>

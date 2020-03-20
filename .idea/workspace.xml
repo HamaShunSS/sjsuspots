@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bf2abe4-f485-47ab-9476-a0a149cf7d2c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Form/Reset.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FUI/Nodata.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FUI/Nodata.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Form/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Form/Sorry.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/Sorry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Form/Thankyou.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/Thankyou.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/Mistake.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/Mistake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Form/UserLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Form/UserLogin.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Form/googlePlaceDetailCall.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
+            <state relative-caret-position="1472">
               <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
             </state>
           </provider>
@@ -42,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2288">
-              <caret line="373" column="106" lean-forward="true" selection-start-line="373" selection-start-column="106" selection-end-line="373" selection-end-column="106" />
+            <state relative-caret-position="263">
+              <caret line="329" column="45" lean-forward="true" selection-start-line="329" selection-start-column="45" selection-end-line="329" selection-end-column="45" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -52,10 +49,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Components/Form/Form.js">
+        <entry file="file://$PROJECT_DIR$/src/Components/Form/Reset.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="951" column="79" lean-forward="true" selection-start-line="951" selection-start-column="79" selection-end-line="951" selection-end-column="79" />
+            <state relative-caret-position="215">
+              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Form/UserLogin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -66,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Form/BusinessesList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
+            <state relative-caret-position="621">
               <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
             </state>
           </provider>
@@ -123,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Components/FUI/CityList.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/CountyArrayList.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SecondUI.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SUI.js" />
@@ -163,17 +171,18 @@
         <option value="$PROJECT_DIR$/src/Components/Navigation/Navigation.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SecondUI/SpotDetail.js" />
         <option value="$PROJECT_DIR$/src/Components/Navigation/Menu.js" />
-        <option value="$PROJECT_DIR$/src/Components/Form/UserLogin.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/SecondUI/SecondUI.js" />
         <option value="$PROJECT_DIR$/src/Components/Mypage/Mypage.js" />
         <option value="$PROJECT_DIR$/src/Components/Mypage/Detail.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Components/Form/Thankyou.js" />
         <option value="$PROJECT_DIR$/src/Components/Form/Sorry.js" />
         <option value="$PROJECT_DIR$/src/Components/FUI/Nodata.js" />
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/Mistake.js" />
         <option value="$PROJECT_DIR$/src/Components/GUIforBack/ThankyouBM.js" />
         <option value="$PROJECT_DIR$/src/Components/Form/Form.js" />
+        <option value="$PROJECT_DIR$/src/Components/Form/UserLogin.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/Components/Form/Reset.js" />
       </list>
     </option>
   </component>
@@ -187,6 +196,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,62 +234,10 @@
               <item name="Components" type="462c0819:PsiDirectoryNode" />
               <item name="Form" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="sjsuspots" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sjsuspots" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="FUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sjsuspots" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sjsuspots" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="FUI" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sjsuspots" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sjsuspots" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="FUI" type="462c0819:PsiDirectoryNode" />
-              <item name="SecondUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sjsuspots" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sjsuspots" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="GUIforBack" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sjsuspots" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sjsuspots" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="Mypage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sjsuspots" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sjsuspots" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="Navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sjsuspots" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sjsuspots" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="SearchBox" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -494,15 +452,17 @@
       <workItem from="1584059697318" duration="24146000" />
       <workItem from="1584116108444" duration="7609000" />
       <workItem from="1584129805961" duration="11025000" />
+      <workItem from="1584239488836" duration="291000" />
+      <workItem from="1584736350568" duration="3000" />
+      <workItem from="1584736357981" duration="4614000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="605547000" />
+    <option name="totallyTimeSpent" value="610455000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="798" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987715" visible="true" weight="0.121212125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -528,9 +488,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/logo.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -657,17 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#74#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/CardUsersB.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -679,16 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="6" column="25" selection-start-line="6" selection-end-line="6" selection-end-column="154" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Contact/About.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="43" column="19" lean-forward="true" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -711,13 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
           <caret line="154" column="92" lean-forward="true" selection-start-line="154" selection-start-column="92" selection-end-line="154" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/googlePlacesAPICall.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -782,16 +711,6 @@
           <caret line="69" column="61" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/UserLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="109" column="60" selection-start-line="109" selection-start-column="60" selection-end-line="109" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -887,13 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/googlePlaceDetailCall.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/Mistake.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -914,27 +826,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/googlePlacesAPICall.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/googlePlaceDetailCall.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1472">
+          <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/BusinessesList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/GUIforBack/GUIforMaster.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1055">
+          <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#74#105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Contact/About.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="43" column="19" lean-forward="true" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/UserLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="275" column="41" selection-start-line="275" selection-start-column="41" selection-end-line="275" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2288">
-          <caret line="373" column="106" lean-forward="true" selection-start-line="373" selection-start-column="106" selection-end-line="373" selection-end-column="106" />
+        <state relative-caret-position="263">
+          <caret line="329" column="45" lean-forward="true" selection-start-line="329" selection-start-column="45" selection-end-line="329" selection-end-column="45" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/BusinessesList.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/Form/Reset.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Form/Form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="951" column="79" lean-forward="true" selection-start-line="951" selection-start-column="79" selection-end-line="951" selection-end-column="79" />
+        <state relative-caret-position="215">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
