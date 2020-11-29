@@ -367,7 +367,7 @@ class App extends Component {
                                 <Route exact path='/back' status={this.state.status} render={()=> < GUIforBack onRouteChange={this.onRouteChange} status={this.state.status} />} />
                                 <Route exact path='/sorry' render={()=> < Sorry routeCheck={this.routeCheck}/>} />
                                 <Route exact path='/thankyoub'  component={ ThankyouB }/>
-                                <Route exact path='/nodata'  component={ NoData }/>
+                                <Route exact path='/nodata' render={()=> < NoData routeCheck={this.routeCheck}/>}/>
                                 <Route exact path='/touroku' onIsSignedInChange={this.onIsSignedInChange} component={ Touroku }/>
                                 <Route exact path='/mistake'  render={() => < Mistake onRouteChange={this.onRouteChange} routeCheck={this.routeCheck}/>} />
                                 <Route exact path='/thankyouBM' render={()=> < ThankyouBM routeCheck={this.routeCheck}/>} />
